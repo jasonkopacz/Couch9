@@ -9,6 +9,7 @@ user1 = User.create!({fname: "James", lname: "Turner", email: "Oldboy52@gmail.co
   age: 29, gender: "M", languages: ["English", "Spanish"], occupation: "teacher", 
   education: ["Masters Degree", "Bachelors Degree"], location_id: 13, 
   about_me: "Easygoing, fun, outdoor person, outrageous planner, excellent organization skills"})
-user2 = User.create!({fname: "Hank", lname: "Schrader", email: "Schrader@gmail.com",password: "starwars",
+  
+user2 = User.create!({fname: "Hank", lname: "Schrader", email: "Schrader@gmail.com", password: "starwars",
   age: 50, gender: "M", languages: ["English", "Spanish"], occupation: "DEA Agent",
   education: ["Masters Degree", "Bachelors Degree"], location_id: 1, about_me: "Hardworker"})
