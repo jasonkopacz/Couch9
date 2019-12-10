@@ -5,13 +5,12 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :lname, null: false
       t.string :username, unique: true
       t.string :email, null: false, unique: true
-      t.integer :age, null: false
-      t.string :gender, null: false
-      t.text :languages, array: true, default: [], null: false
-      t.string :occupation, null: false
-      t.text :education, array: true, default: [], null: false
-      t.text :about_me, null: false
-      t.integer :location_id, null: false
+      t.integer :age
+      t.string :gender
+      t.string :occupation
+      t.string :education
+      t.text :about_me
+      t.integer :location_id
       t.references :imageable, polymorphic: true
       t.references :reviewable, polymorphic: true
       t.references :friendable, polymorphic: true

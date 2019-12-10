@@ -1,0 +1,31 @@
+.global-header {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 70px;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.header-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.header-links a {
+  align-items: center;
+  padding: 20px; 
+  vertical-align: middle;
+}
+
+.header-links select {
+ align-items: center;
+}

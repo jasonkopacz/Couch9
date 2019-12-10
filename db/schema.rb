@@ -20,13 +20,12 @@ ActiveRecord::Schema.define(version: 2019_12_09_163922) do
     t.string "lname", null: false
     t.string "username"
     t.string "email", null: false
-    t.integer "age", null: false
-    t.string "gender", null: false
-    t.text "languages", default: [], null: false, array: true
-    t.string "occupation", null: false
-    t.text "education", default: [], null: false, array: true
-    t.text "about_me", null: false
-    t.integer "location_id", null: false
+    t.integer "age"
+    t.string "gender"
+    t.string "occupation"
+    t.string "education"
+    t.text "about_me"
+    t.integer "location_id"
     t.string "imageable_type"
     t.bigint "imageable_id"
     t.string "reviewable_type"

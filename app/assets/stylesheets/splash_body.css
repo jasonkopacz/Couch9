@@ -1,0 +1,15 @@
+
+.splash-body {
+background-color: #287FB8;
+background-image: url(bg.png);
+}
+
+.facebook-form {
+  background-color: white;
+  z-index: 1;
+}
+
+.signup-form-box {
+  z-index: 1;
+  background-color: white;
+}
