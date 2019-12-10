@@ -41,13 +41,9 @@ class SessionForm extends React.Component {
     return (
       <main className="splash">
         <div className="signup-form-container">
-          <h1>Stay with Locals and Meet Travelers</h1>
-          <h2>Share Authentic Travel Experiences</h2>
           <div className="facebook-form">
             <h2>Sign Up Faster With</h2>
-              <form action="http://facebook.com">
-              <input type="submit" value="Facebook" />
-              </form>
+              <a href="https://www.facebook.com">Facebook</a>
             <h3>We will never post without your permission.</h3>
           </div>
           <p>or</p>

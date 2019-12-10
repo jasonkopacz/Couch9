@@ -1,15 +1,79 @@
+.splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: auto; */
+}
 
 .splash-body {
 background-color: #287FB8;
 background-image: url(bg.png);
+margin: auto;
+min-height: 100vh;
 }
 
 .facebook-form {
   background-color: white;
   z-index: 1;
+  width: 280px;
+  height: 280px;
+  /* min-height: 320px; */
+  padding: 20px 60px;
+  border-radius: 5px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+}
+.facebook-form a {
+  background-color: #3b5998;
+  text-decoration: none;
+  border: 1px solid #3b5998;
+  border-radius: 5px;
+  color: white;
 }
 
 .signup-form-box {
   z-index: 1;
   background-color: white;
+  width: 280px;
+  height: 428px;
+  /* min-height: 468px; */
+  padding: 20px 60px;
+  border-radius: 5px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+}
+
+.signup-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.splash-header h1 {
+  margin: 0 0 15px 0;
+  font-size: 29px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+.splash-header h2 {
+  font-weight: normal;
+  font-size: 18px;
+  margin: 0 0 0.75em 0;
+  line-height: 1.5;
+}
+
+.splash p {
+  color: white;
+
+}
+
+.facebook-form h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }

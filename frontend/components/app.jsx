@@ -30,8 +30,15 @@ const App = () => (
     </header>
     <Modal />
     <main className="splash-body">
-      <SessionFormContainer className="session-form-container"/>
-      <GreetingContainer className="greeting-container"/>
+      <header className="splash-header">
+        <h1>Stay with Locals and Meet Travelers</h1>
+        <br/>
+        <h2>Share Authentic Travel Experiences</h2>
+      </header>
+      <div className="splash-body-forms">
+        <SessionFormContainer className="session-form-container"/>
+        <GreetingContainer className="greeting-container"/>
+      </div>
     </main>
    </div>
 );
