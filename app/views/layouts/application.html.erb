@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Couch9</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <script type="text/javascript">
+      window.logo = '<%= image_url('courchsurfing.png')%>'
+    </script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

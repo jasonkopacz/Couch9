@@ -1,0 +1,150 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-form-container {
+  background-color: white;
+  width: 500px;
+  height: 560px;
+  border-radius: 7px;
+}
+
+.login-form-box {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.close-x {
+  position: fixed;
+  top: 2px;
+  right: -13px;
+  background: none;
+  color: #afb7c3;
+  font-size: 1.5em;
+  height: 1.3em;
+  min-width: 0;
+  text-indent: 0;
+  width: 1.5em;
+}
+
+.login-input-email {
+  border-radius: 4px;
+  padding: 12px 8px;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-sizing: border-box;
+  display: block;
+  width: 420px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 350;
+  position: absolute;
+  left: 8%;
+  top: 18%;
+}
+
+.login-input-email:focus {
+  box-shadow: 0 0 5px rgb(81, 118, 238);
+  border: 3px solid rgba(81, 118, 238, 1);
+}
+
+.login-input-password {
+  border-radius: 4px;
+  padding: 12px 8px;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-sizing: border-box;
+  display: block;
+  width: 420px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 350;
+  position: absolute;
+  left: 8%;
+  top: 29%;
+}
+
+.login-header {
+  display: block;
+  position: absolute;
+  left: 8%;
+  top: 5.2%;
+  color: #34495E;
+  font-size: 19px;
+  font-weight: 450;  
+}
+
+.remember-field {
+  display: flex;
+  position: absolute;
+  top: 13.8em;
+  left: 8%;
+  width: 84%;
+  justify-content: space-between;
+}
+}
+
+.remember-field input {
+  font-size: .85rem;
+  color: #6c797a;
+  position: absolute;
+  top: 2px;
+  left:0
+
+}
+
+.remember-field a {
+  color: #287FB8;
+  font-size: .85rem;
+}
+
+.remember-field a:hover {
+   color: #ED6504;
+}
+
+.remember-field label {
+  position: absolute;
+  top: -2px;
+  left: 4%;
+  font-size: .85rem;
+  color: #6c797a;
+}
+
+.session-submit-login {
+  position: absolute;
+  top: 48%;
+  left: 45%;
+}
+
+.login-form p {
+  position: absolute;
+  top: 52%;
+  left: 46%;
+}
+
+.facebook {
+  position: absolute;
+  top: 57%;
+  left: 30%;
+}
+
+.login-signup-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 70%;
+  left: 30%;
+}
