@@ -23,8 +23,12 @@ const App = () => (
           </select>
           <Link to="/howitworks" className="header-link-1">How It Works</Link>
           <Link to="/safety" className="header-link-2">Safety</Link>
-          <Link to="/signup" className="header-link-3">Join</Link>
-          <Link to="/login" className="header-link-4">Login</Link>
+          <span className="header-link-3-body">
+            <Link to="/signup" className="header-link-3">Join</Link>
+          </span>
+          <span className="header-link-4-body">
+            <Link to="/login" className="header-link-4">Login</Link>
+          </span>
         </ul>
       </div> 
     </header>

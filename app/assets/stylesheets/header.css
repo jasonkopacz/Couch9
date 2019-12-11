@@ -74,13 +74,30 @@
 }
 
 .header-link-3 {
+  height: 50px;
+  width: 30px;
+  background-color: #287FB8;
+  color: white;
+}
+
+.header-link-3-body {
   height: 69px;
   width: 54px;
   display: flex;
   position: relative;
   right: 19em;
 }
+
 .header-link-4 {
+  height: 30px;
+  width: 50px;
+  background-color: white;
+  border: 1px solid #287FB8;
+  color: #287FB8;
+
+}
+
+.header-link-4-body {
   height: 66px;
   width: 75px;
   display: flex;
