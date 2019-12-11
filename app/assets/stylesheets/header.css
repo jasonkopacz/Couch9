@@ -49,7 +49,7 @@
  height: 34px;
  font-weight: 340;
  position: relative;
- right: 25em;
+ right: 26.5em;
  background-color: #fff;
 }
 
@@ -58,7 +58,7 @@
   width: 127px;
   display: flex;
   position: relative;
-  right: 18em;
+  right: 19.5em;
 }
 
 .header-link-1:hover, .header-link-2:hover {
@@ -70,7 +70,7 @@
   width: 75px;
   display: flex;
   position: relative;
-  right: 18em;
+  right: 19.5em;
 }
 
 .header-link-3 {
@@ -80,14 +80,15 @@
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     line-height: 1.5;
     width: 54px;
     height: 36px;
     padding: 8px 12px;
     text-align: center;
-    
+    width: 30px;
+    height: 25px;    
 }
 
 .header-link-3-body {
@@ -95,7 +96,8 @@
   width: 54px;
   display: flex;
   position: relative;
-  right: 19em;
+  right: 20.5em;
+  top: 13px;
 }
 
 .header-link-4 {
@@ -107,19 +109,20 @@
   border-radius: 3px;
   cursor: pointer;
   display: inline-block;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   line-height: 1.5;
   padding: 8px 12px;
   text-align: center;
-  
-
+  width: 45px;
+  height: 22px;
 }
 
 .header-link-4-body {
   height: 66px;
-  width: 75px;
+  width: 86px;
   display: flex;
   position: relative;
   right: 20em;
+  top: 11px;
 }

@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   /* margin: auto; */
+  opacity: inherit;
 }
 
 .splash-body {
@@ -13,6 +14,8 @@ min-height: 100vh;
 }
 
 .facebook-form {
+  position: relative;
+  bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,11 +55,12 @@ min-height: 100vh;
   border: 1px solid #3b5998;
   border-radius: 5px;
   color: white;
-  min-width: 280px;
+  max-width: 280px;
+  width: 280px;
   height: 31px;
   font-weight: 400;
   font-size: 20px;
-  padding: 8px 12px;
+  padding: 8px;
 }
 
 .signup-form-box {
@@ -70,18 +74,29 @@ min-height: 100vh;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
 }
 
+.signup-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .signup-form-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: absolute;
-    top: 30%;
+    top: 27%;
+    width: 49.3%;
 }
 
 .signup-form h2 {
   font-size: 20px;
   font-weight: 500;
   text-align: center;
+  display: block;
+  position: relative;
+  left: 2.5em;
+  bottom: 15px;
+  color: #27374c;
 }
 
 .signup-form label {
@@ -93,12 +108,94 @@ min-height: 100vh;
 .signup-form label input {
   border: 1px solid rgba(0,0,0,0.15);
   font-size: 1em;
+  width: 50%;
+  margin: 5px 5px;
+  width: 8em;
+  height: 3em;
+  padding: 4px 8px;
+}
+
+.signup-form label input:focus {
+  box-shadow: 0 0 5px rgb(81, 118, 238);
+  border: 3px solid rgba(81, 118, 238, 1);
 }
 
 .signup-form label p {
   opacity: 0.75;
   color:#27374c;
   font-size: 14px;
+}
+
+.signup-form-email {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 38px;
+  min-width: 280px;
+}
+
+.signup-form-password {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 57px;
+  font-size: 18px;
+}
+
+.first-name-join {
+  width: 50%;
+  position: relative;
+  left: -20px;
+  top: 20px;
+}
+
+.last-name-join {
+  width: 50%;
+  position: relative;
+  top: 20px;
+}
+
+.first-name {
+  position: relative;
+  left: 1.3em;
+}
+
+.last-name {
+  position: relative;
+  left: 1.3em;
+}
+
+.signup-input-first-name {
+  position: relative;
+  right: 6px;
+}
+
+.signup-input-last-name {
+  position: relative;
+  right: 6px;
+}
+
+.signup-input-email {
+  min-width: 280px;
+  height: 50px;
+  position: relative;
+  right: 6px;
+}
+
+.session-submit {
+  display: flex;
+  position: relative;
+  top: 4.8em;
+  left: 2.7em;
+  width: 200px;
+  height: 40px;
+  background-color: #ED6504;
+  border-color: #ED6504;
+  justify-content: center;
+  border: 1px solid #ED6504;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 15px;
 }
 
 .splash-header {
@@ -134,6 +231,44 @@ min-height: 100vh;
   font-weight: 350;  
 }
 
+.midsection::before {
+  content: '';
+  width: 3px;
+  height: 200px;
+  background-color: white;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  opacity: 1.0;
+  position: relative;
+  bottom: 10px;
+}
+
+.midsection {
+  font-size: 32px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  opacity: 1.0;
+  align-items: center;
+  position: relative;
+  top: 1.8em;
+}
+
+.midsection::after {
+  content: '';
+  width: 3px;
+  height: 200px;
+  background-color: white;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  opacity: 1.0;
+  position: relative;
+  top: 10px;
+}
+
 .login-modal {
   position: absolute;
   bottom: 2em;
@@ -156,3 +291,4 @@ min-height: 100vh;
     text-decoration: none;
     opacity: 0.85;
 }
+

@@ -16,6 +16,7 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+  opacity: inherit;
 }
 
 ul {
