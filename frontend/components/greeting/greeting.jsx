@@ -8,7 +8,8 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     <main className="splash">
       <nav className="login-modal">
         <p>Already a member? </p>
-        <button onClick={() => openModal('login')}>Login</button>
+        <br/>
+        <button onClick={() => openModal('login')}>Log In</button>
       </nav>
     </main>
   );

@@ -13,21 +13,50 @@ min-height: 100vh;
 }
 
 .facebook-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   background-color: white;
   z-index: 1;
   width: 280px;
   height: 280px;
-  /* min-height: 320px; */
   padding: 20px 60px;
   border-radius: 5px;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
 }
+.facebook-form h2 {
+  position: relative;
+  top: 2em;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color:#27374c;
+  display: flex;
+  justify-content: center;
+}
+.facebook-form h3 {
+    position: relative;
+    bottom: 38px;    font-size: 14px;
+    font-weight: normal;
+    color: #27374c;
+    opacity: .75;
+}
+
 .facebook-form a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #3b5998;
   text-decoration: none;
   border: 1px solid #3b5998;
   border-radius: 5px;
   color: white;
+  min-width: 280px;
+  height: 31px;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 8px 12px;
 }
 
 .signup-form-box {
@@ -45,6 +74,31 @@ min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 30%;
+}
+
+.signup-form h2 {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.signup-form label {
+  color: #27374c;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.signup-form label input {
+  border: 1px solid rgba(0,0,0,0.15);
+  font-size: 1em;
+}
+
+.signup-form label p {
+  opacity: 0.75;
+  color:#27374c;
+  font-size: 14px;
 }
 
 .splash-header {
@@ -59,21 +113,46 @@ min-height: 100vh;
   font-size: 29px;
   font-weight: normal;
   line-height: 1.5;
+  position: relative;
+  top: 1em;
+  opacity: .80;
+
 }
 .splash-header h2 {
-  font-weight: normal;
-  font-size: 18px;
+  font-weight: 300;
+  font-size: 20px;
   margin: 0 0 0.75em 0;
   line-height: 1.5;
+  opacity: .80;
+  position: relative;
+  top: 15px;
 }
 
 .splash p {
   color: white;
-
+  opacity: 0.60;
+  font-weight: 350;  
 }
 
-.facebook-form h2 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
+.login-modal {
+  position: absolute;
+  bottom: 2em;
+}
+
+.login-modal button {
+  background-color: #287FB8;
+    border: 1px solid #287FB8;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 350;
+    line-height: 1.5;
+    max-width: 240px;
+    min-width: 6em;
+    padding: 0px 21px;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0.85;
 }

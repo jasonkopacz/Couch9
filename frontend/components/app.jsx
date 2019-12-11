@@ -21,10 +21,10 @@ const App = () => (
             <option value="spanish">Spanish</option>
             <option value="german">German</option>
           </select>
-          <Link to="/howitworks" className="header-link">How It Works</Link>
-          <Link to="/safety" className="header-link">Safety</Link>
-          <Link to="/signup" className="header-link">Join</Link>
-          <Link to="/login" className="header-link">Login</Link>
+          <Link to="/howitworks" className="header-link-1">How It Works</Link>
+          <Link to="/safety" className="header-link-2">Safety</Link>
+          <Link to="/signup" className="header-link-3">Join</Link>
+          <Link to="/login" className="header-link-4">Login</Link>
         </ul>
       </div> 
     </header>
