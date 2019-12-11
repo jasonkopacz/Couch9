@@ -74,10 +74,20 @@
 }
 
 .header-link-3 {
-  height: 50px;
-  width: 30px;
   background-color: #287FB8;
-  color: white;
+    border: 1px solid #287FB8;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    width: 54px;
+    height: 36px;
+    padding: 8px 12px;
+    text-align: center;
+    
 }
 
 .header-link-3-body {
@@ -94,6 +104,15 @@
   background-color: white;
   border: 1px solid #287FB8;
   color: #287FB8;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  padding: 8px 12px;
+  text-align: center;
+  
 
 }
 
