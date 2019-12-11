@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 10;
 }
 
@@ -138,7 +138,7 @@ background-color: white;
 
 .session-submit-login {
   position: absolute;
-  top: 48%;
+  top: 47%;
   left: 45%;
   background-color: #287FB8;
   border: 1px solid #287FB8;
@@ -149,30 +149,100 @@ background-color: white;
   font-size: 15px;
   font-weight: bold;
   line-height: 1.5;
-  max-width: 240px;
-  min-width: 240px;
+  max-width: 420px;
+  min-width: 420px;
   padding: 8px 12px;
   text-align: center;
   text-decoration: none;
+  position: absolute;
+  left: 2em;
 }
 
-.login-form p {
-  position: absolute;
-  top: 52%;
-  left: 46%;
-}
+
 
 .facebook {
   position: absolute;
-  top: 57%;
-  left: 30%;
+  bottom: 28%;
+  left: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b5998;
+  text-decoration: none;
+  border: 1px solid #3b5998;
+  border-radius: 5px;
+  color: white;
+  width: 420px;
+  height: 27px;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 8px;
 }
 
-.login-signup-button {
+.dont-have {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 70%;
-  left: 30%;
+  bottom: 10.5%;
+  left: 35%;
+  color: #34495e;
+  font-size: 1em;
+}
+
+.login-signup-button {
+  border: 1px solid #287FB8;
+  color: #287FB8;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  min-width: 116px;
+  padding: 8px 12px;
+  text-align: center;
+  border-radius: 3px;
+  position: relative;
+  top: 1.5em;
+  padding: 8px 12px;
+
+}
+
+.login-form p::before {
+  content: '';
+  width: 200px;
+  height: 3px;
+  background-color: #f7f7f7;;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  opacity: 1.0;
+  position: relative;
+}
+
+.login-form p {
+  position: absolute;
+  top: 57%;
+  left: 7%;
+  justify-content: center;
+  flex-direction: row;
+  color: #6c797a;
+  opacity: 1.0;
+  align-items: center;
+  background: #fff;
+  display: flex;
+  padding: 0 10px;
+  z-index: 1;
+  font-size: 15px;
+  line-height: 0.7;
+}
+
+.login-form p::after {
+  content: '';
+  width: 200px;
+  height: 3px;
+  background-color: #f7f7f7;;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  opacity: 1.0;
+  position: relative;
 }
