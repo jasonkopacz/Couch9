@@ -27,7 +27,7 @@ const App = () => (
             <Link to="/signup" className="header-link-3">Join</Link>
           </span>
           <span className="header-link-4-body">
-            <Link to="/login" className="header-link-4">Login</Link>
+            <Link to="/login" className="header-link-4">Log In</Link>
           </span>
         </ul>
       </div> 
@@ -44,6 +44,28 @@ const App = () => (
         <GreetingContainer className="greeting-container"/>
       </div>
     </main>
+    <footer className="main-footer">
+      <ul className="footer-links">
+        <li>ABOUT</li>
+        <li>SAFETY</li>
+        <li>SUPPORT</li>
+        <li>BLOG</li>
+        <li>SHOP</li>
+        <li>COOKIE SETTINGS</li>
+      </ul>
+      <div className="footer-language">
+
+      </div>
+      <div className="footer-icons">
+        <h3>CONNECT WITH US</h3>
+        <ul className="icons">
+          <li className="fb">fb</li>
+          <li className="twitter">tw</li>
+          <li className="tumblr">tu</li>
+          <li className="instagram">ig</li>
+        </ul>
+      </div>
+    </footer>
    </div>
 );
 

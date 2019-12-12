@@ -9,6 +9,7 @@ class LoginForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+      // this.loginDemo = this.loginDemo.bind(this);
   }
 
   update(field) {
@@ -22,6 +23,12 @@ class LoginForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(this.props.closeModal);
   }
+
+  // loginDemo(e) {
+  //   e.preventDefault();
+  //   const user = { email: "jk@gmail.com", password: "demouser" };
+  //   this.props.processForm(user);
+  // }
 
   renderErrors() {
     return (
@@ -68,8 +75,8 @@ class LoginForm extends React.Component {
 
             </span>
             <br />
-            <input className="session-submit-login" type="submit" value={this.props.formType} />
-            <p>or</p>
+            <input className="session-submit-login" type="submit" value="Log In"></input>
+              <p>or</p>
             <a href="www.facebook.com" className="facebook">Continue with Facebook</a>
             {this.props.otherForm}
           </div>
