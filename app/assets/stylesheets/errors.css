@@ -1,0 +1,49 @@
+.fname {
+background-color: white;
+border: 1px solid black;
+color: black;
+border-radius: 5px;
+box-shadow: gray;
+height:30px;
+min-width: 200px;
+z-index: 2;
+/* display: none; */
+animation-fill-mode: both;
+}
+
+.lname {
+background-color: white;
+border: 1px solid black;
+color: black;
+border-radius: 5px;
+box-shadow: gray;
+height:30px;
+min-width: 200px;
+z-index: 2;
+/* display: none; */
+}
+
+.email {
+background-color: white;
+border: 1px solid black;
+color: black;
+border-radius: 5px;
+box-shadow: gray;
+height:30px;
+min-width: 200px;
+z-index: 2;
+/* display: none; */
+}
+
+.password {
+background-color: white;
+border: 1px solid black;
+color: black;
+border-radius: 5px;
+box-shadow: gray;
+height:30px;
+min-width: 200px;
+z-index: 2;
+/* display: none; */
+}
+

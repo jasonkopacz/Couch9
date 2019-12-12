@@ -12,29 +12,19 @@
   border-bottom-right-radius: 5px;
 }
 
-
-.footer-links {
+.main-footer h3 {
+  margin: auto;
   display: flex;
-  padding: 20px;
-}
-
-.footer-links > li {
-  padding: 0 0 0 20px;
-}
-
-.footer a:hover {
-  color: #000;
+  width: 150px;
+  height: 75px;
+  align-items: center;
 }
 
 .footer-icons {
   display: flex;
-  padding: 20px;
+  width: 150px;
+  height: 75px;
+  align-items: center;
+  margin: auto;
 }
 
-.footer-icons > li {
-  padding: 0 0 0 20px;
-}
-
-.icons {
-  display: flex;
-}

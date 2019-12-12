@@ -9,7 +9,6 @@ class LoginForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-      // this.loginDemo = this.loginDemo.bind(this);
   }
 
   update(field) {
@@ -23,12 +22,6 @@ class LoginForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(this.props.closeModal);
   }
-
-  // loginDemo(e) {
-  //   e.preventDefault();
-  //   const user = { email: "jk@gmail.com", password: "demouser" };
-  //   this.props.processForm(user);
-  // }
 
   renderErrors() {
     return (
@@ -46,22 +39,23 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <header className="login-header">Log in to Couchsurfing</header>            <br />
+          <header className="login-header">Log in to Couchsurfing</header>
+          <br />
           <div onClick={this.props.closeModal} className="close-x">X</div>
           {this.renderErrors()}
           <div className="login-form">
             <br />
             <label>
-                <input type="email"
+                <input required type="email"
                 value={this.state.email}
-                onChange={this.update('username')}
+                onChange={this.update('email')}
                 className="login-input-email"
                 placeholder="Email or Username"
               />
             </label>
             <br />
             <label>
-                <input type="password"
+                <input required type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input-password"

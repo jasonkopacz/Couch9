@@ -15,10 +15,9 @@ const Greeting = ({ currentUser, logout, openModal }) => {
   );
   const personalGreeting = () => (
     <hgroup className="header-group">
-      <h2 className="header-name">{currentUser.email}</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
-    </hgroup>
-  );
+         <h2 className="header-name">{currentUser.fname} {currentUser.lname}</h2>
+        <button className="header-button" onClick={logout}>Log Out</button>
+    </hgroup>);
 
   return (
     currentUser ?

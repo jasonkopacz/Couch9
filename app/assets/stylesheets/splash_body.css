@@ -30,7 +30,7 @@ min-height: 100vh;
 }
 .facebook-form h2 {
   position: relative;
-  top: 2em;
+  top: 1.2em;
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -46,7 +46,7 @@ min-height: 100vh;
     opacity: .75;
 }
 
-.facebook-form a {
+.demo-login {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,6 +61,12 @@ min-height: 100vh;
   font-weight: 400;
   font-size: 20px;
   padding: 8px;
+  position: relative;
+  bottom: 21%;
+}
+
+.demo-login input {
+  font-size: 20px;
 }
 
 .signup-form-box {
@@ -227,7 +233,7 @@ min-height: 100vh;
 
 .splash p {
   color: white;
-  opacity: 0.60;
+  opacity: 1.0;
   font-weight: 350;  
 }
 
