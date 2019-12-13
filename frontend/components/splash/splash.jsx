@@ -1,5 +1,8 @@
 import React from 'react';
-
+import SplashHeader from './splash_header';
+import SplashBody from './splash_body';
+import SplashFooter from './splash_footer';
+import {withRouter} from 'react-router-dom';
 class Splash extends React.Component {
 
 
@@ -8,10 +11,10 @@ class Splash extends React.Component {
       <div>
         <SplashHeader />
         <SplashBody />
-        <SplashFoter />
+        <SplashFooter />
       </div>
     )
   }
 }
 
-export default Splash;
+export default withRouter(Splash);
