@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from '../modal/modal';
 import SessionFormContainer from '../session_form/session_form_container';
-import GreetingContainer from '../greeting/greeting_container';
+import DashboardContainer from '../dashboard/dashboard_container';
 
 class SplashBody extends React.Component {
 
@@ -16,7 +16,7 @@ class SplashBody extends React.Component {
         </header>
         <div className="splash-body-forms">
           <SessionFormContainer className="session-form-container" />
-          <GreetingContainer className="greeting-container" />
+          <DashboardContainer className="greeting-container" />
         </div>
       </main>
     )

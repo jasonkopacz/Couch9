@@ -9,6 +9,7 @@ class LoginForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginDemo = this.loginDemo.bind(this);
   }
 
   update(field) {
@@ -21,6 +22,12 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(this.props.closeModal);
+  }
+
+  loginDemo(e) {
+    e.preventDefault();
+    const user = { email: "jk@gmail.com", password: "demouser" };
+    this.props.otherForm(user).then(this.props.history.push("/dashboard"));
   }
 
   renderErrors() {
@@ -38,6 +45,9 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
+        <form className="facebook" onSubmit={this.loginDemo}>
+          <input type="submit" value="Demo User" />
+        </form>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <header className="login-header">Log in to Couchsurfing</header>
           <br />
@@ -71,7 +81,6 @@ class LoginForm extends React.Component {
             <br />
             <input className="session-submit-login" type="submit" value="Log In"></input>
               <p>or</p>
-            <a href="www.facebook.com" className="facebook">Continue with Facebook</a>
             {this.props.otherForm}
           </div>
         </form>

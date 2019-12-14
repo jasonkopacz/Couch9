@@ -15,8 +15,12 @@
  */
 
  
-
-.splash-body {
-  background-image: url(bg.png);
+.nav-header {
+  border-bottom: 1px solid black;
 }
 
+.session-buttons-header {
+  display: flex;
+  justify-content: flex-end;
+  width: 45%;
+}

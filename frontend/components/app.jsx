@@ -1,22 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import LogInFormContainer from '../components/session_form/login_form_container';
-import SessionFormContainer from '../components/session_form/session_form_container';
-import GreetingContainer from '../components/greeting/greeting_container';
-import Modal from './modal/modal';
-import {openModal} from '../actions/modal_actions';
-import Dashboard from './dashboard/dashboard';
 import Splash from './splash/splash';
+import CreateFormContainer from './create_account/create_form_container';
+import { Route } from 'react-router-dom';
+import DashboardContainer from './dashboard/dashboard_container';
+import SessionFormContainer from './session_form/session_form_container';
 
 
 const App = () => {
 
 
   return (
-    <main>
-      <Splash />
-    </main>
+    <section>
+      <Switch>
+        <Route exact path="/">
+          <Splash />
+        </Route>
+        <AuthRoute exact path="/login" component={SessionFormContainer}/>
+        <AuthRoute exact path="/signup" component={SessionFormContainer} />
+        <Route path="/create" component={CreateFormContainer}/>
+        <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
+      </Switch>
+    </section>
 
 )};
 

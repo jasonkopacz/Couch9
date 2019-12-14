@@ -12,7 +12,6 @@ const mapStateToProps = ({ errors }) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  debugger
   return {
     openModal: (modal) => dispatch(openModal(modal)), 
     processForm: (user) => dispatch(signup(user)),

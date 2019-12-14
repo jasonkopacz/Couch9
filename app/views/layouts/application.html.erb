@@ -8,10 +8,12 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script type="text/javascript">
+      window.bg = '<%= asset_url('bg.png')%>'
       window.logo = '<%= image_url('courchsurfing.png')%>'
       window.gh = '<%= image_url('gh.png')%>'
       window.heroku = '<%= image_url('heroku.svg')%>'
       window.linkedin = '<%= image_url('linkedin.png')%>'
+      window.earth = '<%=image_url('earth.svg')%>'
     </script>
   </head>
 

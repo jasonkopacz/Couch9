@@ -88,7 +88,7 @@
     padding: 8px 12px;
     text-align: center;
     width: 30px;
-    height: 25px;    
+    height: 20px;    
 }
 
 .header-link-3-body {
@@ -97,7 +97,8 @@
   display: flex;
   position: relative;
   right: 20.5em;
-  top: 13px;
+  top: 15px;
+  margin-right: 3px;
 }
 
 .header-link-4 {
@@ -115,7 +116,7 @@
   padding: 8px 12px;
   text-align: center;
   width: 45px;
-  height: 22px;
+  height: 20px;
 }
 
 .header-link-4-body {
@@ -124,5 +125,5 @@
   display: flex;
   position: relative;
   right: 20em;
-  top: 11px;
+  top: 15px;
 }

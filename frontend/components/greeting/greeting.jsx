@@ -1,4 +1,6 @@
 import React from 'react';
+import DashboardContainer from '../dashboard/dashboard_container';
+import {AuthRoute} from '../../util/route_util';
 
 
 
@@ -21,7 +23,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
 
   return (
     currentUser ?
-      personalGreeting(currentUser, logout) :
+      <AuthRoute path="/dashboard" component={DashboardContainer} /> :
       sessionLinks()
   );
 };

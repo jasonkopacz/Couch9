@@ -1,0 +1,199 @@
+.create {
+background-color: #287FB8;
+background-image: asset_url("bg.png");
+margin: auto;
+min-height: 100vh;
+}
+
+.nav-header {
+  background-color: white;
+}
+
+.create-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white; 
+}
+.create-header h1 {
+  margin: 0 0 15px 0;
+  font-size: 29px;
+  font-weight: normal;
+  line-height: 1.5;
+  position: relative;
+  top: 1em;
+  opacity: .80;
+
+}
+.create-header h2 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 20px;
+  margin: 15px 0 0.75em 0;
+  line-height: 1.5;
+  opacity: .80;
+  position: relative;
+  top: 15px;
+  width: 450px;
+}
+
+.create-form {
+  margin: auto;
+}
+
+.create-form-box {
+  margin: auto;
+  width: 50%;
+}
+
+.create-form {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  background-color: white;
+  width: 650px;
+  height: 466px;
+  border-radius: 4px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+}
+
+.birthday {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.gender {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+
+.city {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  padding: 0px;
+  margin: 0 0 10px 0;
+}
+
+.create-form-box fieldset label {
+  width: 100%;
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 10px;
+  color: black;
+}
+.create-form-box fieldset label select {
+  height: 44px;
+  border-radius: 4px;
+  width: calc((92% - 20px) / 3);
+  background-color: transparent;
+  float: left;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.gender-select select {
+  width: 60%;
+}
+
+fieldset {
+  width: 82%;
+  display: block;
+  margin-inline-start: 2px;
+  margin-inline-end: 2px;
+  padding-block-start: 0.35em;
+  padding-inline-start: 0.75em;
+  padding-inline-end: 0.75em;
+  padding-block-end: 0.625em;
+  min-inline-size: min-content;
+  color: #27374c;
+}
+
+.city input {
+  border: 1px solid #cccccc;
+  border-color: rgba(0,0,0,0.15);
+  padding: 10px;
+  width: 100%;
+  height: 20px;
+  border-radius: 3px;
+}
+
+.city span {
+  color: #27374c;
+  margin-bottom: 15px;
+}
+
+.create-form p {
+  text-align: center;
+  opacity: 1.0;
+  width: 84%;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #27374c;
+}
+
+.create-form-city input {
+  color: #333333;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.agree {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.agree input {
+  font-size: 7em;
+}
+
+.create-submit {
+  background-color: #ED6504;
+  border-color: #ED6504;
+  color: white;
+  opacity: .5;
+  border-radius: 3px;
+  font-family: Lato;
+  font-size: 15px;
+  width: 32%;
+  height: 40px;
+  text-align: center;
+  margin: 10px 5px 5px 5px;
+}
+
+.create-login-modal {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.create-login-modal p {
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.create-login-modal button {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.main-footer {
+  background-color: white;
+}

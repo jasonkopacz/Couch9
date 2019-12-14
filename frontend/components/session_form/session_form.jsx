@@ -24,13 +24,14 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(this.props.closeModal);
+    this.props.getData(user);
+    (this.props.history.push("/create"));
   }
 
   loginDemo(e) {
     e.preventDefault();
     const user = { email: "jk@gmail.com", password: "demouser"};
-    this.props.otherForm(user);
+    this.props.otherForm(user).then(this.props.history.push("/dashboard"));
   }
 
 componentWillUnmount() {

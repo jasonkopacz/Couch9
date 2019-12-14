@@ -1,0 +1,55 @@
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid gray;
+  background-color: #fff;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.25);
+  font-size: 16px;
+}
+
+.dash-header-container {
+  height: 70px;
+}
+
+.left-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+
+.explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 5%;
+    width: 480px;
+  height: 70px;
+}
+
+.right-nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 400px;
+  align-items: center;
+  position: relative;
+  right: 20%;
+  font-size: 14px;
+}
+
+
+.explore-choice {
+  border: 1px solid gray;
+  display: contents;
+}
+
+.topnav {
+  border: 1px solid gray;
+  background-color: #fff;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.25);
+  font-size: 16px;
+      height: 35px;
+    width: 240px;
+}
