@@ -11,7 +11,9 @@
   
 # user2 = User.create!({fname: "Hank", lname: "Schrader", email: "Schrader@gmail.com", password: "starwars"})
 
+User.destroy_all
+
 demo_user = User.create!({fname: "Jason", lname: "Kopacz", email: "jk@gmail.com",
  password: "demouser", age: 27, gender: "M", occupation: "Frycook",
   education: "Rutgers University", 
-  about_me: "I'm learning to code and I really like travelling.", location_id: 1})
+  about_me: "I'm learning to code and I really like travelling.", location_id: 8})

@@ -8,7 +8,7 @@
 
 .nav-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   vertical-align: middle;
 }
@@ -21,12 +21,12 @@
 }
 
 .header-link img {
-  width: 118px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   display: block;
   position: absolute;
-  top: 14.5px;
-  left: 20.6em;
+  top: -1em;
+  left: 17.6em;
 }
 
 .header-links a {
