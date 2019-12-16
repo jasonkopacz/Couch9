@@ -24,6 +24,7 @@ class SessionForm extends React.Component {
 
   
   renderErrors() {
+    debugger
     return (
       <ul>
         {this.props.errors.map((error, i) => (
@@ -66,7 +67,6 @@ class SessionForm extends React.Component {
     return (
       <main className="splash">
         <div className="signup-form-container">
-          {this.renderErrors()}
           <div className="facebook-form">
             <h2>Log In Faster With</h2>
               <form className="demo-login" onSubmit={this.loginDemo}>
@@ -87,19 +87,19 @@ class SessionForm extends React.Component {
                   onChange={this.update('fname')}
                   className="signup-input-first-name"
                   placeholder="First name"
-                />
+                  />
                 </label>
                 {/* <div className="fname">{this.renderErrors()}</div> */}
               </div>
               <br/>
               <div className="last-name-join">
-                <label required className="last-name">Last name
-                <input type="text"
+                <label className="last-name">Last name
+                <input required type="text"
                   value={this.state.lname}
                   onChange={this.update('lname')}
                   className="signup-input-last-name"
                   placeholder="Last name"
-                />
+                  />
                 </label>
                 {/* <div className="lname">{this.renderErrors()}</div> */}
               </div>
@@ -110,7 +110,7 @@ class SessionForm extends React.Component {
                   onChange={this.update('email')}
                   className="signup-input-email"
                   placeholder="Email"
-                />
+                  />
               </label>
               {/* <div className="email">{this.renderErrors()}</div> */}
               <br />
@@ -121,7 +121,7 @@ class SessionForm extends React.Component {
                   onChange={this.update('password')}
                   className="signup-input-password"
                   placeholder="Password"
-                />
+                  />
               </label>
               <ul>
               </ul>
