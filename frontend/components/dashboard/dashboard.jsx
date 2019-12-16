@@ -1,7 +1,7 @@
 import React from 'react';
-import SessionForm from '../session_form/session_form';
-import SplashHeader from '../splash/splash_header_container';
+import DashboardBodyContainer from './dashboard_body_container';
 import DashboardNav from './dashboard_nav_container';
+import DashboardFooter from './dashboard_footer';
 const Dashboard = ({ currentUser, logout, openModal }) => {
 
   const sessionLinks = () => (
@@ -21,8 +21,8 @@ const Dashboard = ({ currentUser, logout, openModal }) => {
   const dash = () => (
     <hgroup className="header-group">
       <DashboardNav />
-      <h2 className="header-name">{currentUser.fname} {currentUser.lname}</h2>
-      <button className="header-button" onClick={handleLogout}>Log Out</button>
+      <DashboardBodyContainer />
+      <DashboardFooter />
     </hgroup>);
 
   return (

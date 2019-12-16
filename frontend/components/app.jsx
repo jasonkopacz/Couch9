@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import Splash from './splash/splash';
+import SplashContainer from './splash/splash_container';
 import CreateFormContainer from './create_account/create_form_container';
 import { Route } from 'react-router-dom';
 import DashboardContainer from './dashboard/dashboard_container';
@@ -14,9 +14,7 @@ const App = () => {
   return (
     <section>
       <Switch>
-        <Route exact path="/">
-          <Splash />
-        </Route>
+        <AuthRoute exact path="/" component={SplashContainer}/>
         <AuthRoute exact path="/login" component={SessionFormContainer}/>
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
         <Route path="/create" component={CreateFormContainer}/>

@@ -12,6 +12,10 @@
   border-bottom-right-radius: 5px;
 }
 
+.main-footer {
+  display: flex;
+}
+
 .main-footer h3 {
   margin: auto;
   display: flex;

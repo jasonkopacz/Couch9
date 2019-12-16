@@ -117,29 +117,3 @@ componentWillUnmount() {
 }
 
 export default withRouter(SessionForm);
-// for (let i = 0; i < this.props.errors.length; i++) {
-//         let errorMessage;
-//         let error = this.props.errors[i];
-//         if (error.includes("can't be blank") && !this.state.fname.length) {
-//            errorMessage = "Please fill out this field.";
-//            return errorMessage;
-//         } else if (error == "can't be blank" && !this.state.lname.length) {
-//           errorMessage = "Please fill out this field.";
-//           return errorMessage;
-//         } else if (error == "can't be blank" && !this.state.email.length) {
-//           errorMessage = "Please fill out this field.";
-//           return errorMessage;
-//         } else if (error === "Email is invalid" && this.state.email.includes("@")) {
-//           errorMessage = `Please enter a part following '@'. '${this.state.email}' is incomplete.`;
-//           return errorMessage;
-//         } else if (error === "Email is invalid" && !this.state.email.includes("@")) {
-//           errorMessage = `Please include and '@' in the email address. '${this.state.email}' is missing an '@'.`;
-//           return errorMessage;
-//         } else if (error === "Password is too short (minimum is 8 characters)" && !this.state.password.length) {
-//           errorMessage = "Please fill out this field.";
-//           return errorMessage;
-//         } else {
-//           errorMessage = "Password is too short (minimum is 8 characters)";
-//           return errorMessage;
-//         }
-//       }

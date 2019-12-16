@@ -28,7 +28,7 @@
 .logo {
   height: 50px;
   width: 50px;
-  position: fixed;
+  position: static;
   top: 0%;
   left: -1%;
 }
@@ -38,8 +38,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  left: 20%;
+  position: relative;
+  left: -10%;
   width: 480px;
   height: 70px;
 }
@@ -55,11 +55,6 @@
 	box-sizing: border-box;
 	margin: 0;
 	border: 1px solid #aaa;
-}
-
-#search-type > option {
-  border-bottom: 1px solid gray;
-  color: red;
 }
 
 .right-nav {

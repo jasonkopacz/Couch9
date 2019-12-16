@@ -179,6 +179,10 @@ background-color: white;
   padding: 8px;
 }
 
+.facebook input {
+  font-size: 14px;
+}
+
 .dont-have {
   display: flex;
   flex-direction: column;

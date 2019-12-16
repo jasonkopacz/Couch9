@@ -1,0 +1,254 @@
+.dashboard {
+  background-color: #F1EFEA;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.left-column-wrapper {
+  width: 300px;
+  height: 100%;
+}
+
+.left-column {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+.right-column-wrapper {
+  width: 300px;
+  height: 100%;
+}
+
+.right-column {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.user {
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.15);
+  margin: 0 10px;
+  background-color: white;
+}
+
+.user-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  height: 33px;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 18px;
+  text-align: center;
+  margin: 10px;
+  height: 33px;
+}
+
+.hang {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: middle;
+  border-top: 1px solid #a1acb8;
+  margin: 10px;
+  height: 50px;
+  align-items: center;
+}
+
+.hang select {
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.friends {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  text-align: left;
+}
+
+.friends h2 {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.friend-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+}
+
+.friend-items a {
+  color: #287FB8;
+}
+
+.see-friends {
+  height: 50px;
+  align-items: center;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+}
+
+.center-column-wrapper {
+  width: 720px;
+  height: 100%;
+  margin: 0 10px;
+}
+
+.center-column {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.destination-header {
+  display: flex;
+  justify-content: left;
+  height: 20px;
+  width: 100%;
+  align-items: center;
+  font-size: 12px;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 20px;
+}
+
+.destinations {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+  border-radius: 2px;
+  margin: 0px auto;
+}
+
+.pictures {
+  display: flex;
+  flex-direction: row;
+  border-left: 5px solid #fff;
+  border-right: 5px solid #fff;
+  float: left;
+  height: 14em;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
+.pictures img {
+  width: 33%;
+}
+
+.pictures a {
+  width: 33%;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 14em;
+  border-left: 5px solid #fff;
+  border-right: 5px solid #fff;
+}
+
+.paris {
+  background-image: url(asset_path("paris.jpg"));
+  
+}
+.rome {
+  background-image: url(asset_path("rome.jpg"));
+}
+
+.nyc {
+  background-image: url(asset_path("nyc.jpg"));
+}
+
+.host-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.searchbar {
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 50px;
+  display: block;
+  margin: 0 auto 15px;
+  min-height: 37px;
+  padding: 0 12px;
+  height: 30px;
+  width: 50%;
+}
+
+.searchbar button {
+  position: relative;
+  left: 29em;
+  top: -.5em;
+  width: 45px;
+  height: 45px;
+  z-index: 1;
+}
+
+.searchbar input {
+  position: relative;
+  bottom: 2.5em;
+  left: 1em;
+  font-size: 16px;
+  width: 100%;
+}
+
+.bookings {
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.15);
+  margin: 10px 0;
+  background-color: white;
+  font-size: 14px;
+  height: 200px;
+}
+
+.bookings h2 {
+  height: 35%;
+  border-bottom: 1px solid #e6e6e6;
+  color: #27374c;
+  font-size: 1em;
+  padding: 0 0 0 20px;
+}
+
+.upcoming-trips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35%;
+  color: #929dad;
+  font-size: 1em;
+}
+
+.trip-mod {
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30%;
+  margin: 0 90px;
+  font-size: 16px;
+  color: #287FB8;
+}
