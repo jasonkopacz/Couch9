@@ -106,10 +106,17 @@ class DashboardBody extends React.Component {
             </div>
           </section>
           <section className="happening">
-            <h2>WHAT'S HAPPENING NEAR: CURRENT USER LOCATION</h2>
+              <h2>WHAT'S HAPPENING NEAR:  
+                <a>
+                  CURRENT USER LOCATION
+                </a>
+              </h2>
           </section>
           <section className="events">
             <h2>EVENTS</h2>
+            <div className="event1">Event 1</div>
+            <div className="event2">Event 2</div>
+            <div className="event3">Event 3</div>
           </section>
           </div>
         </div>
