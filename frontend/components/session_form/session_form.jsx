@@ -24,7 +24,6 @@ class SessionForm extends React.Component {
 
   
   renderErrors() {
-    debugger
     return (
       <ul>
         {this.props.errors.map((error, i) => (
@@ -49,7 +48,6 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    // debugger
     if (user.password.length < 8) {
       return this.changeClass('#error')
     }

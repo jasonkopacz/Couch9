@@ -52,7 +52,8 @@ class LoginForm extends React.Component {
           <header className="login-header">Log in to Couchsurfing</header>
           <br />
           <div onClick={this.props.closeModal} className="close-x">X</div>
-          {this.renderErrors()}
+          <div className="login-error">{this.renderErrors()}</div>
+
           <div className="login-form">
             <br />
             <label>

@@ -27,7 +27,6 @@ class CreateForm extends React.Component {
   }
 
   // getAge() {
-  //   debugger
   //   const d = document.getElementById("day");
   //   const day = Math.floor(d.options[d.selectedIndex].value);
   //   const m = document.getElementById("month")

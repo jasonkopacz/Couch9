@@ -33,7 +33,6 @@ export const clearErrors = () => {
 };
 
 export const receiveFormData = data => {
-  debugger
   return {
     type: RECEIVE_FORM_DATA,
     data

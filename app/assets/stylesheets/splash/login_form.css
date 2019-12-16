@@ -251,7 +251,7 @@ background-color: white;
   position: relative;
 }
 
-ul {
+.login-error {
   background-color: rgba(198,61,67,0.25);
   color: #3e1214;
   position: absolute;

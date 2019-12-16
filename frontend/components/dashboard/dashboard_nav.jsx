@@ -6,6 +6,16 @@ import { withRouter } from 'react-router-dom';
 
 class DashboardNav extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.changeClass = this.changeClass.bind(this);
+  }
+
+  changeClass(element) {
+    $(element).toggleClass('hidden');
+  }
+
   render() {
     return (
       <header className="dashboard-header">
@@ -52,15 +62,17 @@ class DashboardNav extends React.Component {
               <img src={window.profile}></img>
               <Link to="/profile" className="nav-link-5">Profile</Link>
             </button>
-            <button className="dashboard-link-6-body">
+            <button onClick={this.changeClass("#nav-settings")}className="dashboard-link-6-body">
               <img src={window.cog}></img>
-              <select name="settings" id="settings">
-                <option value="account">Account and Settings</option>
-                <button onClick={this.props.logout}>
-                  <option value="logout">Logout</option>
-                </button>
-            </select>
-            </button>
+
+              Settings
+              </button>
+            <ul id="nav-settings" className="hidden">
+              <li>Account and Settings</li>
+              <li>Logout
+                <a onClick={this.props.logout}></a>
+              </li>
+            </ul>
           </div>
       </header>
     )

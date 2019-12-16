@@ -119,3 +119,11 @@
 .dashboard-link-4-body {
   position: initial;
 }
+
+.dash-nav-settings {
+  display: none;
+}
+
+.dash-nav-settings:active {
+  display: flex;
+}
