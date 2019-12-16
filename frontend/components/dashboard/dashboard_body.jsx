@@ -11,7 +11,7 @@ class DashboardBody extends React.Component {
             <section className="user">
               <h2 className="user-name">{this.props.currentUser.fname} {this.props.currentUser.lname}</h2>
                 <div className="location">
-                  <button className="header-button" onClick={this.props.logout}>Log Out</button>
+                  <button>Da moon, Outer Space</button>
                 </div>
               <div className="hang">
                 <form>

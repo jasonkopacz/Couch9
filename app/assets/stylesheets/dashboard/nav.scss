@@ -17,6 +17,8 @@
   justify-content: center;
   align-items: center;
   width: 70%;
+  position: absolute;
+  left: 5%;
 }
 
 .logo img {
@@ -38,10 +40,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  left: -10%;
+  position: absolute;
   width: 480px;
   height: 70px;
+  top: 5%;
 }
 
 #search-type {

@@ -51,7 +51,8 @@ z-index: 2;
 }
 
 .password-error {
-  color: red;
+  background-color: rgba(198,61,67,0.25);
+  color: #3e1214;
   display: block;
   z-index: 1;
   font-size: 13px;

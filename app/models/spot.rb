@@ -25,6 +25,9 @@
 class Spot < ApplicationRecord
   validates :description, presence: true
 
-  belongs_to :host 
-  belongs_to :location
+  belongs_to :host,
+  primary_key: :id, 
+  foreign_key: :host_id,
+  class_name: :User
+
 end
