@@ -6,7 +6,7 @@ import CreateFormContainer from './create_account/create_form_container';
 import { Route } from 'react-router-dom';
 import DashboardContainer from './dashboard/dashboard_container';
 import SessionFormContainer from './session_form/session_form_container';
-
+import Profile from './user/profile';
 
 const App = () => {
 
@@ -18,6 +18,7 @@ const App = () => {
         <AuthRoute exact path="/login" component={SessionFormContainer}/>
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
         <Route path="/create" component={CreateFormContainer}/>
+        <Route path="/profile" component={Profile}/>
         <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
       </Switch>
     </section>
