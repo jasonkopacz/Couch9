@@ -46,4 +46,13 @@ min-width: 200px;
 z-index: 2;
 /* display: none; */
 }
+.hidden {
+  display: none;
+}
 
+.password-error {
+  color: red;
+  display: block;
+  z-index: 1;
+  font-size: 13px;
+}

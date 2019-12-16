@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.loginDemo = this.loginDemo.bind(this);
+    this.changeClass = this.changeClass.bind(this);
   }
 
   update(field) {
@@ -21,42 +22,61 @@ class SessionForm extends React.Component {
     });
   }
 
+  
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  
+  componentWillUnmount() {
+    this.props.clearErrors();
+    $('#error').addClass('hidden')
+  }
+  
+  changeClass(element) {
+    $(element).toggleClass('hidden');
+    $(element).toggleClass('password-error')
+  }
+  
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    // debugger
+    if (user.password.length < 8) {
+      return this.changeClass('#error')
+    }
     this.props.getData(user);
     (this.props.history.push("/create"));
   }
-
+  
   loginDemo(e) {
     e.preventDefault();
     const user = { email: "jk@gmail.com", password: "demouser"};
     this.props.otherForm(user).then(this.props.history.push("/dashboard"));
   }
-
-componentWillUnmount() {
-  this.props.clearErrors();
-}
-  renderErrors() {
-    return (
-    <div>{this.props.errors[0]}</div>  
-    )
-  }
   
   render() {
     return (
       <main className="splash">
-          <p className="midsection">or</p>
         <div className="signup-form-container">
+          {this.renderErrors()}
           <div className="facebook-form">
             <h2>Log In Faster With</h2>
               <form className="demo-login" onSubmit={this.loginDemo}>
                 <input type="submit" value="Demo User"/>
               </form>
           </div>
+          <p className="midsection">or</p>
           <form onSubmit={this.handleSubmit} className="signup-form-box">
-            <br />
-            {/* {this.props.otherForm} */}
+            <p id="error" className="hidden"  >Password is too short(minimum is 8 characters)</p>
+            <br/>
             <div className="signup-form">
               <h2>Sign Up With Email</h2>
               <br />
@@ -103,7 +123,6 @@ componentWillUnmount() {
                   placeholder="Password"
                 />
               </label>
-              {/* <div className="password">{this.renderErrors()}</div> */}
               <ul>
               </ul>
               <br />

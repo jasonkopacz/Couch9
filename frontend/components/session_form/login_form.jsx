@@ -72,12 +72,6 @@ class LoginForm extends React.Component {
                 placeholder="Password"
               />
             </label>
-            <span className="remember-field">
-              <input type="checkbox" value="remember" name="user[remember_me]" defaultChecked></input>
-              <label>Remember me?</label>
-              <a href="/users/password/new">Forgot password?</a>
-
-            </span>
             <br />
             <input className="session-submit-login" type="submit" value="Log In"></input>
               <p>or</p>

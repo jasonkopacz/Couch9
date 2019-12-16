@@ -54,7 +54,12 @@ class DashboardNav extends React.Component {
             </button>
             <button className="dashboard-link-6-body">
               <img src={window.cog}></img>
-              <Link to="/settings" className="nav-link-6">Settings</Link>
+              <select name="settings" id="settings">
+                <option value="account">Account and Settings</option>
+                <button onClick={this.props.logout}>
+                  <option value="logout">Logout</option>
+                </button>
+            </select>
             </button>
           </div>
       </header>

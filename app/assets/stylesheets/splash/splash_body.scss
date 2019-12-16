@@ -1,16 +1,17 @@
-.splash {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* margin: auto; */
-  opacity: inherit;
-}
+
 
 .splash-body {
 background-color: #287FB8;
 background-image: asset_url("bg.png");
 margin: auto;
 min-height: 100vh;
+}
+
+.splash-body-forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
 }
 
 .facebook-form {
@@ -89,9 +90,7 @@ min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
-    top: 27%;
-    width: 49.3%;
+    width: 100vh;
 }
 
 .signup-form h2 {
@@ -231,11 +230,11 @@ min-height: 100vh;
   top: 15px;
 }
 
-.splash p {
-  color: white;
-  opacity: 1.0;
-  font-weight: 350;  
-}
+// .splash p {
+//   color: white;
+//   opacity: 1.0;
+//   font-weight: 350;  
+// }
 
 .midsection::before {
   content: '';
@@ -258,7 +257,7 @@ min-height: 100vh;
   color: white;
   opacity: 1.0;
   align-items: center;
-  position: relative;
+  position: inherit;
   top: 1.8em;
 }
 
@@ -278,6 +277,7 @@ min-height: 100vh;
 .login-modal {
   position: absolute;
   bottom: 2em;
+  color: white;
 }
 
 .login-modal button {
