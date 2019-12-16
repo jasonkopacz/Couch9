@@ -8,12 +8,6 @@ class DashboardNav extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.changeClass = this.changeClass.bind(this);
-  }
-
-  changeClass(element) {
-    $(element).toggleClass('hidden');
   }
 
   render() {
@@ -42,37 +36,39 @@ class DashboardNav extends React.Component {
             </div>
           </div>
           <div className="right-nav">
-            <button className="dashboard-link-1-body">
+            <ul>
+            <li className="dashboard-link-1-body">
               <img src={window.earth}></img>
               <Link to="/dashboard" className="nav-link-1">Dashboard</Link>
-            </button>
-            <button className="dashboard-link-2-body">
+            </li>
+            <li className="dashboard-link-2-body">
               <img src={window.chat}></img>
               <Link to="/groups" className="nav-link-2">Groups</Link>
-            </button>
-            <button className="dashboard-link-3-body">
+            </li>
+            <li className="dashboard-link-3-body">
               <img src={window.calendar}></img>
               <Link to="/events" className="nav-link-3">Events</Link>
-            </button>
-            <button className="dashboard-link-4-body">
+            </li>
+            <li className="dashboard-link-4-body">
             <img src={window.envelope}></img>
               <Link to="/inbox" className="nav-link-4">Inbox</Link>
-            </button>
-            <button className="dashboard-link-5-body">
+            </li>
+            <li className="dashboard-link-5-body">
               <img src={window.profile}></img>
               <Link to="/profile" className="nav-link-5">Profile</Link>
-            </button>
-            <button onClick={this.changeClass("#nav-settings")}className="dashboard-link-6-body">
-              <img src={window.cog}></img>
-
+            </li>
+            <li tabIndex="0" className="dashboard-link-6-body">
+                <img src={window.cog}></img>
+              <ul id="dropdown-menu">
+                <li>Account and Settings</li>
+                <li onClick={this.props.logout} className="nav-logout">Logout
+                  {/* <button onClick={this.props.logout}></button> */}
+                </li>
+              </ul>
               Settings
-              </button>
-            <ul id="nav-settings" className="hidden">
-              <li>Account and Settings</li>
-              <li>Logout
-                <a onClick={this.props.logout}></a>
-              </li>
-            </ul>
+            </li>
+
+          </ul>
           </div>
       </header>
     )
@@ -80,3 +76,8 @@ class DashboardNav extends React.Component {
 }
 
 export default withRouter(DashboardNav);
+
+{/* <select name="settings" id="settings"> */}
+  {/* <option value="account">Account and Settings</option>
+  <option value="logout">Logout</option>
+</select> */}
