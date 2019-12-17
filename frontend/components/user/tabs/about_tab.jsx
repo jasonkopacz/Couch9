@@ -29,7 +29,7 @@ class AboutTab extends React.Component {
             <h2>ABOUT ME YERRR</h2>
             <div className="about-me-content">
               Content
-                  </div>
+            </div>
           </div>
         </section>
       </main>

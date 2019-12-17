@@ -37,14 +37,6 @@ class ReviewTab extends React.Component {
             </div>
           </div>
         </section>
-        <section className="about-me">
-          <div className="about-me-box">
-            <h2>ABOUT ME YERRR</h2>
-            <div className="about-me-content">
-              Content
-                    </div>
-          </div>
-        </section>
       </main >
     )
   }

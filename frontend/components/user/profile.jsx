@@ -12,7 +12,6 @@ class Profile extends React.Component {
       <main>
         <DashboardNav />
         <ProfileContainer />
-        <DashboardFooter />
       </main>
     )
   }

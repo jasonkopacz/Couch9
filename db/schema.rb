@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_140822) do
+ActiveRecord::Schema.define(version: 2019_12_17_195452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2019_12_16_140822) do
     t.string "occupation"
     t.string "education"
     t.text "about_me"
-    t.integer "location_id"
     t.string "imageable_type"
     t.bigint "imageable_id"
     t.string "reviewable_type"
@@ -58,8 +57,8 @@ ActiveRecord::Schema.define(version: 2019_12_16_140822) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "spot_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["fname", "lname"], name: "index_users_on_fname_and_lname", unique: true
     t.index ["friendable_type", "friendable_id"], name: "index_users_on_friendable_type_and_friendable_id"
     t.index ["imageable_type", "imageable_id"], name: "index_users_on_imageable_type_and_imageable_id"
     t.index ["reviewable_type", "reviewable_id"], name: "index_users_on_reviewable_type_and_reviewable_id"

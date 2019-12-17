@@ -1,7 +1,6 @@
 import React from 'react';
 import DashboardBodyContainer from './dashboard_body_container';
 import DashboardNav from './dashboard_nav_container';
-import DashboardFooter from './dashboard_footer';
 const Dashboard = ({ currentUser, logout, openModal }) => {
 
   const sessionLinks = () => (
@@ -20,7 +19,6 @@ const Dashboard = ({ currentUser, logout, openModal }) => {
     <hgroup className="header-group">
       <DashboardNav />
       <DashboardBodyContainer />
-      <DashboardFooter />
     </hgroup>);
 
   return (

@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../modal/modal';
-import { openModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router-dom';
 
 class DashboardNav extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogout() {
+    this.props.logout().then(this.props.history.push('/'));
   }
 
   render() {
@@ -55,14 +58,13 @@ class DashboardNav extends React.Component {
             </li>
             <li className="dashboard-link-5-body">
               <img src={window.profile}></img>
-              <Link to="/profile" className="nav-link-5">Profile</Link>
+              <Link to={`/profile/${this.props.user.id}`} className="nav-link-5">Profile</Link>
             </li>
             <li tabIndex="0" className="dashboard-link-6-body">
                 <img src={window.cog}></img>
               <ul id="dropdown-menu">
                 <li>Account and Settings</li>
-                <li onClick={this.props.logout} className="nav-logout">Logout
-                  {/* <button onClick={this.props.logout}></button> */}
+                <li onClick={this.handleLogout} className="nav-logout">Logout
                 </li>
               </ul>
               Settings
@@ -76,8 +78,3 @@ class DashboardNav extends React.Component {
 }
 
 export default withRouter(DashboardNav);
-
-{/* <select name="settings" id="settings"> */}
-  {/* <option value="account">Account and Settings</option>
-  <option value="logout">Logout</option>
-</select> */}

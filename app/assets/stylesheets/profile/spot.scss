@@ -1,0 +1,55 @@
+.my-spot h2 {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 20px;
+}
+
+.preferences {
+  background-color: white;
+}
+.home {
+  background-color: white;
+}
+.arrangements {
+  background-color: white;
+}
+.details {
+  background-color: white;
+}
+
+.preferences ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 20px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+.home ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 20px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+.arrangements ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 20px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+.details ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 20px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.my-spot li {
+  margin-bottom: .75em;
+}
+
+
+

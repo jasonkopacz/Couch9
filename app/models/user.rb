@@ -12,7 +12,6 @@
 #  occupation      :string
 #  education       :string
 #  about_me        :text
-#  location_id     :integer
 #  imageable_type  :string
 #  imageable_id    :bigint
 #  reviewable_type :string
@@ -23,6 +22,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  spot_id         :integer
 #
 
 class User < ApplicationRecord

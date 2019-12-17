@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import SplashHeader from '../splash/splash_header';
-import SplashFooter from '../splash/splash_footer';
 
 class CreateForm extends React.Component {
   constructor(props) {
@@ -249,7 +248,6 @@ class CreateForm extends React.Component {
           <br />
           <button onClick={() => openModal('login')}>Log In</button>
         </nav>
-        <SplashFooter/>
       </main>
     );
   }
