@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import Tabs from './tabs/tabs';
 
 class ProfileBody extends React.Component {
 
@@ -28,41 +29,8 @@ class ProfileBody extends React.Component {
             </section>
             <section className="profile-nav">
               <header className="profile-header">
-                <ul>
-                  <li className="profile-about">
-                    <a>About</a>
-                  </li>
-                  <li className="profile-spot">
-                    <a>My Spot</a>
-                  </li>
-                  <li className="profile-review">
-                    <a>Reviews</a>
-                  </li>
-                </ul>
+                <Tabs/>
               </header>
-            </section>
-            <section className="overview">
-              <div className="overview-box">
-                <div className="overview-left-column">
-                  <ul>
-                    <li className="left-reviews">Reviews</li>
-                    <li className="left-languages">Languages</li>
-                    <li className="age-gender">27 M</li>
-                  </ul>
-                </div>
-                <div className="overview-right-column">
-                  <ul>
-                    <li className="occupation">Occupation</li>
-                    <li className="education">Education</li>
-                    <li className="hometown">Hometown</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-            <section className="about-me">
-              <div className="about-me-box">
-                about me yerrrrrrr
-              </div>
             </section>
           </div>
         </div>

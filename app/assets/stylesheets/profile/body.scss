@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: -webkit-fill-available;
 }
 
 .left-column-wrapper {
@@ -58,27 +59,122 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: 1px solid #a1acb8;
   margin: 10px;
-  height: 50px;
+  height: 100px;
   align-items: center;
+  background-color: white;
+  border-bottom: 2px solid rgba(0,0,0,0.15);
 }
 
 .availability {
   font-size: 20px;
   color: #41b866;
   font-weight: 500;
+  position: relative;
+  left: 5%;
 }
 
-.profile-header ul {
+.availability-header button {
+  width: 110px;
+  height: 40px;
+  background-color: #287FB8;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+  right: 5%;
+}
+
+.tab-header {
+  display: flex;
+  justify-content: space-evenly;
+  color: #287FB8;
+  height: 75px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tabs-header ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   color: #287FB8;
+  position: relative;
+  top: 3vh;
 }
 
-.profile-nav {
-  width: 100%;
+.tabs {
+  width: 98.5%;
   height: 70px;
   background-color: white;
+  margin: 0 0 10px 0;
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+
+.overview {
+  width: 96.5%;
+  height: 250px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 15px;
+  margin-bottom: 20px;
+}
+
+.overview-box {
+  display: flex;
+  height: 100%;
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+
+.overview-left-column {
+  width: 50%;
+}
+
+.overview-right-column {
+  width: 50%;
+}
+
+.overview-box ul {
+  height: 100%;
+}
+
+.overview-box ul li {
+  height: 33.33%;
+  color: #27374c;
+}
+
+.overview h2 {
+  border-bottom: 1px solid #a1acb8;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  color: #27374c;
+  font-size: 1em;
+}
+
+.about-me {
+  width: 96.5%;
+  height: fit-content;
+  background-color: white;
+  margin-top: 10px;
+  padding: 0 0 0 15px;
+}
+
+.about-me-box {
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+
+.about-me-box h2 {
+  border-bottom: 1px solid #a1acb8;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  color: #27374c;
+  font-size: 1em;
+}
+
+.about-me-content {
+  color: #27374c;
 }
