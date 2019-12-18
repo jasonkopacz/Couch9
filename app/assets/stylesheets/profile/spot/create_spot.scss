@@ -1,0 +1,342 @@
+.spot-page {
+  background-color: #F1EFEA;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-body {
+  padding-left: 40px;
+}
+
+.main-header {
+  background-color: #F1EFEA;
+  color: #27374c;
+  padding-left: 40px;
+
+}
+
+.main-header h1 {
+  font-size: 4.8rem;
+  font-weight: bold;
+}
+
+.main-header h2 {
+  font-size: 2rem;
+}
+
+.home-container {
+  background-color: white;
+  width: 790px;
+  margin: 20px;
+}
+
+.spot-left-column {
+  width: 400px;
+  height: 100%;
+  margin: 20px;
+}
+
+.left-overview {
+  width: 370px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  background-color: white;
+}
+
+.left-overview h2 {
+  color: #ed6542;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.left-overview ul {
+  display: flex;
+  flex-direction: column;
+  line-height: 2;
+  color: #27374c;
+}
+
+.spot-user {
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.15);
+  margin: 0 10px;
+  background-color: white;
+}
+
+.inside-left-column {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+.home-header {
+  height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  color: #27374c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 150px;
+  flex-direction: row;
+
+}
+
+.header-buttons input {
+  background-color: #41b866;
+  color: #fff;
+  width: 85px;
+  height: 80%;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.header-buttons a {
+  background-color: #bfcad2;
+  color: #fff;
+  width: 50px;
+  height: 80%;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  width: 150px;
+  flex-direction: row;
+}
+
+.footer-buttons input {
+  background-color: #41b866;
+  color: #fff;
+  width: 85px;
+  height: 80%;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.footer-buttons a {
+  background-color: #bfcad2;
+  color: #fff;
+  width: 50px;
+  height: 80%;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.section-h3 {
+  font-size: 1.2rem;
+  color: #ed6542;
+  font-weight: bold;
+}
+
+dt {
+  color: #27374c;
+  font-size: 16px;
+  font-weight: 500;
+  width: 180px;
+}
+
+.dt {
+  color: #27374c;
+  font-size: 16px;
+  font-weight: 500;
+  width: 180px;
+}
+
+li {
+  list-style: none;
+}
+
+li > label {
+  color: #27374c;
+}
+
+.available-nights {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: max-content;
+}
+
+.days {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #27374c;
+
+}
+
+.days input {
+  position: relative;
+  top: 1.5em;
+  right: 2em;
+}
+
+.max-guests {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.max-guests select {
+  margin-left: 40px;
+}
+
+.request-preferences {
+  display: flex;
+}
+
+#multi {
+  position: relative;
+  right: 1.8em;
+}
+
+#last {
+  position: relative;
+  right: 20em;
+}
+
+#mul {
+  display: flex;
+  flex-direction: column;
+}
+
+small {
+  position: relative;
+  bottom: 10px;
+  color: #929ead;
+}
+
+.gender-preference {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.gender-preference select {
+  margin-left: 40px;
+}
+
+.cps {
+  display: flex;
+  flex-direction: row;
+}
+
+#kid, #pet {
+  position: relative;
+  right: 9.5em;
+}
+
+#smoking {
+  position: relative;
+  right: 14.5em;
+}
+
+.my-home div {
+  display: flex;
+  flex-direction: row;
+  width: 750px;
+  height: 180px;
+}
+.misc {
+  display: flex;
+  flex-direction: row;
+}
+
+.sleeping-arrangements {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sleeping-arrangements select {
+  margin-left: 40px;
+}
+
+textarea {
+  border: 1px solid #bfcad2;
+  border-radius: 4px;
+  width: 520px;
+}
+
+.public-transportation {
+  max-height: 50px;
+  margin-bottom: 20px;
+}
+
+.public-transportation textarea {
+  height: 50px;
+}
+
+.misc-description {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+#have-pet {
+  position: relative;
+  right: 10em;
+}
+
+#have-kids {
+  position: relative;
+  right: 10.9em;
+}
+
+#home-smoking {
+  position: relative;
+  right: 13.7em;
+}
+
+#wheelchair {
+  position: relative;
+  right: 16.7em;
+}
+
+.home-preferences {
+  border-bottom: 1px dotted #ccc;
+}
+
+.my-home {
+  border-bottom: 1px dotted #ccc;
+}
+
+.home-container select {
+  transition: border-color;
+  background-color: white;
+  border: 1px solid #bfcad2;
+  border-radius: 4px;
+  -webkit-appearance: menulist;
+}
