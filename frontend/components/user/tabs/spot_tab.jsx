@@ -67,7 +67,6 @@ class SpotTab extends React.Component {
     )
   }
   render() {
-    debugger
     return(
       this.props.justCreated ? this.newUser() : this.oldUser()
     )
