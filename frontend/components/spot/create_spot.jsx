@@ -4,6 +4,29 @@ import DashboardNav from '../dashboard/dashboard_nav_container';
 class CreateSpot extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      sleepingArrangements: "",
+      descriptionOfSleepingArrangement: "",
+      roommateSituation: "",
+      publicTransportation: "",
+      whatICanShareWithGuest: "",
+      additionalInformation: "",
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
+  }
+
+  handleSubmit() {
+    e.preventDefault();
+    const form = Object.assign({}, this.state)
+    this.props.processForm(form)
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
   }
 
   render() {
@@ -11,6 +34,9 @@ class CreateSpot extends React.Component {
       <main>
         <DashboardNav/>
         <article className="spot-page">
+          <form onSubmit={this.handleSubmit}>
+
+          
         <div className="spot-left-column">
           <div className="inside-left-column">
             <section className="spot-user">
@@ -161,7 +187,9 @@ class CreateSpot extends React.Component {
 
             <div className="description-sleep">
               <h3 className="dt">Description of Sleeping Arrangement</h3>
-              <textarea name="descript" id="descript" cols="40" rows="8"></textarea>
+              <input type="textarea"
+                value={this.state.descriptionOfSleepingArrangement}
+                onChange={this.update('descriptionOfSleepingArrangement')} ></input>
             </div>
 
             <div className="roommate-situation">
@@ -213,6 +241,7 @@ class CreateSpot extends React.Component {
           </div>
         </main>
         </div>
+          </form>
         </article>
       </main >
     )

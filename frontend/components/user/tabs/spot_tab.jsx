@@ -13,10 +13,10 @@ class SpotTab extends React.Component {
   newUser() {
     return (
       <main>
-        <button>
           <h2>Create Your Spot</h2>
-          <Link to="/spots/new" />
-        </button>
+          <button>
+            <Link to="/spots/new">Click Me</Link>
+          </button>
       </main>
     )
   }
@@ -68,7 +68,8 @@ class SpotTab extends React.Component {
   }
   render() {
     return(
-      this.props.justCreated ? this.newUser() : this.oldUser()
+      // this.props.justCreated ? this.newUser() : this.oldUser()
+      this.newUser()
     )
   }
 }

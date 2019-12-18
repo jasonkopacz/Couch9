@@ -3,7 +3,7 @@ import SpotTab from './spot_tab';
 
 const mapStateToProps = ({ ui: { forms } }) => {
   return {
-    justCreated: [forms.data.justCreated]
+    // justCreated: [forms.data.justCreated]
   };
 };
 
