@@ -307,22 +307,26 @@ textarea {
 
 #have-pet {
   position: relative;
-  right: 10em;
+  bottom: 1.3em;
+  right: 2em;
 }
 
 #have-kids {
   position: relative;
-  right: 10.9em;
+  right: 2em;
+  bottom: 1.5em;
 }
 
 #home-smoking {
   position: relative;
-  right: 13.7em;
+  right: 2em;
+  bottom: 1.5em;
 }
 
 #wheelchair {
   position: relative;
-  right: 16.7em;
+  right: 2em;
+  bottom: 1.3em;
 }
 
 .home-preferences {
@@ -339,4 +343,33 @@ textarea {
   border: 1px solid #bfcad2;
   border-radius: 4px;
   -webkit-appearance: menulist;
+}
+
+.create-spot-form {
+  display: flex;
+}
+
+.create-spot-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-spot-button a {
+  background-color: #287FB8;
+  color: white;
+  border-radius: 5px;
+  width: 225px;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.text-area {
+  border: 1px solid lightgray;
+  width: 400px;
+  height: 100%;
+  margin-bottom: 25px;
 }

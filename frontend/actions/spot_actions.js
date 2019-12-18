@@ -1,5 +1,8 @@
 import * as APIUtil from '../util/spot_util';
 export const RECEIVE_CURRENT_SPOT = 'RECEIVE_CURRENT_SPOT';
+export const RECEIVE_SPOT_ERRORS = 'RECEIVE_SPOT_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const GET_SPOT = 'GET_SPOT';
 
 export const receiveCurrentSpot = currentSpot => {
   return {
@@ -11,9 +14,33 @@ export const receiveCurrentSpot = currentSpot => {
 export const create = spot => dispatch => {
   return APIUtil.create(spot).then(spot => (
     dispatch(receiveCurrentSpot(spot))
-  )
-  // err => (
-    // dispatch(receiveErrors(err.responseJSON))
-  // )
-  );
+  ),
+  err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ));
 };
+
+export const receiveErrors = errors => {
+  return {
+    type: RECEIVE_SPOT_ERRORS,
+    errors
+  };
+};
+
+export const clearErrors = () => {
+  return {
+    type: CLEAR_ERRORS
+  };
+};
+
+export const requestSpot = (id) => (dispatch) => {
+  return APIUtil.fetchSpot(id).then(spot => {
+    dispatch(getSpot(spot));
+    return spot;
+  });
+};
+
+export const getSpot = (spot) => ({
+  type: GET_SPOT,
+  spot
+});

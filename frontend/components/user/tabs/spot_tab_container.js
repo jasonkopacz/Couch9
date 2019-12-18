@@ -1,11 +1,18 @@
 import { connect } from 'react-redux';
 import SpotTab from './spot_tab';
 
-const mapStateToProps = ({ ui: { forms } }) => {
+const mapStateToProps = ({session, entities}) => {
   return {
-    // justCreated: [forms.data.justCreated]
+    currentUser: entities.users[session.id]
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    requestSpot: () => dispatch(requestSpot(id))
+  };
+};
+
+
 export default connect(
-  mapStateToProps)(SpotTab);
+  mapStateToProps, mapDispatchToProps)(SpotTab);

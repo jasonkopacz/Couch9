@@ -1,27 +1,30 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Spot from '../../spot/create_spot';
 
 class SpotTab extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      spotId: {sp: this.props.currentUser.spot_id}
+    };
     this.newUser = this.newUser.bind(this);
     this.oldUser = this.oldUser.bind(this);
   }
 
   newUser() {
     return (
-      <main>
-          <h2>Create Your Spot</h2>
+      <main className="create-spot-button">
           <button>
-            <Link to="/spots/new">Click Me</Link>
+            <Link to="/spots/new">Create Your Spot</Link>
           </button>
       </main>
     )
   }
 
   oldUser() {
+    debugger
+    this.props.requestSpot(this.state.spotId)
     return (
       <main>
         <section className="my-spot">
@@ -67,10 +70,15 @@ class SpotTab extends React.Component {
     )
   }
   render() {
-    return(
-      // this.props.justCreated ? this.newUser() : this.oldUser()
-      this.newUser()
-    )
+    if (this.props.currentUser.spot_id) {
+      debugger
+      return this.oldUser();
+    } else {
+      return this.newUser();
+    }
+    // return(
+    //    this.props.currentUser.spot_id ? this.oldUser() : this.newUser()
+    // )
   }
 }
 

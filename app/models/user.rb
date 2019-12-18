@@ -35,6 +35,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_one :spot
+
 
   def password=(pw)
     @password = pw
