@@ -3,6 +3,7 @@ import React from 'react';
 class AboutTab extends React.Component {
 
   render() {
+    const user = this.props.currentUser;
     return (
       <main>
         <section className="overview">
@@ -12,13 +13,13 @@ class AboutTab extends React.Component {
               <ul>
                 <li className="left-reviews">Reviews</li>
                 <li className="left-languages">Languages</li>
-                <li className="age-gender">27 M</li>
+                <li className="age-gender">{user.age},{user.gender}</li>
               </ul>
             </div>
             <div className="overview-right-column">
               <ul>
-                <li className="occupation">Occupation</li>
-                <li className="education">Education</li>
+                <li className="occupation">{user.occupation}</li>
+                <li className="education">{user.education}</li>
                 <li className="hometown">Hometown</li>
               </ul>
             </div>

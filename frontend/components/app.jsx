@@ -8,6 +8,7 @@ import DashboardContainer from './dashboard/dashboard_container';
 import SessionFormContainer from './session_form/session_form_container';
 import Profile from './user/profile';
 import CreateSpotContainer from './spot/create_spot_container';
+import SpotShowContainer from './spot/spot_show_container';
 
 const App = () => {
 
@@ -19,8 +20,9 @@ const App = () => {
         <AuthRoute exact path="/login" component={SessionFormContainer}/>
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
         <Route path="/create" component={CreateFormContainer}/>
-        <Route path="/profile" component={Profile}/>
+        <Route path="/api/user" component={Profile}/>
         <Route path="/spots/new" component={CreateSpotContainer}/>
+        <Route path="/spots/:spot_id" component={SpotShowContainer}/>
         <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
       </Switch>
     </section>

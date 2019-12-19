@@ -12,9 +12,10 @@ export const receiveCurrentSpot = currentSpot => {
 };
 
 export const create = spot => dispatch => {
-  return APIUtil.create(spot).then(spot => (
-    dispatch(receiveCurrentSpot(spot))
-  ),
+  return APIUtil.create(spot).then(spot => {
+   dispatch(receiveCurrentSpot(spot));
+   return spot;
+  },
   err => (
     dispatch(receiveErrors(err.responseJSON))
   ));
@@ -36,7 +37,7 @@ export const clearErrors = () => {
 export const requestSpot = (id) => (dispatch) => {
   return APIUtil.fetchSpot(id).then(spot => {
     dispatch(getSpot(spot));
-    return spot;
+    return spot.host_id;
   });
 };
 

@@ -6,10 +6,16 @@ class CreateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: ''
+      city: '',
+      gender: "",
+      day: null,
+      month: "",
+      year: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.update = this.update.bind(this);
+    this.getAge = this.getAge.bind(this);
   }
 
   update(field) {
@@ -20,33 +26,23 @@ class CreateForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const gender = document.getElementById("gender");
-    const user = Object.assign({}, this.state, this.props.formData);
+    const age = this.getAge();
+    const user = Object.assign({age}, this.state, this.props.formData);
     this.props.processForm(user).then(this.props.history.push('/dashboard'));
   }
 
-  // getAge() {
-  //   const d = document.getElementById("day");
-  //   const day = Math.floor(d.options[d.selectedIndex].value);
-  //   const m = document.getElementById("month")
-  //   const month = Math.floor(m.options[m.selectedIndex].value);
-  //   const y = document.getElementById("year")
-  //   const year = Math.floor(y.options[y.selectedIndex].value);
-  //   var today = new Date();
-  //   var birthDate = new Date(`${year}${month}${day}`);
-  //   var age = today.getFullYear() - birthDate.getFullYear();
-  //   // var m = today.getMonth() - birthDate.getMonth();
-  //   // if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-  //   //   age--;
-  //   // }
-  //   return age; 
-  // }
+  getAge() {
+    const { day, month, year } = this.state;
+    var today = new Date();
+    var birthDate = new Date(`${year}${month}${day}`);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age; 
+  }
 
-  
-
-  // componentWillUnmount() {
-  //   this.props.clearErrors();
-  // }
   renderErrors() {
     return (
       <div>{this.props.errors[0]}</div>
@@ -70,7 +66,8 @@ class CreateForm extends React.Component {
             <div className="create-form">
               <fieldset className="birthday">Birthday
                 <label className="birth-date">
-                  <select name="day" id="day" placeholder="Day" required>
+                  <select name="day" id="day" placeholder="Day" required
+                  onChange={this.update('day')}>
                     <option value="Day">Day</option>
                     <option value="2">1</option>
                     <option value="2">2</option>
@@ -104,7 +101,8 @@ class CreateForm extends React.Component {
                     <option value="2">30</option>
                     <option value="2">31</option>
                   </select>
-                  <select name="month" id="month" placeholder="Month" required>
+                  <select name="month" id="month" placeholder="Month" required
+                  onChange={this.update('month')}>
                     <option value="Month">Month</option>
                     <option value="January">January</option>
                     <option value="February">February</option>
@@ -119,7 +117,8 @@ class CreateForm extends React.Component {
                     <option value="November">November</option>
                     <option value="December">December</option>
                   </select>
-                  <select name="Year" id="year" placeholder="Year" required>
+                  <select name="Year" id="year" placeholder="Year" required
+                  onChange={this.update('year')}>
                     <option>- Year -</option>
                     <option value="2020">2020</option>
                     <option value="2019">2019</option>
@@ -217,7 +216,8 @@ class CreateForm extends React.Component {
               </fieldset>
               <fieldset className="gender">Gender
                 <label className="gender-select">
-                  <select name="Gender" id="gender" placeholder="Gender" required>
+                  <select name="Gender" id="gender" placeholder="Gender" required
+                  onChange={this.update('gender')}>
                     <option value="Gender">Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>

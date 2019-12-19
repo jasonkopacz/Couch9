@@ -22,7 +22,6 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  spot_id         :integer
 #
 
 class User < ApplicationRecord
@@ -35,7 +34,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_one :spot
+  has_one :spot,
+    primary_key: :id,
+    foreign_key: :host_id,
+    class_name: :Spot
 
 
   def password=(pw)
@@ -63,4 +65,9 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end 
+
+  def change_spot()
+
+  end
+
 end

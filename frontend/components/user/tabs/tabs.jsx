@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutTab from './about_tab';
+import AboutTabContainer from './about_tab_container';
 import SpotTabContainer from './spot_tab_container';
 import PhotoTab from './photo_tab';
 import ReviewTab from './review_tab';
@@ -37,7 +37,7 @@ export default class Tabs extends React.Component {
     };
     this.selectTab = this.selectTab.bind(this);
     this.panes = [
-      { title: 'About', content: <AboutTab/> },
+      { title: 'About', content: <AboutTabContainer/> },
       { title: 'My Spot', content: <SpotTabContainer/> },
       { title: 'Photos', content: <PhotoTab/> },
       { title: 'Reviews', content: <ReviewTab/> }

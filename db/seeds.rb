@@ -14,55 +14,54 @@
 User.destroy_all
 
 demo_user = User.create!({fname: "Jason", lname: "Kopacz", email: "jk@gmail.com",
- password: "demouser", age: 27, gender: "M", occupation: "Frycook",
+ password: "demouser", age: 27, gender: "M", occupation: "goon",
   education: "Rutgers University", 
-  about_me: "I'm learning to code and I really like travelling.", spot_id: 8})
+  about_me: "Yerrrrrrr"})
 
 user1 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: Faker::Internet.email, password: "password", age: Faker::Number.between(18, 100),
 gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::GreekPhilosophers.name,
-about_me: Faker::Movies::LordOfTheRings.quote, spot_id: 1})
+about_me: Faker::Movies::LordOfTheRings.quote})
 user2 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: Faker::Internet.email, password: "password", age: Faker::Number.between(18, 100),
 gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::GreekPhilosophers.name,
-about_me: Faker::Movies::LordOfTheRings.quote, spot_id: 2})
+about_me: Faker::Movies::LordOfTheRings.quote})
 user3 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: Faker::Internet.email, password: "password", age: Faker::Number.between(18, 100),
 gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::GreekPhilosophers.name,
-about_me: Faker::Movies::LordOfTheRings.quote, spot_id: 3})
+about_me: Faker::Movies::LordOfTheRings.quote})
 user4 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: Faker::Internet.email, password: "password", age: Faker::Number.between(18, 100),
 gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::GreekPhilosophers.name,
-about_me: Faker::Movies::LordOfTheRings.quote, spot_id: 4})
+about_me: Faker::Movies::LordOfTheRings.quote})
 user5 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: Faker::Internet.email, password: "password", age: Faker::Number.between(18, 100),
 gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::GreekPhilosophers.name,
-about_me: Faker::Movies::LordOfTheRings.quote, spot_id: 5})
+about_me: Faker::Movies::LordOfTheRings.quote})
 user6 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: Faker::Internet.email, password: "password", age: Faker::Number.between(18, 100),
 gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::GreekPhilosophers.name,
-about_me: Faker::Movies::LordOfTheRings.quote, spot_id: 6})
+about_me: Faker::Movies::LordOfTheRings.quote})
 user7 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: Faker::Internet.email, password: "password", age: Faker::Number.between(18, 100),
 gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::GreekPhilosophers.name,
-about_me: Faker::Movies::LordOfTheRings.quote, spot_id: 7})
+about_me: Faker::Movies::LordOfTheRings.quote})
 user8 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: Faker::Internet.email, password: "password", age: Faker::Number.between(18, 100),
 gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::GreekPhilosophers.name,
-about_me: Faker::Movies::LordOfTheRings.quote, spot_id: 8})
+about_me: Faker::Movies::LordOfTheRings.quote})
 user9 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: Faker::Internet.email, password: "password", age: Faker::Number.between(18, 100),
 gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::GreekPhilosophers.name,
-about_me: Faker::Movies::LordOfTheRings.quote, spot_id: 9})
+about_me: Faker::Movies::LordOfTheRings.quote})
 user10 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: Faker::Internet.email, password: "password", age: Faker::Number.between(18, 100),
 gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::GreekPhilosophers.name,
-about_me: Faker::Movies::LordOfTheRings.quote, spot_id: 10})
+about_me: Faker::Movies::LordOfTheRings.quote})
 
 
-spot1 = Spot.create!({description: Faker::Movies::StarWars.quote, 
-host_id: User.find_by(email: "jk@gmail.com").id, max_guests: 4, 
-last_minute_requests: false, preferred_gender: "F", kid_friendly: true, 
-pet_friendly: true, smoking_allowed: false, has_pets: false, has_children: false,
- smoking_at_home: false, wheelchair_accessible: false, 
- sleeping_arrangements: "Cozy Bedroom"})
+spot1 = Spot.create!({host_id: User.find_by(email: "jk@gmail.com").id, max_guests: 4, 
+last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
+pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
+ smoking_at_home: true, wheelchair_accessible: true, 
+ sleeping_arrangements: "Private Bedroom"})

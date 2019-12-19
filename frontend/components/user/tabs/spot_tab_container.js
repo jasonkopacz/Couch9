@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import SpotTab from './spot_tab';
+import {requestSpot } from '../../../actions/spot_actions';
 
 const mapStateToProps = ({session, entities}) => {
   return {
@@ -14,5 +15,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(
-  mapStateToProps, mapDispatchToProps)(SpotTab);
+export default connect(mapStateToProps, mapDispatchToProps)(SpotTab);

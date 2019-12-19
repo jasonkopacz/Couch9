@@ -55,10 +55,10 @@ class CreateSpot extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     const createForm = Object.assign({}, this.state);
-    this.props.processForm(createForm).then(this.props.history.push('/dashboard'));
-  }
+    this.props.processForm(createForm)
+    .then((spot) => this.props.history.push(`/spots/${spot.id}`))
+  };
 
   update(field) {
     return e => this.setState({
@@ -70,7 +70,6 @@ class CreateSpot extends React.Component {
     return e => {
     let selections = e.target.className;
       Array.from(this.state[selections]).forEach(selection => {
-        debugger
       if (selection.value === e.target.value)
         selection.isChecked = e.target.checked;
     });

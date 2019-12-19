@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { requestSpot } from '../../actions/spot_actions';
 import SpotShow from './spot_show';
 
 const mapStateToProps = ({ errors, entities }) => {
@@ -10,10 +9,9 @@ const mapStateToProps = ({ errors, entities }) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    requestSpot: () => dispatch(requestSpot(id))
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SpotShow);
+export default connect(mapStateToProps)(SpotShow);

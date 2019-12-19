@@ -1,6 +1,20 @@
 import * as APIUtil from '../util/user_util';
 import {receiveCurrentUser, receiveErrors } from './session_actions';
 export const EDIT_CURRENT_USER = 'EDIT_CURRENT_USER';
+export const GET_USER = 'GET_USER';
+
+
+export const requestUser = (id) => (dispatch) => {
+  return APIUtil.fetchUser(id).then(user => {
+    dispatch(getUser(user));
+    return user;
+  });
+};
+
+export const getUser = (user) => ({
+  type: GET_USER,
+  user
+});
 
 
 export const editUser = (user) => {

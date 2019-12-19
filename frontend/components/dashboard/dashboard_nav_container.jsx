@@ -4,10 +4,11 @@ import DashboardNav from './dashboard_nav';
 import { clearErrors } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 
-const mapStateToProps = ({ errors, entities }) => {
+const mapStateToProps = ({ errors, entities, session }) => {
+  const id = session.id;
   return {
     errors: errors.session,
-    user: entities.users
+    user: entities.users[id]
   };
 };
 

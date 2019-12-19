@@ -5,3 +5,11 @@ export const edit = user => {
     data: { user } 
   });
 };
+
+export const fetchUser = id => (
+  $.ajax({
+    method: 'GET',
+    url: `api/users/${id}`
+  })
+);
+

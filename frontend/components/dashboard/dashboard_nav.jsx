@@ -58,7 +58,7 @@ class DashboardNav extends React.Component {
             </li>
             <li className="dashboard-link-5-body">
               <img src={window.profile}></img>
-              <Link to={`/profile/${this.props.user.id}`} className="nav-link-5">Profile</Link>
+              <Link to='/api/user' className="nav-link-5">Profile</Link>
             </li>
             <li tabIndex="0" className="dashboard-link-6-body">
                 <img src={window.cog}></img>
