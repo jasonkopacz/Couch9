@@ -43,7 +43,7 @@ Things you may want to cover:
 <h1 align="center">
   <img
   alt="Profile Page"
-  src="/Users/appacademystudent/Desktop/Couch9-user_auth/app/assets/images/prof.png">
+  src="app/assets/images/prof.png">
 </hi>
 
 ## Overview
