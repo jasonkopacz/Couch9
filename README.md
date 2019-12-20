@@ -27,7 +27,7 @@ Things you may want to cover:
 	<img
 		width="300"
 		alt="Couch9"
-		src="/Users/appacademystudent/Desktop/Couch9-user_auth/app/assets/images/logo.png">
+		src="app/assets/images/logo.png">
 </h1>
 
 <h3 align="center">
