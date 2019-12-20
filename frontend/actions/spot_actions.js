@@ -3,6 +3,7 @@ export const RECEIVE_CURRENT_SPOT = 'RECEIVE_CURRENT_SPOT';
 export const RECEIVE_SPOT_ERRORS = 'RECEIVE_SPOT_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const GET_SPOT = 'GET_SPOT';
+export const REQUEST_SPOT = 'REQUEST_SPOT';
 
 export const receiveCurrentSpot = payload => {
   return {

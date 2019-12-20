@@ -14,7 +14,7 @@
 User.destroy_all
 
 demo_user = User.create!({fname: "Jason", lname: "Kopacz", email: "jk@gmail.com",
- password: "demouser", age: 27, gender: "M", city: "Bayonne", occupation: "goon",
+ password: "demouser", age: 27, gender: "M", occupation: "goon",
   education: "Rutgers University", 
   about_me: "Yerrrrrrr"})
 
