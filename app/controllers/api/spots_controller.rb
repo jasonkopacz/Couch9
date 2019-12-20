@@ -22,6 +22,17 @@ class Api::SpotsController < ApplicationController
     end
   end
 
+   def update
+    if logged_in?
+      @spot = Spot.find(params[:id])
+      @spot.update(spot_params)
+      render "api/spots/show"
+    else
+      render json ['You can not do that']
+    end
+  end
+
+
   private
 
   def spot_params

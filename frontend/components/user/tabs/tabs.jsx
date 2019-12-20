@@ -5,6 +5,9 @@ import PhotoTab from './photo_tab';
 import ReviewTab from './review_tab';
 
 class Headers extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     const selected = this.props.selectedPane;
     const headers = this.props.panes.map((pane, index) => {
@@ -37,8 +40,8 @@ export default class Tabs extends React.Component {
     };
     this.selectTab = this.selectTab.bind(this);
     this.panes = [
-      { title: 'About', content: <AboutTabContainer/> },
-      { title: 'My Spot', content: <SpotTabContainer/> },
+      { title: 'About', content: <AboutTabContainer user={this.props.user}/> },
+      { title: 'My Spot', content: <SpotTabContainer user={this.props.user}/> },
       { title: 'Photos', content: <PhotoTab/> },
       { title: 'Reviews', content: <ReviewTab/> }
     ];

@@ -10,6 +10,10 @@
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
 }
 
 .left-nav {
@@ -67,6 +71,13 @@
   position: absolute;
   right: 20%;
   font-size: 14px;
+}
+
+.right-nav a {
+  display: flex;
+  height: inherit;
+  flex-direction: column-reverse;
+  justify-content: center;
 }
 
 .right-nav:hover {

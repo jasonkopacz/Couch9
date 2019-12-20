@@ -23,6 +23,16 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    if logged_in?
+      @user = User.find(params[:id])
+      @user.update(user_params)
+      render "api/users/show"
+    else
+      render json ['You can not do that']
+    end
+  end
+
   private
 
   def user_params

@@ -1,10 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Tabs from './tabs/tabs';
 
 class ProfileBody extends React.Component {
 
   render() {
+    const user = this.props.currentUser;
     return(
       <main className="profile">
         <div className="left-column-wrapper">
@@ -24,7 +26,7 @@ class ProfileBody extends React.Component {
               <section className="host-availability">
               <div className="availability-header">
                 <div className="availability">Host Availability</div>
-                <button>Edit Profile</button>
+                <Link to="/spots/edit" user={user}>Edit Profile</Link>
               </div>
             </section>
             <section className="profile-nav">

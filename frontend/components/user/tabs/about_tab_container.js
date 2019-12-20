@@ -2,10 +2,12 @@ import { connect } from 'react-redux';
 import AboutTab from './about_tab';
 // import { requestSpot } from '../../../actions/spot_actions';
 
-const mapStateToProps = ({entities: {users}, session}) => {
+const mapStateToProps = (state, ownProps) => {
 
+  // const profileId = mathparseInt(match.params.user_id);
   return {
-    currentUser: users[session.id]
+    currentUser: state.entities.users[state.session.id],
+    // profileId 
   };
 };
 

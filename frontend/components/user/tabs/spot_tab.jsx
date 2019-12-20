@@ -25,7 +25,7 @@ class SpotTab extends React.Component {
 
   oldUser() {
     return (
-      <SpotShowContainer />
+      <SpotShowContainer user={this.props.user}/>
     )
   }
   render() {

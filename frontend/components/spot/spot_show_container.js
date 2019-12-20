@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import SpotShow from './spot_show';
 
-const mapStateToProps = ({ errors, entities }) => {
+const mapStateToProps = (ownProps, state) => {
   return {
-    errors: errors.session,
-    user: entities.users,
-    currentUserId: store.getState().session.id
+    errors: ownProps.errors.session,
+    users: ownProps.entities.users,
+    currentUserId: ownProps.session.id,
+    profileOwner: state.user
   };
 };
 

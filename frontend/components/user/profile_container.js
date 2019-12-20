@@ -6,7 +6,7 @@ import ProfileBody from './profile_body';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
-    currentUser: users[session.id]
+    currentUser: users[session.id],
   };
 };
 

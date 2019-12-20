@@ -2,6 +2,7 @@ import * as APIUtil from '../util/user_util';
 import {receiveCurrentUser, receiveErrors } from './session_actions';
 export const EDIT_CURRENT_USER = 'EDIT_CURRENT_USER';
 export const GET_USER = 'GET_USER';
+export const LOAD_USER = 'LOAD_USER';
 
 
 export const requestUser = (id) => (dispatch) => {
@@ -15,7 +16,6 @@ export const getUser = (user) => ({
   type: GET_USER,
   user
 });
-
 
 export const editUser = (user) => {
   return {
@@ -31,3 +31,7 @@ export const edit = user => dispatch => {
     dispatch(receiveErrors(err.responseJSON))
   ));
 };
+
+// export const loadUser = () => ({
+//   type: LOAD_USER
+// });

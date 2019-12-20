@@ -4,17 +4,17 @@ export const RECEIVE_SPOT_ERRORS = 'RECEIVE_SPOT_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const GET_SPOT = 'GET_SPOT';
 
-export const receiveCurrentSpot = currentSpot => {
+export const receiveCurrentSpot = payload => {
   return {
     type: RECEIVE_CURRENT_SPOT,
-    currentSpot
+    payload
   };
 };
 
 export const create = spot => dispatch => {
-  return APIUtil.create(spot).then(spot => {
-   dispatch(receiveCurrentSpot(spot));
-   return spot;
+  return APIUtil.create(spot).then(payload => {
+    dispatch(receiveCurrentSpot(payload));
+    return payload;
   },
   err => (
     dispatch(receiveErrors(err.responseJSON))

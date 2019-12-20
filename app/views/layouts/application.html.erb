@@ -24,13 +24,13 @@
       window.rome = '<%=image_url('rome.jpg')%>'
       window.nyc = '<%=image_url('nyc.jpg')%>'
       window.profpic = '<%=asset_url('profpic.jpg')%>'
+      window.book = '<%=image_url('book.svg')%>'
     </script>
   </head>
 
-  <body>
+  <body className="page-container">
       <%= yield %>
-  </body>
-        <footer className="main-footer">
+        <footer className="main-footer" id="main-footer">
           <h3>Jason Kopacz</h3>
           <div className="footer-icons">
             <a to="https://github.com/Alaizard/Couch9">
@@ -44,4 +44,5 @@
             </a>
           </div>
         </footer>
+  </body>
 </html>

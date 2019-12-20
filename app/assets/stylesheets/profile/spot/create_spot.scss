@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+      margin-top: 70px;
 }
 
 .main-body {
@@ -307,26 +308,26 @@ textarea {
 
 #have-pet {
   position: relative;
-  bottom: 1.3em;
-  right: 2em;
+      bottom: 0.2em;
+    right: 9.7em;
 }
 
 #have-kids {
   position: relative;
-  right: 2em;
-  bottom: 1.5em;
+  right: 10.7em;
+    bottom: 0.2em;
 }
 
 #home-smoking {
   position: relative;
-  right: 2em;
-  bottom: 1.5em;
+  right: 13.6em;
+    bottom: 0.2em;
 }
 
 #wheelchair {
   position: relative;
-  right: 2em;
-  bottom: 1.3em;
+  right: 16.5em;
+  bottom: 0.1em;
 }
 
 .home-preferences {

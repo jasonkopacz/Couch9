@@ -74,17 +74,23 @@
   position: relative;
   left: 5%;
 }
-
-.availability-header button {
-  width: 110px;
-  height: 40px;
+#testing { display: inline-block; width: 210px; text-align: right; }
+.availability-header a {
   background-color: #287FB8;
-  border-radius: 5px;
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  position: relative;
-  right: 5%;
+    border: 1px solid #287FB8;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    max-width: 240px;
+    min-width: 6em;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 15px;
 }
 
 .tab-header {
@@ -94,11 +100,17 @@
   height: 75px;
   align-items: center;
   margin-bottom: 10px;
+  background-color: white;
 }
 
 .tab-header li:hover {
   color: #ED6504;
   cursor: pointer;
+}
+
+.active {
+  color: #ED6504;
+  text-decoration: none;
 }
 
 .tabs-header ul {
@@ -112,8 +124,6 @@
 
 .tabs {
   width: 98.5%;
-  height: 70px;
-  background-color: white;
   margin: 0 0 10px 0;
   border-bottom: 2px solid rgba(0,0,0,0.15);
 }
