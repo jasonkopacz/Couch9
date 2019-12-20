@@ -74,7 +74,6 @@
   position: relative;
   left: 5%;
 }
-#testing { display: inline-block; width: 210px; text-align: right; }
 .availability-header a {
   background-color: #287FB8;
     border: 1px solid #287FB8;
@@ -193,4 +192,13 @@
 
 .about-me-content {
   color: #27374c;
+}
+
+.location button {
+  color: #287FB8;
+  font-size: 1rem;
+}
+
+.location button:hover {
+  color: #ED6504;
 }

@@ -27,7 +27,7 @@ class ProfileShow extends React.Component {
                   <h2 className="user-name">{user.fname} {user.lname}</h2>
 
                 <div className="location">
-                  <button>Location</button>
+                  <button>{user.city}</button>
                 </div>
               </section>
             </div>
@@ -36,7 +36,7 @@ class ProfileShow extends React.Component {
             <div className="center-column">
               <section className="host-availability">
                 <div className="availability-header">
-                  <div className="availability">Host Availability</div>
+                  <div className="availability">Host availability</div>
                   <button>Edit Profile</button>
                 </div>
               </section>

@@ -16,7 +16,7 @@ class ProfileBody extends React.Component {
               <h2 className="user-name">{this.props.currentUser.fname} {this.props.currentUser.lname}</h2>
 
               <div className="location">
-                <button>Location</button>
+                <button>{this.props.currentUser.city}</button>
               </div>
             </section>
           </div>

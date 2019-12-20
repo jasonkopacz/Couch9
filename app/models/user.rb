@@ -22,6 +22,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  city            :string
 #
 
 class User < ApplicationRecord
@@ -65,9 +66,5 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end 
-
-  def change_spot()
-
-  end
 
 end

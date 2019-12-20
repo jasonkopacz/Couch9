@@ -11,7 +11,7 @@ class DashboardBody extends React.Component {
             <section className="user">
               <h2 className="user-name">{this.props.currentUser.fname} {this.props.currentUser.lname}</h2>
                 <div className="location">
-                  <button>Da moon, Outer Space</button>
+                  <button>{this.props.currentUser.city}</button>
                 </div>
               <div className="hang">
                 <form>
@@ -108,7 +108,7 @@ class DashboardBody extends React.Component {
           <section className="happening">
               <h2>WHAT'S HAPPENING NEAR:  
                 <a>
-                  CURRENT USER LOCATION
+                  {this.props.currentUser.city}
                 </a>
               </h2>
           </section>

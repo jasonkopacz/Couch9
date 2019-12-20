@@ -35,6 +35,7 @@ class CreateSpot extends React.Component {
     this.update = this.update.bind(this);
     this.checkboxUpdate = this.checkboxUpdate.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    debugger
     this.dateUpdate = this.dateUpdate.bind(this);
     // this.checkboxState = this.checkboxState.bind(this);
   }
@@ -118,8 +119,8 @@ class CreateSpot extends React.Component {
         </div>
         <div className="home-container">
           <header className="main-header">
-            <h1>Username</h1>
-            <h2>Location</h2>
+                <h1>{this.props.user[this.props.currentUserId].fname} {this.props.user[this.props.currentUserId].lname}</h1>
+                <h2>{this.props.user[this.props.currentUserId].city}</h2>
           </header>
           <main className="main-body">
           <header className="home-header">

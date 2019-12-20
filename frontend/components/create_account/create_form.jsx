@@ -6,7 +6,7 @@ class CreateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: '',
+      city: "",
       gender: "",
       day: null,
       month: "",
@@ -28,6 +28,7 @@ class CreateForm extends React.Component {
     e.preventDefault();
     const age = this.getAge();
     const user = Object.assign({age}, this.state, this.props.formData);
+    debugger
     this.props.processForm(user).then(this.props.history.push('/dashboard'));
   }
 
