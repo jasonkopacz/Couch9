@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SessionFormContainer from '../session_form/session_form_container';
+import BookingContainer from './booking_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -12,6 +13,9 @@ function Modal({modal, closeModal}) {
   switch (modal) {
     case 'login':
       component = <LoginFormContainer />;
+      break;
+    case 'booking':
+      component = <BookingContainer />;
       break;
     default:
       return null;

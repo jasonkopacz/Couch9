@@ -35,7 +35,6 @@ class CreateSpot extends React.Component {
     this.update = this.update.bind(this);
     this.checkboxUpdate = this.checkboxUpdate.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    debugger
     this.dateUpdate = this.dateUpdate.bind(this);
     // this.checkboxState = this.checkboxState.bind(this);
   }
@@ -209,7 +208,7 @@ class CreateSpot extends React.Component {
               <dt className="request-title">Request Preferences</dt>
               <dd className="request-descriptions">
                 <li>
-                  <label>Last-Minute Requests Okay</label>
+                  <label htmlFor="last">Last-Minute Requests Okay</label>
                         <input type="radio" name="last" id="last" className="last_minute_requests"
                           onChange={this.update("last_minute_requests")} value={this.state.last_minute_requests}/>
                            
@@ -241,19 +240,19 @@ class CreateSpot extends React.Component {
               <dt className="cps-title">Children, Pets, Smoking</dt>
               <dd className="cps-descriptions">
                 <li>
-                  <label>Kid Friendly</label>
+                  <label htmlFor="kid">Kid Friendly</label>
                   <input type="checkbox" name="kid" id="kid"
                     className="kid_friendly" className="save-cb-state"
                   onChange={this.checkboxUpdate("kid_friendly")} value={this.state.kid_friendly} />
                 </li>
                 <li>
-                  <label>Pet Friendly</label>
+                  <label htmlFor="pet">Pet Friendly</label>
                   <input type="checkbox" name="pet" id="pet"
                     className="pet_friendly" className="save-cb-state"
                   onChange={this.checkboxUpdate("pet_friendly")} value={this.state.pet_friendly} />
                 </li>
                 <li>
-                  <label>Smoking is Allowed</label>
+                  <label htmlFor="smoking">Smoking is Allowed</label>
                   <input type="checkbox" name="smoking" id="smoking"
                     className="smoking_allowed" className="save-cb-state"
                   onChange={this.checkboxUpdate("smoking_allowed")} value={this.state.smoking_allowed} />
@@ -300,25 +299,25 @@ class CreateSpot extends React.Component {
               <dt className="misc-title">Miscellaneous</dt>
               <dd className="misc-descriptions">
                 <li>
-                  <label>I Have a Pet</label>
+                  <label htmlFor="have-pet">I Have a Pet</label>
                   <input type="checkbox" name="have-pet" id="have-pet" value={this.state.has_pets}
                       className="has_pets" className="save-cb-state"
                   onChange={this.checkboxUpdate("has_pets")}  />
                 </li>
                 <li>
-                  <label>Kids at Home</label>
+                  <label htmlFor="have-kids">Kids at Home</label>
                   <input type="checkbox" name="have-kids" id="have-kids" value={this.state.has_children}
                       className="has_kids" className="save-cb-state"
                   onChange={this.checkboxUpdate("has_kids")} />
                 </li>
                 <li>
-                  <label>Smoking at Home</label>
+                  <label htmlFor="home-smoking">Smoking at Home</label>
                   <input type="checkbox" name="home-smoking" id="home-smoking" value={this.state.smoking_at_home}
                       className="smoking_at_home" className="save-cb-state"
                   onChange={this.checkboxUpdate("smoking_at_home")}  />
                 </li>
                 <li>
-                  <label>Wheelchair Accessible</label>
+                  <label htmlFor="wheelchair">Wheelchair Accessible</label>
                   <input type="checkbox" name="wheelchair" id="wheelchair" value={this.state.wheelchair_accessible}
                     className="wheelchair_accessible" className="save-cb-state"
                   onChange={this.checkboxUpdate("wheelchair_accessible")}  />

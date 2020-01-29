@@ -22,7 +22,6 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  city            :string
 #
 
 class User < ApplicationRecord
@@ -39,6 +38,11 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :host_id,
     class_name: :Spot
+
+  has_many :bookings,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Booking
 
 
   def password=(pw)
