@@ -13,11 +13,14 @@ class Api::SpotsController < ApplicationController
   end
 
   def search
-    @spot = Spot.where("name LIKE ?", "%" + params[:q] + "%")
-    if @spot
+    debugger
+    @spots = Spot.where("location_name LIKE ?", "%" + params[:q] + "%")
+    debugger
+    if @spots
+      debugger
       render "api/spots/search"
     else
-      render json: @spot.errors.full_messages, status: 422
+      render json ["That spot doesn't exist"]
     end
   end
 

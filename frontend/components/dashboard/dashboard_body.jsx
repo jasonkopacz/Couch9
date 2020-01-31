@@ -1,22 +1,47 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Modal from '../modal/modal';
+import SpotSearchIndex from '../spot/spot_search_index';
 
 class DashboardBody extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchResults: {}
+    };
 
-  componentDidMount () {
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount () {  
     return this.props.fetchBookings(this.props.currentUser.id)
+  }
+
+  handleSubmit() {
+    const search = document.getElementById('searchQuery').value;
+    debugger
+    this.props.searchQuery(search).then((data) => {
+      debugger
+      this.setState({
+        searchResults: data
+      });
+
+    });
+    // return (
+    //   <div>
+    //     <SpotSearchIndex results={results}/>
+    //   </div>
+    // )
   }
 
 
   render() {
-    debugger
     const { bookings } = this.props;
     if (bookings.length === 0) return null;
     const bookingItems = bookings.map((booking, id) => {
       const word = booking.number_of_travelers !== 1 ? 'Travelers' : 'Traveler';
       return (
-        <div className="trip-container">
+        <div key={id} className="trip-container">
           <li key={id} className="trip">
             <div>Visiting: {booking.destination}</div>
             <div className="middle">
@@ -29,7 +54,6 @@ class DashboardBody extends React.Component {
         </div>
       )
     })
-    debugger
     return (
       <main className="dashboard">
         <div className="left-column-wrapper">
@@ -85,11 +109,11 @@ class DashboardBody extends React.Component {
              <div className="host-search">
                <h3>Find hosts wherever I'm going:</h3>
               <div className="searchbar">
-                <form action="/api/search">
-                  <button>
+                <form action="/api/search" onSubmit={this.handleSubmit}>
+                  <button type="submit">
                     <img src={window.search} />
                   </button>
-                  <input type="text" name="q" placeholder="Where are you going?" />
+                  <input type="text" name="q" id="searchQuery" placeholder="Where are you going?" />
                 </form>
               </div>
              </div>

@@ -11,6 +11,8 @@ import CreateSpotContainer from './spot/create_spot_container';
 import SpotShowContainer from './spot/spot_show_container';
 import ProfileShowContainer from './user/profile_show_container';
 import EditSpotContainer from './spot/edit_spot_container';
+import SpotSearchIndex from './spot/spot_search_index';
+
 
 const App = () => {
 
@@ -28,7 +30,7 @@ const App = () => {
         <Route path="/spots/edit" component={EditSpotContainer}/>
         <Route path="/spots/:spot_id" component={SpotShowContainer}/>
         <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
-        <Route path="/api/spots/search" component={DashboardContainer} />
+        <Route path="/api/spots/search/" component={SpotSearchIndex} />
       </Switch>
     </section>
 
