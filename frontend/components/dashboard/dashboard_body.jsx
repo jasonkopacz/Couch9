@@ -14,24 +14,17 @@ class DashboardBody extends React.Component {
   }
 
   componentDidMount () {  
+    // const results = this.props.searchQuery("New");
+    // console.log(results);
     return this.props.fetchBookings(this.props.currentUser.id)
   }
 
   handleSubmit() {
     const search = document.getElementById('searchQuery').value;
-    debugger
-    this.props.searchQuery(search).then((data) => {
-      debugger
-      this.setState({
-        searchResults: data
-      });
 
-    });
-    // return (
-    //   <div>
-    //     <SpotSearchIndex results={results}/>
-    //   </div>
-    // )
+    this.props.searchQuery(search).then(() => {
+      this.props.history.push("/api/spots/search");}
+      );
   }
 
 
@@ -109,7 +102,7 @@ class DashboardBody extends React.Component {
              <div className="host-search">
                <h3>Find hosts wherever I'm going:</h3>
               <div className="searchbar">
-                <form action="/api/search" onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                   <button type="submit">
                     <img src={window.search} />
                   </button>

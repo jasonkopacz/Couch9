@@ -14,11 +14,11 @@ export const fetchSpot = id => (
 );
 
 export const getData = (search) => {
-  debugger
   return $.ajax({
     method: 'GET',
     url: `api/search/`,
-    data: search
+    dataType: "json",
+    data: `q=${search}`
   });
 };
 
