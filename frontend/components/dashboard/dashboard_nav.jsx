@@ -45,21 +45,6 @@ class DashboardNav extends React.Component {
               <img src={window.earth}></img>
               </Link>
             </li>
-            <li className="dashboard-link-2-body">
-              <Link to="/groups" className="nav-link-2">Groups
-                <img src={window.chat}></img>
-              </Link>
-            </li>
-            <li className="dashboard-link-3-body">
-              <Link to="/events" className="nav-link-3">Events
-                <img src={window.calendar}></img>
-              </Link>
-            </li>
-            <li className="dashboard-link-4-body">
-              <Link to="/inbox" className="nav-link-4">Inbox
-                <img src={window.envelope}></img>
-              </Link>
-            </li>
             <li className="dashboard-link-5-body">
               <Link to='/api/users' className="nav-link-5">Profile
                 <img src={window.profile}></img>

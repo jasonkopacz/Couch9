@@ -1,9 +1,35 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import Modal from '../modal/modal';
 
 class DashboardBody extends React.Component {
 
+  componentDidMount () {
+    debugger
+    return this.props.fetchBookings(this.props.currentUser.id)
+  }
+
+
   render() {
+    const { bookings } = this.props;
+    debugger
+    if (bookings.length === 0) return null;
+    const bookingItems = bookings.map((booking, id) => {
+      const word = booking.number_of_travelers !== 1 ? 'Travelers' : 'Traveler';
+      return (
+        <div className="trip-container">
+          <li key={id} className="trip">
+            <div>Visiting: {booking.destination}</div>
+            <div className="middle">
+              <div>{booking.arrival_date}</div> 
+              <div>{booking.departure_date}</div> 
+              <div>{booking.number_of_travelers} {word}</div> 
+            </div>
+            <div>{booking.trip_description}</div>       
+          </li>
+        </div>
+      )
+    })
     return (
       <main className="dashboard">
         <div className="left-column-wrapper">
@@ -26,34 +52,6 @@ class DashboardBody extends React.Component {
                 </form>
               </div>
             </section>
-            <section className="friends">
-              <h2>You have 10 Facebook friends on Couch9:</h2>
-                <div className="friend-items">
-                  <div className="friend-item">
-                    <h3>Name</h3>
-                    <a>Add Friend</a>
-                  </div>
-                  <div className="friend-item">
-                    <h3>Name</h3>
-                    <a>Add Friend</a>
-                  </div>
-                  <div className="friend-item">
-                    <h3>Name</h3>
-                    <a>Add Friend</a>
-                  </div>
-                  <div className="friend-item">
-                    <h3>Name</h3>
-                    <a>Add Friend</a>
-                  </div>
-                  <div className="friend-item">
-                    <h3>Name</h3>
-                    <a>Add Friend</a>
-                  </div>
-                <div className="see-friends">
-                  <a href="/friends">See my friends</a>
-                </div>
-                </div>
-            </section>
           </div>
         </div>
         <div className="center-column-wrapper">
@@ -65,19 +63,19 @@ class DashboardBody extends React.Component {
               </h2>
             </header>
              <div className="pictures">
-               <a className="paris" href="/paris">
+               <a className="paris">
                  <header>
                    <h1>Paris, France</h1>
                    <p>70,000+ hosts</p>
                  </header>
                </a>
-               <a className="rome" href="/rome">
+                <a className="rome">
                  <header>
                    <h1>Rome, Italy</h1>
                    <p>22,900+ hosts</p>
                  </header>
                </a>
-               <a className="nyc" href="/nyc">
+                <a className="nyc">
                  <header>
                    <h1>New York City, New York</h1>
                    <p>50,000+ hosts</p>
@@ -96,11 +94,12 @@ class DashboardBody extends React.Component {
           </section>
           <section className="bookings">
               <h2>&#9992; MY TRAVEL PLANS</h2>
-            <div className="upcoming-trips">
-              You have no upcoming trips.
+            <div className="preferences">
+              {bookingItems}
             </div>
             <div className="trip-mod">
-              <a>Create a Public Trip &#9654;</a>
+              <a onClick={() => this.props.openModal('booking')}>Create a Public Trip &#9654;</a>
+              <Modal />
               <a>My Public Trips &#9654;</a>
               <a>My Couch Requests &#9654;</a>
             </div>
