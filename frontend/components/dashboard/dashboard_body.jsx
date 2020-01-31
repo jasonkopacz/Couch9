@@ -15,14 +15,19 @@ class DashboardBody extends React.Component {
     debugger
     if (bookings.length === 0) return null;
     const bookingItems = bookings.map((booking, id) => {
+      const word = booking.number_of_travelers !== 1 ? 'Travelers' : 'Traveler';
       return (
-        <li key={id}>
-          <div>{booking.destination}</div>
-          <div>{booking.arrival_date}</div> 
-          <div>{booking.departure_date}</div> 
-          <div>{booking.number_of_travelers}</div> 
-          <div>{booking.trip_description}</div>       
-        </li>
+        <div className="trip-container">
+          <li key={id} className="trip">
+            <div>Visiting: {booking.destination}</div>
+            <div className="middle">
+              <div>{booking.arrival_date}</div> 
+              <div>{booking.departure_date}</div> 
+              <div>{booking.number_of_travelers} {word}</div> 
+            </div>
+            <div>{booking.trip_description}</div>       
+          </li>
+        </div>
       )
     })
     return (
@@ -46,34 +51,6 @@ class DashboardBody extends React.Component {
                   </div>
                 </form>
               </div>
-            </section>
-            <section className="friends">
-              <h2>You have 10 Facebook friends on Couch9:</h2>
-                <div className="friend-items">
-                  <div className="friend-item">
-                    <h3>Name</h3>
-                    <a>Add Friend</a>
-                  </div>
-                  <div className="friend-item">
-                    <h3>Name</h3>
-                    <a>Add Friend</a>
-                  </div>
-                  <div className="friend-item">
-                    <h3>Name</h3>
-                    <a>Add Friend</a>
-                  </div>
-                  <div className="friend-item">
-                    <h3>Name</h3>
-                    <a>Add Friend</a>
-                  </div>
-                  <div className="friend-item">
-                    <h3>Name</h3>
-                    <a>Add Friend</a>
-                  </div>
-                <div className="see-friends">
-                  <a href="/friends">See my friends</a>
-                </div>
-                </div>
             </section>
           </div>
         </div>
@@ -117,7 +94,7 @@ class DashboardBody extends React.Component {
           </section>
           <section className="bookings">
               <h2>&#9992; MY TRAVEL PLANS</h2>
-            <div className="upcoming-trips">
+            <div className="preferences">
               {bookingItems}
             </div>
             <div className="trip-mod">
