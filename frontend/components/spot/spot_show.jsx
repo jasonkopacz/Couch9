@@ -2,10 +2,6 @@ import React from 'react';
 
 class SpotShow extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-  
   render() {
     const user = this.props.profileOwner ? this.props.profileOwner : this.props.users[this.props.currentUserId];
     const spot = user.spot ? user.spot : {};

@@ -12,11 +12,20 @@ class Api::SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
   end
 
+  def search
+    @spot = Spot.where("name LIKE ?", "%" + params[:q] + "%")
+    if @spot
+      render "api/spots/search"
+    else
+      render json: @spot.errors.full_messages, status: 422
+    end
+  end
+
   def destroy
     @spot = Spot.find(params[:id])
     if current_user.id == @spot.host_id
       @spot.destroy
-      render "api/dashboard"
+      render "api/spots/spot"
     else
       render json ["You can not do that."]
     end

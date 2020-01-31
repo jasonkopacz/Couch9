@@ -28,6 +28,7 @@ const App = () => {
         <Route path="/spots/edit" component={EditSpotContainer}/>
         <Route path="/spots/:spot_id" component={SpotShowContainer}/>
         <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
+        <Route path="/api/spots/search" component={DashboardContainer} />
       </Switch>
     </section>
 

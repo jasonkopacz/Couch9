@@ -6,7 +6,6 @@ import { openModal } from '../../actions/modal_actions';
 import { fetchBookings } from '../../actions/booking_actions';
 
 const mapStateToProps = ({ session, entities: { users, bookings }, errors }) => {
-  debugger
   return {
     errors: errors.session,
     currentUser: users[session.id],

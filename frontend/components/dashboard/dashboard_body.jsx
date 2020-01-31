@@ -5,14 +5,13 @@ import Modal from '../modal/modal';
 class DashboardBody extends React.Component {
 
   componentDidMount () {
-    debugger
     return this.props.fetchBookings(this.props.currentUser.id)
   }
 
 
   render() {
-    const { bookings } = this.props;
     debugger
+    const { bookings } = this.props;
     if (bookings.length === 0) return null;
     const bookingItems = bookings.map((booking, id) => {
       const word = booking.number_of_travelers !== 1 ? 'Travelers' : 'Traveler';
@@ -30,6 +29,7 @@ class DashboardBody extends React.Component {
         </div>
       )
     })
+    debugger
     return (
       <main className="dashboard">
         <div className="left-column-wrapper">
@@ -85,10 +85,12 @@ class DashboardBody extends React.Component {
              <div className="host-search">
                <h3>Find hosts wherever I'm going:</h3>
               <div className="searchbar">
-                <button>
-                  <img src={window.search} />
-                </button>
-                <input type="text" placeholder="Where are you going?" />
+                <form action="/api/search">
+                  <button>
+                    <img src={window.search} />
+                  </button>
+                  <input type="text" name="q" placeholder="Where are you going?" />
+                </form>
               </div>
              </div>
           </section>
