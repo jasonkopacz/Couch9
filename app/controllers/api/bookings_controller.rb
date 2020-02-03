@@ -14,7 +14,11 @@ class Api::BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.all
+    debugger
+    @user = User.find(params[:user_id])
+    debugger
+    @bookings = Booking.where("user_id = ?", @user.id)
+    debugger
   end
 
   def destroy

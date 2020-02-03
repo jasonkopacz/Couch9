@@ -14,8 +14,7 @@ class DashboardBody extends React.Component {
   }
 
   componentDidMount () {  
-    // const results = this.props.searchQuery("New");
-    // console.log(results);
+    debugger
     return this.props.fetchBookings(this.props.currentUser.id)
   }
 
@@ -30,6 +29,7 @@ class DashboardBody extends React.Component {
 
   render() {
     const { bookings } = this.props;
+    debugger
     if (bookings.length === 0) return null;
     const bookingItems = bookings.map((booking, id) => {
       const word = booking.number_of_travelers !== 1 ? 'Travelers' : 'Traveler';
