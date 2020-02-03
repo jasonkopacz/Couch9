@@ -1,7 +1,6 @@
 import { RECEIVE_CURRENT_BOOKING, RECEIVE_ALL_BOOKINGS } from '../actions/booking_actions';
 
 export default (state = {}, action) => {
-  debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_BOOKING:

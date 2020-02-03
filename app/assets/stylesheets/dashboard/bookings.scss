@@ -1,0 +1,70 @@
+.trip-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 20px;
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.15);
+}
+
+.main-header-booking {
+    padding: 10px;
+    color: #27374c;
+    background-color: #eceff2;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.booking-destination {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 10px 10px 20px;
+    margin-bottom: 5px;
+}
+
+.booking-destination > a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.booking-destination > a:hover {
+    color: unset;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.half {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px;
+    font-size: 1em;
+    color: #34495e;
+}
+
+.num-trav {
+    padding: 10px;
+    font-size: 1em;
+    color: #34495e;
+}
+
+.half > div {
+    width: 45%;
+}
+
+.public {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 10px 10px 10px 20px;
+    margin-bottom: 5px;
+}
+
+.descrip {
+    padding: 10px 10px 10px 20px;
+}

@@ -14,7 +14,6 @@ class DashboardBody extends React.Component {
   }
 
   componentDidMount () {  
-    debugger
     return this.props.fetchBookings(this.props.currentUser.id)
   }
 
@@ -29,22 +28,29 @@ class DashboardBody extends React.Component {
 
   render() {
     const { bookings } = this.props;
-    debugger
-    if (bookings.length === 0) return null;
     const bookingItems = bookings.map((booking, id) => {
+      const ms = new Date(booking.departure_date).getTime() - new Date(booking.arrival_date).getTime();
+      const days = ms / (1000 * 3600 * 24);
+      const nights = days > 1 ? "Nights" : "Night"; 
       const word = booking.number_of_travelers !== 1 ? 'Travelers' : 'Traveler';
       return (
-        <div key={id} className="trip-container">
-          <li key={id} className="trip">
-            <div>Visiting: {booking.destination}</div>
-            <div className="middle">
-              <div>{booking.arrival_date}</div> 
-              <div>{booking.departure_date}</div> 
-              <div>{booking.number_of_travelers} {word}</div> 
-            </div>
-            <div>{booking.trip_description}</div>       
-          </li>
-        </div>
+        <main>
+          <header className="main-header-booking">{booking.destination}</header>
+          <div key={id} className="trip-container">
+            <li key={id} className="trip">
+              <header className="public">Public Trip</header>
+              <div className="booking-destination">Visiting: <a> {booking.destination}</a> </div>
+              <div className="middle">
+                <span className="half">
+                  <div>&#127968; {days} {nights}</div> 
+                  <div>&#128197; {booking.arrival_date} &rarr; {booking.departure_date}</div>
+                </span> 
+                <div className="num-trav">&#x1f9cd; {booking.number_of_travelers} {word}</div> 
+              </div>
+              <div className="descrip">{booking.trip_description}</div>       
+            </li>
+          </div>
+        </main>
       )
     })
     return (
@@ -71,7 +77,7 @@ class DashboardBody extends React.Component {
             </section>
           </div>
         </div>
-        <div className="center-column-wrapper">
+        <div className="center-column-wrapper" id="center-column-wrapper">
           <div className="center-column">
           <section className="destinations">
             <header className="destination-header">
@@ -122,19 +128,6 @@ class DashboardBody extends React.Component {
               <a>My Public Trips &#9654;</a>
               <a>My Couch Requests &#9654;</a>
             </div>
-          </section>
-          <section className="happening">
-              <h2>WHAT'S HAPPENING NEAR:  
-                <a>
-                  {this.props.currentUser.city}
-                </a>
-              </h2>
-          </section>
-          <section className="events">
-            <h2>EVENTS</h2>
-            <div className="event1">Event 1</div>
-            <div className="event2">Event 2</div>
-            <div className="event3">Event 3</div>
           </section>
           </div>
         </div>
