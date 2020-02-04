@@ -1,6 +1,5 @@
 import React from 'react';
 import Tabs from './tabs/tabs';
-import DashboardNav from '../dashboard/dashboard_nav_container';
 
 class ProfileShow extends React.Component {
   constructor(props) {
@@ -18,7 +17,6 @@ class ProfileShow extends React.Component {
     const user = this.state.user;
     return (
         <main>
-        <DashboardNav />
         <main className="profile">
           <div className="left-column-wrapper">
             <div className="left-column">

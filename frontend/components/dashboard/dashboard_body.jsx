@@ -125,8 +125,7 @@ class DashboardBody extends React.Component {
             <div className="trip-mod">
               <a onClick={() => this.props.openModal('booking')}>Create a Public Trip &#9654;</a>
               <Modal />
-              <a>My Public Trips &#9654;</a>
-              <a>My Couch Requests &#9654;</a>
+              <a onClick={() => this.props.history.push('/api/bookings')}>My Public Trips &#9654;</a>
             </div>
           </section>
           </div>

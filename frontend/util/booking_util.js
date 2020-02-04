@@ -6,9 +6,25 @@ export const create = booking => {
   })
 };
 
+export const update = booking => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/users/${booking.user_id}/bookings/${booking.id}/edit`,
+    data: { booking }
+  })
+};
+
+
 export const fetchBookings = userId => {
   return $.ajax({
     method: 'GET',
     url: `/api/users/${userId}/bookings`,
+  })
+}
+
+export const fetchSingleBooking = (user, id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/users/${user.id}/bookings/${id}`,
   })
 }

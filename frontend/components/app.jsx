@@ -4,7 +4,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import CreateFormContainer from './create_account/create_form_container';
 import { Route } from 'react-router-dom';
-import DashboardContainer from './dashboard/dashboard_container';
+import DashboardBodyContainer from './dashboard/dashboard_body_container';
 import SessionFormContainer from './session_form/session_form_container';
 import Profile from './user/profile';
 import CreateSpotContainer from './spot/create_spot_container';
@@ -12,6 +12,8 @@ import SpotShowContainer from './spot/spot_show_container';
 import ProfileShowContainer from './user/profile_show_container';
 import EditSpotContainer from './spot/edit_spot_container';
 import spot_search_index_container from './spot/spot_search_index_container';
+import trip_index_container from './trip/trip_index_container';
+import DashboardNavContainer from './nav/dashboard_nav_container';
 
 
 const App = () => {
@@ -23,15 +25,17 @@ const App = () => {
         <AuthRoute exact path="/" component={SplashContainer}/>
         <AuthRoute exact path="/login" component={SessionFormContainer}/>
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
+        <Route path="/" component={DashboardNavContainer} />
+      </Switch>
         <Route path="/create" component={CreateFormContainer}/>
         <Route path="/api/users" component={Profile}/>
         <Route path="/api/users/:user_id" component={ProfileShowContainer}/>
         <Route path="/spots/new" component={CreateSpotContainer}/>
         <Route path="/spots/edit" component={EditSpotContainer}/>
         <Route path="/spots/:spot_id" component={SpotShowContainer}/>
-        <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
+        <Route path="/api/bookings" component={trip_index_container} />
+        <ProtectedRoute path="/dashboard" component={DashboardBodyContainer}/>
         <Route path="/api/spots/search/" component={spot_search_index_container} />
-      </Switch>
     </section>
 
 )};

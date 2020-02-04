@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class SplashFooter extends React.Component {
+class Footer extends React.Component {
 
   render() {
     return (
@@ -23,4 +23,4 @@ class SplashFooter extends React.Component {
   }
 }
 
-export default SplashFooter;
+export default Footer;
