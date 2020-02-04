@@ -14,7 +14,7 @@ import EditSpotContainer from './spot/edit_spot_container';
 import spot_search_index_container from './spot/spot_search_index_container';
 import trip_index_container from './trip/trip_index_container';
 import DashboardNavContainer from './nav/dashboard_nav_container';
-
+import Footer from './nav/footer';
 
 const App = () => {
 
@@ -25,9 +25,9 @@ const App = () => {
         <AuthRoute exact path="/" component={SplashContainer}/>
         <AuthRoute exact path="/login" component={SessionFormContainer}/>
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
+        <Route exact path="/create" component={CreateFormContainer}/>
         <Route path="/" component={DashboardNavContainer} />
       </Switch>
-        <Route path="/create" component={CreateFormContainer}/>
         <Route path="/api/users" component={Profile}/>
         <Route path="/api/users/:user_id" component={ProfileShowContainer}/>
         <Route path="/spots/new" component={CreateSpotContainer}/>
@@ -36,6 +36,7 @@ const App = () => {
         <Route path="/api/bookings" component={trip_index_container} />
         <ProtectedRoute path="/dashboard" component={DashboardBodyContainer}/>
         <Route path="/api/spots/search/" component={spot_search_index_container} />
+        {/* <Route path="/" component={Footer} /> */}
     </section>
 
 )};

@@ -1,72 +1,15 @@
-/* .global-header {
- position: fixed;
-top: 0;
-width: 100%;
-z-index: 10;
+.global-header {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-header {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
   align-items: center;
-  vertical-align: middle;
-}
-
-.header-links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  vertical-align: middle;
-}
-
-.header-link img {
-  width: 100px;
-  height: 100px;
-  display: block;
-}
-
-.header-links a {
-  align-items: center;
-  vertical-align: middle;
-  margin-left: 15px;
-
-}
-
-.header-links select {
- display: inline-block;
- align-items: center;
- border: 1px solid #e6e6e6;
- color: #ED6504;
- border-radius: 3px;
- padding: 5px 10px;
- text-align: left;
- font-size: 12.5px;
- width: 160px;
- height: 34px;
- font-weight: 340;
- position: relative;
- right: 26.5em;
- background-color: #fff;
-}
-
-.header-link-1 {
-  height: 69px;
-  width: 127px;
-  display: flex;
-  position: relative;
-  right: 19.5em;
-}
-
-.header-link-1:hover, .header-link-2:hover {
-  color: #ED6504;
-}
-
-.header-link-2 {
-  height: 69px;
-  width: 75px;
-  display: flex;
-  position: relative;
-  right: 19.5em;
 }
 
 .header-link-3 {
@@ -79,27 +22,13 @@ z-index: 10;
     font-size: 14px;
     font-weight: bold;
     line-height: 1.5;
-    width: 54px;
-    height: 36px;
     padding: 8px 12px;
     text-align: center;
     width: 30px;
     height: 20px;    
 }
 
-.header-link-3-body {
-  height: 69px;
-  width: 54px;
-  display: flex;
-  position: relative;
-  right: 20.5em;
-  top: 15px;
-  margin-right: 3px;
-}
-
 .header-link-4 {
-  height: 30px;
-  width: 50px;
   background-color: white;
   border: 1px solid #287FB8;
   color: #287FB8;
@@ -115,11 +44,7 @@ z-index: 10;
   height: 20px;
 }
 
-.header-link-4-body {
-  height: 66px;
-  width: 86px;
-  display: flex;
-  position: relative;
-  right: 20em;
-  top: 15px;
-} */
+
+.session-buttons-header > span {
+  margin: 10px;
+}

@@ -1,9 +1,11 @@
 .dashboard {
+  // height: 100vh;
   background-color: #F1EFEA;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 65px;
+  box-sizing: border-box;
+  // margin-top: 65px;
 }
 
 .left-column-wrapper {
@@ -211,22 +213,24 @@
   width: 50%;
 }
 
-.searchbar button {
-  position: relative;
-  left: 29em;
-  top: -.5em;
+.searchbar > form {
+  display: flex;
+  width: 100%;
+}
+
+.mag-glass {
   width: 45px;
   height: 45px;
   z-index: 1;
 }
 
-.searchbar input {
-  position: relative;
-  bottom: 2.5em;
-  left: 1em;
-  font-size: 16px;
-  width: 100%;
-}
+// .searchbar input {
+//   position: relative;
+//   bottom: 2.5em;
+//   left: 1em;
+//   font-size: 16px;
+//   width: 100%;
+// }
 
 .bookings {
   border-bottom: 2px solid rgba(0,0,0,0.15);

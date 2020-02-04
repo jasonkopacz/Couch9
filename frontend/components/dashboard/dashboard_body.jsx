@@ -110,7 +110,7 @@ class DashboardBody extends React.Component {
               <div className="searchbar">
                 <form onSubmit={this.handleSubmit}>
                   <button type="submit">
-                    <img src={window.search} />
+                    <img className="mag-glass" src={window.search} />
                   </button>
                   <input type="text" name="q" id="searchQuery" placeholder="Where are you going?" />
                 </form>
