@@ -39,7 +39,7 @@ class Booking extends React.Component {
       </ul>
     );
   }
-
+  
   render() {
     return (
       <main>
@@ -65,21 +65,25 @@ class Booking extends React.Component {
             </label>
             <br />
             <div className="dates">
-                <h2>Arrival Date</h2>
-              <label className="date-label">
-                  <input type="date" id="start" name="booking-start"
-                    max="2022-12-31" onChange={this.update('arrival_date')}/>
-              </label>
+              <span className="arrival">
+                  <h2>Arrival Date</h2>
+                <label className="date-label">
+                    <input type="date" id="start" name="booking-start"
+                      max="2022-12-31" onChange={this.update('arrival_date')}/>
+                </label>
+              </span>
               <br />
-                <h2>Departure Date</h2>
-              <label>
-                  <input type="date" id="end" name="booking-end"
-                    min={this.state.arrival_date} max="2022-12-31"
-                    onChange={this.update('departure_date')}/>
-              </label>
+              <span className="departure">
+                  <h2>Departure Date</h2>
+                <label className="date-label">
+                    <input type="date" id="end" name="booking-end"
+                      min={this.state.arrival_date} max="2022-12-31"
+                      onChange={this.update('departure_date')}/>
+                </label>
+              </span>
             </div>
             <br />
-              <h2>Number of Travelers</h2>
+              <h2 className="h2">Number of Travelers</h2>
             <label className="travelers">
                 <select name="travel" id="day" required
                   onChange={this.update('number_of_travelers')}>
@@ -100,14 +104,15 @@ class Booking extends React.Component {
                     <option value="15">15</option>
                 </select>
             </label>
-              <h2>Trip Description</h2>
+              <h2 className="h2">Trip Description</h2>
             <label className="desc">
-              <textarea rows="10" cols="50" onChange={this.update('trip_description')}>
+              <textarea className="tarea" rows="10" cols="50" onChange={this.update('trip_description')}>
 
               </textarea>
             </label>
-            <input className="booking-submit" type="submit" value="Create"></input>
           </div>
+          <input className="booking-submit" type="submit" value="Create"></input>
+          <button onClick={this.props.closeModal}>Cancel</button>
         </form>
       </main>
     );
