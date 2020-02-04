@@ -16,7 +16,7 @@ class DashboardNav extends React.Component {
   render() {
     return (
       <header className="dashboard-header">
-        <div>
+        <div className="nav-container">
           <div className="left-nav">
             <div className="logo">
               <Link to="/dashboard" className="header-link">
@@ -32,8 +32,8 @@ class DashboardNav extends React.Component {
             <div className="topnav">
               <button>
                 <img src={window.search}/>
+                <input type="text" placeholder="Where are you going?"/>
               </button>
-              <input type="text" placeholder="Where are you going?"/>
             </div>
             </fieldset>
             </div>

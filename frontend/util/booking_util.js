@@ -22,9 +22,10 @@ export const fetchBookings = userId => {
   })
 }
 
-export const fetchSingleBooking = (user, id) => {
+export const fetchSingleBooking = (user_id, booking_id) => {
+  debugger
   return $.ajax({
     method: 'GET',
-    url: `/api/users/${user.id}/bookings/${id}`,
+    url: `/api/users/${user_id}/bookings/${booking_id}/edit`,
   })
 }

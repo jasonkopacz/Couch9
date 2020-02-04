@@ -1,4 +1,4 @@
-.global-header {
+/* .global-header {
  position: fixed;
 top: 0;
 width: 100%;
@@ -23,9 +23,6 @@ z-index: 10;
   width: 100px;
   height: 100px;
   display: block;
-  position: absolute;
-  top: -1em;
-  left: 17.6em;
 }
 
 .header-links a {
@@ -125,4 +122,4 @@ z-index: 10;
   position: relative;
   right: 20em;
   top: 15px;
-}
+} */

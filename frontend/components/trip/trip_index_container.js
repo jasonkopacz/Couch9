@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => {
     clearErrors: () => dispatch(clearErrors()),
     openModal: (modal) => dispatch(openModal(modal)),
     fetchBookings: (id) => dispatch(fetchBookings(id)),
-    // fetchSingleBooking: (user, id) => dispatch(fetchSingleBooking(user, id))
+    fetchSingleBooking: (user, id) => dispatch(fetchSingleBooking(user, id))
   };
 };
 

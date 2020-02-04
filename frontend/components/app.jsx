@@ -32,7 +32,7 @@ const App = () => {
         <Route path="/api/users/:user_id" component={ProfileShowContainer}/>
         <Route path="/spots/new" component={CreateSpotContainer}/>
         <Route path="/spots/edit" component={EditSpotContainer}/>
-        <Route path="/spots/:spot_id" component={SpotShowContainer}/>
+        <Route exact path="/spots/:spot_id" component={SpotShowContainer}/>
         <Route path="/api/bookings" component={trip_index_container} />
         <ProtectedRoute path="/dashboard" component={DashboardBodyContainer}/>
         <Route path="/api/spots/search/" component={spot_search_index_container} />

@@ -15,17 +15,16 @@ class TripIndex extends React.Component {
     //     return this.props.fetchBookings(this.props.currentUser.id)
     // }
 
-    // handleEdit(e) {
-    //     e.preventDefault();
-    //     debugger
-    //     const booking = this.props.fetchSingleBooking(this.props.currentUser.id, id);
-    //     debugger
-    //     this.setState({
-    //         booking
-    //     })
-    //     debugger
-    //     this.props.openModal("edit_booking")
-    // }
+    handleEdit(id) {
+        debugger
+        const booking = this.props.fetchSingleBooking(this.props.currentUser.id, id);
+        debugger
+        this.setState({
+            booking
+        })
+        debugger
+        this.props.openModal("edit_booking")
+    }
 
     render () {
       const { bookings } = this.props;
@@ -46,7 +45,7 @@ class TripIndex extends React.Component {
               <div className="descrip">{booking.trip_description}</div>       
             </li>
             <div>
-                {/* <a onClick={this.handleEdit}>Edit</a> */}
+                <a onClick={this.handleEdit(booking.id)}>Edit</a>
             </div>
           </div>
         </main>
