@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import SpotSearchIndex from './spot_search_index';
+import { clearErrors } from '../../actions/spot_actions';
 
 const mapStateToProps = (ownProps, state) => {
   return {
@@ -13,7 +14,8 @@ const mapStateToProps = (ownProps, state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    clearSearch: () => dispatch(clearSearch())
+    clearSearch: () => dispatch(clearSearch()),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

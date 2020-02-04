@@ -8,16 +8,17 @@ class TripIndex extends React.Component {
         this.state = {
 
         }
-        // this.handleEdit = this.handleEdit.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
     // componentDidMount() {
     //     return this.props.fetchBookings(this.props.currentUser.id)
     // }
 
-    handleEdit(id) {
+    handleEdit(e) {
+        e.preventDefault();
         debugger
-        const booking = this.props.fetchSingleBooking(this.props.currentUser.id, id);
+        const booking = this.props.fetchSingleBooking(this.props.currentUser.id, e.target.value);
         debugger
         this.setState({
             booking
@@ -45,7 +46,7 @@ class TripIndex extends React.Component {
               <div className="descrip">{booking.trip_description}</div>       
             </li>
             <div>
-                <a onClick={this.handleEdit(booking.id)}>Edit</a>
+                <button onClick={this.handleEdit} value={booking.id}>Edit</button>
             </div>
           </div>
         </main>
