@@ -111,8 +111,10 @@ class Booking extends React.Component {
               </textarea>
             </label>
           </div>
-          <input className="booking-submit" type="submit" value="Create"></input>
-          <button onClick={this.props.closeModal}>Cancel</button>
+          <section className="booking-buttons">
+            <button className="booking-cancel" onClick={this.props.closeModal}>Cancel</button>
+            <input className="booking-submit" type="submit" value="Create"></input>
+          </section>
         </form>
       </main>
     );

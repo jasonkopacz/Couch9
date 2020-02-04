@@ -117,4 +117,37 @@
 
 .desc {
   padding-left: 20px;
+  margin: 10px 0px;
+}
+
+.booking-buttons {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  height: 50px;
+}
+
+.booking-cancel, .booking-submit {
+  width: 90px;
+  height: 45px;
+  border-radius: 5px;
+  margin: 0px 5px;
+}
+
+.booking-cancel {
+  text-align: center;
+  background-color: #afb7c3;
+  border: 1px solid #afb7c3;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.booking-submit {
+  text-align: center;
+  background-color: #ED6504;
+  border: 1px solid #ED6504;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
 }
