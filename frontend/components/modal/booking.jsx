@@ -44,15 +44,20 @@ class Booking extends React.Component {
     return (
       <main>
         <form onSubmit={this.handleSubmit} className="booking-box">
-          <header className="login-header">Create a Public Trip</header>
-          <br />
-          <div onClick={this.props.closeModal} className="close-x">X</div>
           <div className="booking-error">{this.renderErrors()}</div>
-
+          <div className="booking-header">
+            <div onClick={this.props.closeModal} className="close-x">X</div>
+            <header className="public-header">Create a Public Trip</header>
+            <br />
+          </div>
+          <div className="subheader">
+            <h2>Post your trip details so that you can be discovered by local hosts, event organizers, or other travelers</h2>
+          </div>
           <div className="booking-form">
             <br />
-            <label>
-                <input required type="destination"
+              <h2>Destination</h2>
+            <label className="dest">
+                <input required type="text"
                   value={this.state.destination}
                   onChange={this.update('destination')}
                   className="booking-input-destination"
@@ -60,11 +65,13 @@ class Booking extends React.Component {
             </label>
             <br />
             <div className="dates">
-              <label>
+                <h2>Arrival Date</h2>
+              <label className="date-label">
                   <input type="date" id="start" name="booking-start"
                     max="2022-12-31" onChange={this.update('arrival_date')}/>
               </label>
               <br />
+                <h2>Departure Date</h2>
               <label>
                   <input type="date" id="end" name="booking-end"
                     min={this.state.arrival_date} max="2022-12-31"
@@ -72,6 +79,7 @@ class Booking extends React.Component {
               </label>
             </div>
             <br />
+              <h2>Number of Travelers</h2>
             <label className="travelers">
                 <select name="travel" id="day" required
                   onChange={this.update('number_of_travelers')}>
@@ -92,9 +100,12 @@ class Booking extends React.Component {
                     <option value="15">15</option>
                 </select>
             </label>
+              <h2>Trip Description</h2>
+            <label className="desc">
               <textarea rows="10" cols="50" onChange={this.update('trip_description')}>
 
               </textarea>
+            </label>
             <input className="booking-submit" type="submit" value="Create"></input>
           </div>
         </form>
