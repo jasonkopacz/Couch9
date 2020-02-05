@@ -34,7 +34,7 @@ class TripIndex extends React.Component {
         <main>
           <div key={id} className="trip-container">
             <li key={id} className="trip">
-              <div className="booking-destination"><h2>Trip to {booking.destination}</h2></div>
+              <div className="booking-destination"><h2 id="bd">Trip to {booking.destination}</h2></div>
               <div className="middle">
                 <span className="half">
                   <div>{booking.arrival_date} - {booking.departure_date} ({days} {nights})</div> 
@@ -43,7 +43,7 @@ class TripIndex extends React.Component {
               <div className="descrip">{booking.trip_description}</div>       
             </li>
             <div>
-                <button onClick={this.handleEdit} value={booking.id}>Edit</button>
+                <button className="edit-booking" onClick={this.handleEdit} value={booking.id}>Edit</button>
             </div>
           </div>
         </main>
@@ -51,10 +51,11 @@ class TripIndex extends React.Component {
     })
         return (
             <main className="trip-index">
+              <div className="left-column-booking"></div>
               <div className="center-column-wrapper" id="center-column-wrapper">
                 <div className="center-column">
                 <section className="bookings">
-                    <h2>&#9992; PUBLIC TRIPS</h2>
+                    <h2 id="bookings-public">&#9992; PUBLIC TRIPS</h2>
                   <div className="preferences">
                     {bookingItems}
                   </div>
@@ -63,12 +64,14 @@ class TripIndex extends React.Component {
               </div>
               <div className="right-column-wrapper">
                 <div className="right-column">
-                <div className="trip-mod">
-                    <a onClick={() => this.props.openModal('booking')}>Create a Public Trip &#9654;</a>
+                <div className="trip-mod-index">
+                  <h3>CREATE A PUBLIC TRIP</h3>
+                    <a onClick={() => this.props.openModal('booking')}>New Public Trip</a>
                     <Modal />
                   </div>
                 </div>
               </div>
+              <div className="right-column-booking"></div>
             </main>
           )
     }

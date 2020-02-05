@@ -6,7 +6,8 @@ class EditSpot extends React.Component {
     const spot = this.props.currentUser.spot || {};
 
     this.state = {
-      host_id: this.props.currentUser.id,
+      id: spot.id,
+      host_id: spot.host_id,
       sun: false,
       mon: false,
       tue: false,
@@ -30,6 +31,7 @@ class EditSpot extends React.Component {
       public_transportation: spot.public_transportation || "",
       what_i_can_share_with_guests: spot.what_i_can_share_with_guests || "",
       additional_information: spot.additional_information || "",
+      location_name: spot.location_name || ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -56,6 +58,10 @@ class EditSpot extends React.Component {
     $('#error').addClass('hidden')
   }
 
+  // componentDidMount() {
+  //   this.props.requestSpot(this.props.currentUser.spot.id)
+  // }
+
   // componentWillReceiveProps(nextProps) {
   //   return this.setState({ inputVal: nextProps.publication.document_title })
   // }
@@ -63,7 +69,8 @@ class EditSpot extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const createForm = Object.assign({}, this.state);
-    this.props.processForm(createForm)
+    debugger
+    this.props.processForm(createForm.id, createForm)
       .then(() => this.props.history.push(`/api/users`))
   };
 

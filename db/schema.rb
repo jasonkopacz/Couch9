@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_31_183814) do
+ActiveRecord::Schema.define(version: 2020_02_05_213355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,13 @@ ActiveRecord::Schema.define(version: 2020_01_31_183814) do
     t.text "what_i_can_share_with_guests"
     t.text "additional_information"
     t.string "location_name"
+    t.boolean "sun"
+    t.boolean "mon"
+    t.boolean "tue"
+    t.boolean "wed"
+    t.boolean "thu"
+    t.boolean "fri"
+    t.boolean "sat"
     t.index ["location_id"], name: "index_spots_on_location_id"
   end
 

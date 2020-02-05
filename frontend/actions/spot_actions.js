@@ -8,6 +8,7 @@ export const GET_SEARCH_RESULTS = 'GET_SEARCH_RESULTS';
 export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
 
 export const receiveCurrentSpot = payload => {
+  debugger
   return {
     type: RECEIVE_CURRENT_SPOT,
     payload
@@ -22,6 +23,18 @@ export const create = spot => dispatch => {
   err => (
     dispatch(receiveErrors(err.responseJSON))
   ));
+};
+
+export const update = (id, data) => dispatch => {
+  debugger
+  return APIUtil.update(id, data).then(payload => {
+    debugger
+    dispatch(receiveCurrentSpot(payload));
+    return payload;
+  },
+    err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ));
 };
 
 export const receiveErrors = errors => {

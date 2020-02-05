@@ -28,13 +28,15 @@ class Api::SpotsController < ApplicationController
       @spot.destroy
       render "api/spots/spot"
     else
-      render json ["You can not do that."]
+      render json: ["You can not do that."]
     end
   end
 
    def update
     if logged_in?
+      debugger
       @spot = Spot.find(params[:id])
+      debugger
       @spot.update(spot_params)
       render "api/spots/show"
     else
@@ -46,12 +48,16 @@ class Api::SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:host_id, :location_id, :max_guests,
-    :last_minute_requests, :preferred_gender, :kid_friendly, :pet_friendly, :smoking_allowed,
-    :has_pets, :has_children, :smoking_at_home, :wheelchair_accessible, :sleeping_arrangements,
-    :more_details, :request_preferences, :description_of_sleeping_arrangements,
-    :roommate_situation, :public_transportation, :what_i_can_share_with_guests, :additional_information,
-    available_nights: [:id, :value, :is_checked])
+    debugger
+    params.require(:spot).permit(
+      :id, :host_id, :location_id, :sun, :mon, :tue, 
+      :wed, :thu, :fri, :sat, :max_guests,
+      :last_minute_requests, :preferred_gender, :kid_friendly, :pet_friendly, :smoking_allowed,
+      :has_pets, :has_children, :smoking_at_home, :wheelchair_accessible, :sleeping_arrangements
+      :more_details, :request_preferences, :description_of_sleeping_arrangements,
+      :roommate_situation, :public_transportation, :what_i_can_share_with_guests, :additional_information,
+      :location_name
+    )
   end
 end
 

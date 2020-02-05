@@ -45,7 +45,7 @@ class DashboardBody extends React.Component {
                   <div>&#127968; {days} {nights}</div> 
                   <div>&#128197; {booking.arrival_date} &rarr; {booking.departure_date}</div>
                 </span> 
-                <div className="num-trav">&#x1f9cd; {booking.number_of_travelers} {word}</div> 
+                <div className="num-trav">👤 {booking.number_of_travelers} {word}</div> 
               </div>
               <div className="descrip">{booking.trip_description}</div>       
             </li>
