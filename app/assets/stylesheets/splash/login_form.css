@@ -15,6 +15,7 @@
   transform: translate(-50%, -50%);
   max-height: calc(100vh - 50px);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .before {

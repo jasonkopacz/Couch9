@@ -14,7 +14,6 @@ export const fetchSpot = id => (
 );
 
 export const getData = (search) => {
-  debugger
   return $.ajax({
     method: 'GET',
     url: `api/search/`,

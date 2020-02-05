@@ -24,7 +24,7 @@ class Booking extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const booking = Object.assign({}, this.state);
-    this.props.create(booking).then(this.props.closeModal);
+    this.props.create(booking).then(() => this.props.closeModal());
   }
 
 

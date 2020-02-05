@@ -3,7 +3,6 @@ import { RECEIVE_CURRENT_SPOT, REQUEST_SPOT, GET_SEARCH_RESULTS, CLEAR_SEARCH_RE
 
 export default (state = {}, action) => {
   Object.freeze(state);
-  debugger
   switch (action.type) {
     case RECEIVE_CURRENT_SPOT:
       return Object.assign({}, state, action.payload.spots);

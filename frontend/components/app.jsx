@@ -20,7 +20,7 @@ const App = () => {
 
 
   return (
-    <section className="all">
+    <>
       <Switch>
         <AuthRoute exact path="/" component={SplashContainer}/>
         <AuthRoute exact path="/login" component={SessionFormContainer}/>
@@ -28,16 +28,16 @@ const App = () => {
         <Route exact path="/create" component={CreateFormContainer}/>
         <Route path="/" component={DashboardNavContainer} />
       </Switch>
-        <ProtectedRoute exact path="/api/users" component={Profile}/>
-        <ProtectedRoute path="/dashboard" component={DashboardBodyContainer}/>
-        <Route path="/api/users/:user_id" component={ProfileShowContainer}/>
-        <ProtectedRoute path="/spots/new" component={CreateSpotContainer}/>
-        <ProtectedRoute exact path="/spots/edit" component={EditSpotContainer}/>
-        {/* <Route exact path="/spots/:spot_id" component={SpotShowContainer}/> */}
-        <ProtectedRoute path="/api/bookings" component={trip_index_container} />
-        <ProtectedRoute path="/api/spots/search/" component={spot_search_index_container} />
-        <Route path="/" component={Footer} />
-    </section>
+      <ProtectedRoute exact path="/api/users" component={Profile}/>
+      <ProtectedRoute path="/dashboard" component={DashboardBodyContainer}/>
+      <Route exact path="/api/users/:user_id" component={ProfileShowContainer}/>
+      <ProtectedRoute exact path="/spots/new" component={CreateSpotContainer}/>
+      <ProtectedRoute exact path="/spots/edit" component={EditSpotContainer}/>
+      {/* <Route exact path="/spots/:spot_id" component={SpotShowContainer}/> */}
+      <ProtectedRoute exact path="/api/bookings" component={trip_index_container} />
+      <ProtectedRoute exact path="/api/spots/search/" component={spot_search_index_container} />
+      <Route path="/" component={Footer} />
+    </>
 
 )};
 

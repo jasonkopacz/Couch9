@@ -50,9 +50,7 @@ export const getSpot = (spot) => ({
 });
 
 export const searchQuery =  (search) => dispatch => {
-  debugger
   return APIUtil.getData(search).then(payload => {
-    debugger
     dispatch(getSearchResults(payload));
   },
     err => {
@@ -62,7 +60,6 @@ export const searchQuery =  (search) => dispatch => {
 };
 
 export const getSearchResults = (searchResults) => {
-  debugger
   return {
     type: GET_SEARCH_RESULTS,
     searchResults
