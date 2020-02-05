@@ -1,15 +1,11 @@
-.footer {
+footer {
   display: flex;
   justify-content: space-between;
-  width: 900px;
-  margin: 0 auto 50px auto;
+  width: 100vw;
   background: #fff;
   color: #aaa;
   font-size: 14px;
-  border: 1px solid #ccc;
-  border-top: 0;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border: 1px solid lightgray;
 }
 
 .main-footer {
@@ -30,5 +26,10 @@
   height: 75px;
   align-items: center;
   margin: auto;
+}
+
+.footer-icons > a > img {
+  width: 50px;
+  height: 50px;
 }
 

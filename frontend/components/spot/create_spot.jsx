@@ -1,5 +1,4 @@
 import React from 'react';
-import DashboardNav from '../dashboard/dashboard_nav_container';
 
 class CreateSpot extends React.Component {
   constructor(props) {
@@ -94,7 +93,6 @@ class CreateSpot extends React.Component {
   render() {
     return(
       <main>
-        <DashboardNav/>
         <article className="spot-page">
           <form className="create-spot-form" onSubmit={this.handleSubmit}>
 

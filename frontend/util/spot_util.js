@@ -13,6 +13,16 @@ export const fetchSpot = id => (
   })
 );
 
+export const getData = (search) => {
+  debugger
+  return $.ajax({
+    method: 'GET',
+    url: `api/search/`,
+    dataType: "json",
+    data: `q=${search}`
+  });
+};
+
 
 // export const edit = spot => {
 //   return $.ajax({

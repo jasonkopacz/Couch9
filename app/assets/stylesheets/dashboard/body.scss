@@ -1,10 +1,20 @@
+html {
+  overflow-x: hidden !important;
+}
+
 .dashboard {
+  max-height: calc(100vh - 50px);
   background-color: #F1EFEA;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 65px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 70px;
 }
+
+.dashboard::-webkit-scrollbar { width: 0 !important }
+
 
 .left-column-wrapper {
   width: 300px;
@@ -122,8 +132,8 @@
   justify-content: center;
 }
 
-.center-column-wrapper {
-  width: 720px;
+#center-column-wrapper {
+  width: 1600px;
   height: 100%;
   margin: 0 10px;
 }
@@ -211,22 +221,36 @@
   width: 50%;
 }
 
-.searchbar button {
-  position: relative;
-  left: 29em;
-  top: -.5em;
+.searchbar > form {
+  display: flex;
+  width: 100%;
+  height: -webkit-fill-available;
+}
+
+.mag-glass {
   width: 45px;
   height: 45px;
   z-index: 1;
 }
 
-.searchbar input {
-  position: relative;
-  bottom: 2.5em;
-  left: 1em;
-  font-size: 16px;
+.buttonbutton {
+  display: flex;
+  width: 25px;
+  height: 38px;
+  align-items: center;
+}
+
+#searchQuery {
   width: 100%;
 }
+
+// .searchbar input {
+//   position: relative;
+//   bottom: 2.5em;
+//   left: 1em;
+//   font-size: 16px;
+//   width: 100%;
+// }
 
 .bookings {
   border-bottom: 2px solid rgba(0,0,0,0.15);
@@ -243,12 +267,14 @@
   color: #ED6504;
 }
 
-.bookings h2 {
+.bookings > h2 {
   height: 35%;
   border-bottom: 1px solid #e6e6e6;
   color: #27374c;
   font-size: 1em;
   padding: 0 0 0 20px;
+  display: flex;
+  align-items: center;
 }
 
 .upcoming-trips {
@@ -261,14 +287,13 @@
 }
 
 .trip-mod {
-  border-top: 1px solid #e6e6e6;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   height: 30%;
-  margin: 0 90px;
   font-size: 16px;
   color: #287FB8;
+  background-color: white;
 }
 
 .happening {

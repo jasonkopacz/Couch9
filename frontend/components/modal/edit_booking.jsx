@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class Booking extends React.Component {
+class EditBooking extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,7 +24,7 @@ class Booking extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const booking = Object.assign({}, this.state);
-    this.props.create(booking).then(this.props.closeModal);
+    this.props.update(booking).then(this.props.closeModal);
   }
 
 
@@ -39,7 +39,7 @@ class Booking extends React.Component {
       </ul>
     );
   }
-  
+
   render() {
     return (
       <main>
@@ -47,11 +47,8 @@ class Booking extends React.Component {
           <div className="booking-error">{this.renderErrors()}</div>
           <div className="booking-header">
             <div onClick={this.props.closeModal} className="close-x">X</div>
-            <header className="public-header">Create a Public Trip</header>
+            <header className="public-header">Edit My Public Trip</header>
             <br />
-          </div>
-          <div className="subheader">
-            <h2>Post your trip details so that you can be discovered by local hosts, event organizers, or other travelers</h2>
           </div>
           <div className="booking-form">
             <br />
@@ -65,27 +62,24 @@ class Booking extends React.Component {
             </label>
             <br />
             <div className="dates">
-              <span className="arrival">
-                  <h2>Arrival Date</h2>
-                <label className="date-label">
-                    <input type="date" id="start" name="booking-start"
-                      max="2022-12-31" onChange={this.update('arrival_date')}/>
-                </label>
-              </span>
+                <h2>Arrival Date</h2>
+              <label className="date-label">
+                  <input value={this.state.arrival_date} type="date" id="start" name="booking-start"
+                    max="2022-12-31" onChange={this.update('arrival_date')}/>
+              </label>
               <br />
-              <span className="departure">
-                  <h2>Departure Date</h2>
-                <label className="date-label">
-                    <input type="date" id="end" name="booking-end"
-                      min={this.state.arrival_date} max="2022-12-31"
-                      onChange={this.update('departure_date')}/>
-                </label>
-              </span>
+                <h2>Departure Date</h2>
+              <label>
+                  <input value={this.state.departure_date} type="date" id="end" name="booking-end"
+                    min={this.state.arrival_date} max="2022-12-31"
+                    onChange={this.update('departure_date')}/>
+              </label>
             </div>
             <br />
-              <h2 className="h2">Number of Travelers</h2>
+              <h2>Number of Travelers</h2>
             <label className="travelers">
                 <select name="travel" id="day" required
+                value={this.state.number_of_travelers}
                   onChange={this.update('number_of_travelers')}>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -104,21 +98,18 @@ class Booking extends React.Component {
                     <option value="15">15</option>
                 </select>
             </label>
-              <h2 className="h2">Trip Description</h2>
+              <h2>Trip Description</h2>
             <label className="desc">
-              <textarea className="tarea" rows="10" cols="50" onChange={this.update('trip_description')}>
+              <textarea value={this.state.trip_description} rows="10" cols="50" onChange={this.update('trip_description')}>
 
               </textarea>
             </label>
-          </div>
-          <section className="booking-buttons">
-            <button className="booking-cancel" onClick={this.props.closeModal}>Cancel</button>
             <input className="booking-submit" type="submit" value="Create"></input>
-          </section>
+          </div>
         </form>
       </main>
     );
   }
 }
 
-export default withRouter(Booking);
+export default withRouter(EditBooking);

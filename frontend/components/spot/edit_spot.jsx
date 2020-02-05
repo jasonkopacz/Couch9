@@ -1,5 +1,4 @@
 import React from 'react';
-import DashboardNav from '../dashboard/dashboard_nav_container';
 
 class EditSpot extends React.Component {
   constructor(props) {
@@ -100,7 +99,6 @@ class EditSpot extends React.Component {
   render() {
     return (
       <main>
-        <DashboardNav />
         <article className="spot-page">
           <form className="create-spot-form" onSubmit={this.handleSubmit}>
 

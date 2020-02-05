@@ -4,9 +4,9 @@ import DashboardBody from './dashboard_body';
 import { clearErrors } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 import { fetchBookings } from '../../actions/booking_actions';
+import { searchQuery } from '../../actions/spot_actions';
 
 const mapStateToProps = ({ session, entities: { users, bookings }, errors }) => {
-  debugger
   return {
     errors: errors.session,
     currentUser: users[session.id],
@@ -19,7 +19,8 @@ const mapDispatchToProps = dispatch => {
     openModal: (modal) => dispatch(openModal(modal)),
     logout: () => dispatch(logout()),
     clearErrors: (errors) => dispatch(clearErrors(errors)),
-    fetchBookings: (id) => dispatch(fetchBookings(id))
+    fetchBookings: (id) => dispatch(fetchBookings(id)),
+    searchQuery: (search) => dispatch(searchQuery(search))
   };
 };
 

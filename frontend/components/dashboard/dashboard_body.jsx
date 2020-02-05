@@ -1,33 +1,56 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Modal from '../modal/modal';
+import SpotSearchIndex from '../spot/spot_search_index';
 
 class DashboardBody extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchResults: {}
+    };
 
-  componentDidMount () {
-    debugger
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount () {  
     return this.props.fetchBookings(this.props.currentUser.id)
+  }
+
+  handleSubmit() {
+    const search = document.getElementById('searchQuery').value;
+
+    this.props.searchQuery(search).then(() => {
+      this.props.history.push("/api/spots/search");}
+      );
   }
 
 
   render() {
     const { bookings } = this.props;
-    debugger
-    if (bookings.length === 0) return null;
     const bookingItems = bookings.map((booking, id) => {
+      const ms = new Date(booking.departure_date).getTime() - new Date(booking.arrival_date).getTime();
+      const days = ms / (1000 * 3600 * 24);
+      const nights = days > 1 ? "Nights" : "Night"; 
       const word = booking.number_of_travelers !== 1 ? 'Travelers' : 'Traveler';
       return (
-        <div className="trip-container">
-          <li key={id} className="trip">
-            <div>Visiting: {booking.destination}</div>
-            <div className="middle">
-              <div>{booking.arrival_date}</div> 
-              <div>{booking.departure_date}</div> 
-              <div>{booking.number_of_travelers} {word}</div> 
-            </div>
-            <div>{booking.trip_description}</div>       
-          </li>
-        </div>
+        <main>
+          <header className="main-header-booking">{booking.destination}</header>
+          <div key={id} className="trip-container">
+            <li key={id} className="trip">
+              <header className="public">Public Trip</header>
+              <div className="booking-destination">Visiting: <a> {booking.destination}</a> </div>
+              <div className="middle">
+                <span className="half">
+                  <div>&#127968; {days} {nights}</div> 
+                  <div>&#128197; {booking.arrival_date} &rarr; {booking.departure_date}</div>
+                </span> 
+                <div className="num-trav">&#x1f9cd; {booking.number_of_travelers} {word}</div> 
+              </div>
+              <div className="descrip">{booking.trip_description}</div>       
+            </li>
+          </div>
+        </main>
       )
     })
     return (
@@ -54,7 +77,7 @@ class DashboardBody extends React.Component {
             </section>
           </div>
         </div>
-        <div className="center-column-wrapper">
+        <div className="center-column-wrapper" id="center-column-wrapper">
           <div className="center-column">
           <section className="destinations">
             <header className="destination-header">
@@ -85,10 +108,13 @@ class DashboardBody extends React.Component {
              <div className="host-search">
                <h3>Find hosts wherever I'm going:</h3>
               <div className="searchbar">
-                <button>
-                  <img src={window.search} />
-                </button>
-                <input type="text" placeholder="Where are you going?" />
+                <form onSubmit={this.handleSubmit}>
+                  <button className="buttonbutton" type="submit">
+                    &#128269;
+                    {/* <img className="mag-glass" src={window.search} /> */}
+                  </button>
+                  <input type="text" name="q" id="searchQuery" placeholder="Where are you going?" />
+                </form>
               </div>
              </div>
           </section>
@@ -100,22 +126,8 @@ class DashboardBody extends React.Component {
             <div className="trip-mod">
               <a onClick={() => this.props.openModal('booking')}>Create a Public Trip &#9654;</a>
               <Modal />
-              <a>My Public Trips &#9654;</a>
-              <a>My Couch Requests &#9654;</a>
+              <a onClick={() => this.props.history.push('/api/bookings')}>My Public Trips &#9654;</a>
             </div>
-          </section>
-          <section className="happening">
-              <h2>WHAT'S HAPPENING NEAR:  
-                <a>
-                  {this.props.currentUser.city}
-                </a>
-              </h2>
-          </section>
-          <section className="events">
-            <h2>EVENTS</h2>
-            <div className="event1">Event 1</div>
-            <div className="event2">Event 2</div>
-            <div className="event3">Event 3</div>
           </section>
           </div>
         </div>

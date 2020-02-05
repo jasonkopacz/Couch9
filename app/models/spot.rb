@@ -26,6 +26,7 @@
 #  public_transportation                :text
 #  what_i_can_share_with_guests         :text
 #  additional_information               :text
+#  location_name                        :string
 #
 
 class Spot < ApplicationRecord
