@@ -1,12 +1,20 @@
+html {
+  overflow-x: hidden !important;
+}
+
 .dashboard {
-  // height: 100vh;
+  max-height: calc(100vh - 50px);
   background-color: #F1EFEA;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  box-sizing: border-box;
-  // margin-top: 65px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 70px;
 }
+
+.dashboard::-webkit-scrollbar { width: 0 !important }
+
 
 .left-column-wrapper {
   width: 300px;
@@ -265,14 +273,13 @@
 }
 
 .trip-mod {
-  border-top: 1px solid #e6e6e6;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   height: 30%;
-  margin: 0 90px;
   font-size: 16px;
   color: #287FB8;
+  background-color: white;
 }
 
 .happening {

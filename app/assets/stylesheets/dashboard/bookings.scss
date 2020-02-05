@@ -68,3 +68,12 @@
 .descrip {
     padding: 10px 10px 10px 20px;
 }
+
+.trip-index {
+  max-height: calc(100vh - 50px);
+  background-color: #F1EFEA;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 70px;
+}

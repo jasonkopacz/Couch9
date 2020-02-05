@@ -2,14 +2,10 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 100vw;
-  margin: 0 auto 50px auto;
   background: #fff;
   color: #aaa;
   font-size: 14px;
-  border: 1px solid #ccc;
-  border-top: 0;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border: 1px solid lightgray;
 }
 
 .main-footer {

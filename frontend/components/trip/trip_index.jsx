@@ -53,7 +53,7 @@ class TripIndex extends React.Component {
       )
     })
         return (
-            <main className="dashboard">
+            <main className="trip-index">
               <div className="center-column-wrapper" id="center-column-wrapper">
                 <div className="center-column">
                 <section className="bookings">

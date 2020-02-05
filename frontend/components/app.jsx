@@ -20,7 +20,7 @@ const App = () => {
 
 
   return (
-    <section>
+    <section className="all">
       <Switch>
         <AuthRoute exact path="/" component={SplashContainer}/>
         <AuthRoute exact path="/login" component={SessionFormContainer}/>
@@ -28,15 +28,15 @@ const App = () => {
         <Route exact path="/create" component={CreateFormContainer}/>
         <Route path="/" component={DashboardNavContainer} />
       </Switch>
-        <Route path="/api/users" component={Profile}/>
+        <Route exact path="/api/users" component={Profile}/>
         <Route path="/api/users/:user_id" component={ProfileShowContainer}/>
         <Route path="/spots/new" component={CreateSpotContainer}/>
-        <Route path="/spots/edit" component={EditSpotContainer}/>
+        <Route exact path="/spots/edit" component={EditSpotContainer}/>
         <Route exact path="/spots/:spot_id" component={SpotShowContainer}/>
         <Route path="/api/bookings" component={trip_index_container} />
         <ProtectedRoute path="/dashboard" component={DashboardBodyContainer}/>
         <Route path="/api/spots/search/" component={spot_search_index_container} />
-        {/* <Route path="/" component={Footer} /> */}
+        <Route path="/" component={Footer} />
     </section>
 
 )};
