@@ -122,16 +122,22 @@
   // vertical-align: -webkit-baseline-middle;
 }
 
-.topnav > form > button {
+.topnav > form {
+  width: -webkit-fill-available;
   display: flex;
-  width: 150px;
-  height: 33px;
 }
 
-.topnav input {
+.topnav > form > button {
+  display: flex;
+  width: 25px;
+  height: 33px;
+  align-items: center;
+}
+
+#searchQueryTop {
   font-size: inherit;
   height: 30px;
-  width: 140px;
+  width: 155px;
 }
 
 .topnav img {

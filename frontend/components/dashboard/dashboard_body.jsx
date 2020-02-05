@@ -109,8 +109,9 @@ class DashboardBody extends React.Component {
                <h3>Find hosts wherever I'm going:</h3>
               <div className="searchbar">
                 <form onSubmit={this.handleSubmit}>
-                  <button type="submit">
-                    <img className="mag-glass" src={window.search} />
+                  <button className="buttonbutton" type="submit">
+                    &#128269;
+                    {/* <img className="mag-glass" src={window.search} /> */}
                   </button>
                   <input type="text" name="q" id="searchQuery" placeholder="Where are you going?" />
                 </form>

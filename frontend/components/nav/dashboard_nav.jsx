@@ -41,9 +41,10 @@ class DashboardNav extends React.Component {
             <div className="topnav">
               <form onSubmit={this.handleSubmit}>
                 <button>
-                  <img src={window.search}/>
-                  <input type="text" name="q" id="searchQuery" placeholder="Where are you going?"/>
+                  &#128269;
+                  {/* <img src={window.search}/> */}
                 </button>
+                  <input type="text" name="q" id="searchQueryTop" placeholder="Where are you going?"/>
               </form>  
             </div>
             </fieldset>

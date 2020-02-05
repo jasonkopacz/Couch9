@@ -224,12 +224,24 @@ html {
 .searchbar > form {
   display: flex;
   width: 100%;
+  height: -webkit-fill-available;
 }
 
 .mag-glass {
   width: 45px;
   height: 45px;
   z-index: 1;
+}
+
+.buttonbutton {
+  display: flex;
+  width: 25px;
+  height: 38px;
+  align-items: center;
+}
+
+#searchQuery {
+  width: 100%;
 }
 
 // .searchbar input {
