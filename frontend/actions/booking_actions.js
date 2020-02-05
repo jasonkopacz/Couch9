@@ -19,7 +19,6 @@ export const receiveAllBookings = payload => {
 };
 
 export const receiveSingleBooking = payload => {
-  debugger
   return {
     type: RECEIVE_SINGLE_BOOKING,
     payload
@@ -58,14 +57,11 @@ export const fetchBookings = (id) => dispatch => {
 };
 
 export const fetchSingleBooking = (user, id) => dispatch => {
-  debugger
   return APIUtil.fetchSingleBooking(user, id).then(payload => {
-    debugger
     dispatch(receiveSingleBooking(payload));
     return payload;
   },
   err => {
-    debugger
     dispatch(receiveErrors(err.responseJSON))
   });
 };

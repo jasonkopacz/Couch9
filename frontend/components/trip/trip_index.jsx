@@ -17,13 +17,10 @@ class TripIndex extends React.Component {
 
     handleEdit(e) {
         e.preventDefault();
-        debugger
         const booking = this.props.fetchSingleBooking(this.props.currentUser.id, e.target.value);
-        debugger
         this.setState({
             booking
         })
-        debugger
         this.props.openModal("edit_booking")
     }
 

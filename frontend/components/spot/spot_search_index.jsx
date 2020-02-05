@@ -10,7 +10,6 @@ class SpotSearchIndex extends React.Component {
   }
 
   componentWillUnmount () {
-    debugger
     this.props.clearSearch;
   }
 

@@ -6,11 +6,20 @@ class DashboardNav extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleLogout() {
     this.props.logout().then(this.props.history.push('/'));
+  }
+
+  handleSubmit() {
+    const search = document.getElementById('searchQuery').value;
+
+    this.props.searchQuery(search).then(() => {
+      this.props.history.push("/api/spots/search");}
+      );
   }
 
   render() {
@@ -30,10 +39,12 @@ class DashboardNav extends React.Component {
                 <option value="find-hosts">Find Hosts</option>
               </select>
             <div className="topnav">
-              <button>
-                <img src={window.search}/>
-                <input type="text" placeholder="Where are you going?"/>
-              </button>
+              <form onSubmit={this.handleSubmit}>
+                <button>
+                  <img src={window.search}/>
+                  <input type="text" name="q" id="searchQuery" placeholder="Where are you going?"/>
+                </button>
+              </form>  
             </div>
             </fieldset>
             </div>

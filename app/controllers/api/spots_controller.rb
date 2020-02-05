@@ -13,11 +13,14 @@ class Api::SpotsController < ApplicationController
   end
 
   def search
-    @spots = Spot.where("location_name LIKE ?", "%" + params[:q] + "%")
-    if @spots
+    @search_query = params[:q].upcase()
+    @spots = Spot.where("UPPER(location_name) LIKE ?", "%" + @search_query + "%")
+    debugger
+    if @spots.length > 0
       render "api/spots/search"
     else
-      render json ["That spot doesn't exist"]
+      debugger
+      render json: ["That spot doesn't exist"]
     end
   end
 
@@ -37,7 +40,7 @@ class Api::SpotsController < ApplicationController
       @spot.update(spot_params)
       render "api/spots/show"
     else
-      render json ['You can not do that']
+      render json: ['You can not do that']
     end
   end
 
