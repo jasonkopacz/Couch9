@@ -4,8 +4,11 @@ export const RECEIVE_SPOT_ERRORS = 'RECEIVE_SPOT_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const GET_SPOT = 'GET_SPOT';
 export const REQUEST_SPOT = 'REQUEST_SPOT';
+export const GET_SEARCH_RESULTS = 'GET_SEARCH_RESULTS';
+export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
 
 export const receiveCurrentSpot = payload => {
+  debugger
   return {
     type: RECEIVE_CURRENT_SPOT,
     payload
@@ -20,6 +23,18 @@ export const create = spot => dispatch => {
   err => (
     dispatch(receiveErrors(err.responseJSON))
   ));
+};
+
+export const update = (id, data) => dispatch => {
+  debugger
+  return APIUtil.update(id, data).then(payload => {
+    debugger
+    dispatch(receiveCurrentSpot(payload));
+    return payload;
+  },
+    err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ));
 };
 
 export const receiveErrors = errors => {
@@ -46,3 +61,26 @@ export const getSpot = (spot) => ({
   type: GET_SPOT,
   spot
 });
+
+export const searchQuery =  (search) => dispatch => {
+  return APIUtil.getData(search).then(payload => {
+    dispatch(getSearchResults(payload));
+  },
+    err => {
+      dispatch(receiveErrors(err.responseJSON))
+    }
+    );
+};
+
+export const getSearchResults = (searchResults) => {
+  return {
+    type: GET_SEARCH_RESULTS,
+    searchResults
+  };
+};
+
+export const clearSearch = () => {
+  return {
+    type: CLEAR_SEARCH_RESULTS
+  };
+};

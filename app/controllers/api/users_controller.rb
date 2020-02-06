@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
       @user.destroy
       render "api/users"
     else
-      render json ["You are not logged in."]
+      render json: ["You are not logged in."]
     end
   end
 
@@ -29,7 +29,7 @@ class Api::UsersController < ApplicationController
       @user.update(user_params)
       render "api/users/show"
     else
-      render json ['You can not do that']
+      render json: ['You can not do that']
     end
   end
 

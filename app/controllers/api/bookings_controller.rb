@@ -9,12 +9,17 @@ class Api::BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end
 
   def index
-    @bookings = Booking.all
+    @user = User.find(params[:user_id])
+    @bookings = Booking.where("user_id = ?", @user.id)
   end
 
   def destroy

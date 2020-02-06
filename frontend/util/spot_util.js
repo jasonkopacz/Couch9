@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const create = spot => (
   $.ajax({
     method: 'POST',
@@ -13,11 +15,29 @@ export const fetchSpot = id => (
   })
 );
 
+export const getData = (search) => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/search/`,
+    dataType: "json",
+    data: `q=${search}`
+  });
+};
 
-// export const edit = spot => {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: `/api/users/${spot.host.id}`,
-//     data: { spot }
-//   });
+
+export const update = (id, data) => {
+  debugger
+  if (data instanceof FormData) {
+    return $.ajax({
+      method: 'PATCH',
+      url: `/api/spots/${id}`,
+      data: { data },
+      processData: false,
+      contentType: false
+    });
+  }
+};
+
+// export const update = (id, data) => {
+//   return axios.put(`/api/users/${id}`, data);
 // };

@@ -1,0 +1,153 @@
+.booking-box {
+  height: min-content;
+  width: 500px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.booking-header {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  border-bottom: 1px solid #f7f7f7;
+  padding: 20px;
+  size: 20px;
+  font-weight: bold;
+  color: #34495E;
+}
+
+.subheader {
+  display: flex;
+  align-items: center;
+  height: 75px;
+}
+
+.subheader > h2 {
+  color: #27374c;
+  font-size: 1em;
+  padding: 0 0 0 20px;
+  font-weight: normal;
+  border-bottom: none;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  height: -webkit-fill-available;
+}
+
+
+.booking-form input {
+  height: 50px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.dates {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.booking-input-destination {
+  width: 90%;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.booking-form > h2 {
+  color: #27374c;
+  font-size: 1em;
+  padding: 0 0 0 20px;
+}
+
+.dates > h2 {
+  color: #27374c;
+  font-size: 1em;
+  padding: 0 0 0 20px;
+}
+
+.arrival, .departure {
+  display: flex;
+  flex-direction: column;
+  // padding-right: 5em;
+}
+
+.arrival > h2 {
+  color: #27374c;
+  font-size: 1em;
+  align-self: flex-start;
+}
+
+.departure > h2 {
+  color: #27374c;
+  font-size: 1em;
+  align-self: flex-start;
+}
+
+.date-label > input {
+  width: 15em;
+  margin-right: 1em;
+}
+
+#day {
+  width: 80px;
+  height: 35px;
+  background-color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.travelers {
+  padding-left: 20px;
+}
+
+.h2 {
+  margin: 10px 0px;
+}
+
+.tarea {
+  width: 95%;
+  height: 60%;
+}
+
+.desc {
+  padding-left: 20px;
+  margin: 10px 0px;
+}
+
+.booking-buttons {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  height: 50px;
+}
+
+.booking-cancel, .booking-submit {
+  width: 90px;
+  height: 45px;
+  border-radius: 5px;
+  margin: 0px 5px;
+}
+
+.booking-cancel {
+  text-align: center;
+  background-color: #afb7c3;
+  border: 1px solid #afb7c3;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.booking-submit {
+  text-align: center;
+  background-color: #ED6504;
+  border: 1px solid #ED6504;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}

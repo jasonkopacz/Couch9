@@ -26,6 +26,14 @@
 #  public_transportation                :text
 #  what_i_can_share_with_guests         :text
 #  additional_information               :text
+#  location_name                        :string
+#  sun                                  :boolean
+#  mon                                  :boolean
+#  tue                                  :boolean
+#  wed                                  :boolean
+#  thu                                  :boolean
+#  fri                                  :boolean
+#  sat                                  :boolean
 #
 
 class Spot < ApplicationRecord
