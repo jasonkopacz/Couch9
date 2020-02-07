@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const create = spot => (
   $.ajax({
     method: 'POST',
@@ -26,7 +24,6 @@ export const getData = (search) => {
 
 
 export const update = (id, data) => {
-  debugger
   if (data instanceof FormData) {
     return $.ajax({
       method: 'PATCH',
@@ -37,7 +34,3 @@ export const update = (id, data) => {
     });
   }
 };
-
-// export const update = (id, data) => {
-//   return axios.put(`/api/users/${id}`, data);
-// };

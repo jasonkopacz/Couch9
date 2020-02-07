@@ -34,9 +34,7 @@ class Api::SpotsController < ApplicationController
 
    def update
     if logged_in?
-      debugger
       @spot = Spot.find(params[:id])
-      debugger
       @spot.update(spot_params)
       render "api/spots/show"
     else
@@ -48,7 +46,6 @@ class Api::SpotsController < ApplicationController
   private
 
   def spot_params
-    debugger
     params.require(:spot).permit(
       :id, :host_id, :location_id, :sun, :mon, :tue, 
       :wed, :thu, :fri, :sat, :max_guests,

@@ -35,7 +35,6 @@ class ProfileShow extends React.Component {
               <section className="host-availability">
                 <div className="availability-header">
                   <div className="availability">Host availability</div>
-                  <button>Edit Profile</button>
                 </div>
               </section>
               <section className="profile-nav">

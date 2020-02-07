@@ -28,18 +28,18 @@
 
 .home-container {
   background-color: white;
-  width: 790px;
+  width: 65%;
   margin: 20px;
 }
 
 .spot-left-column {
-  width: 400px;
+  width: 30%;
   height: 100%;
   margin: 20px;
 }
 
 .left-overview {
-  width: 370px;
+  width: 95%;
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -65,7 +65,6 @@
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0.15);
-  margin: 0 10px;
   background-color: white;
 }
 
@@ -195,14 +194,15 @@ li > label {
   justify-content: space-evenly;
   align-items: center;
   color: #27374c;
-
 }
 
-.days input {
-  position: relative;
-  top: 1.5em;
-  right: 2em;
+.days > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
 }
+
 
 .max-guests {
   display: flex;
@@ -218,19 +218,15 @@ li > label {
   display: flex;
 }
 
-#multi {
-  position: relative;
-  right: 1.8em;
-}
-
-#last {
-  position: relative;
-  right: 20em;
-}
-
-#mul {
+.request-descriptions > li {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.last_minute_requests {
+  margin-right: 10px;
 }
 
 small {
@@ -254,20 +250,27 @@ small {
   flex-direction: row;
 }
 
-#kid, #pet {
-  position: relative;
-  right: 9.5em;
+.cps-descriptions {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 
-#smoking {
-  position: relative;
-  right: 14.5em;
+.cps-descriptions > li {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: right;
+}
+
+.save-cb-state {
+  margin-right: 10px;
 }
 
 .my-home div {
   display: flex;
   flex-direction: row;
-  width: 750px;
+  width: 100%;
   height: 180px;
 }
 .misc {
@@ -288,7 +291,8 @@ small {
 textarea {
   border: 1px solid #bfcad2;
   border-radius: 4px;
-  width: 520px;
+  width: 55%;
+  margin: 0px 0px 10px 40px;
 }
 
 .public-transportation {
@@ -300,34 +304,16 @@ textarea {
   height: 50px;
 }
 
-.misc-description {
+.misc-descriptions {
   display: flex;
   flex-direction: column;
-  line-height: 1.3;
+  align-items: baseline;
 }
 
-#have-pet {
-  position: relative;
-      bottom: 0.2em;
-    right: 9.7em;
-}
-
-#have-kids {
-  position: relative;
-  right: 10.7em;
-    bottom: 0.2em;
-}
-
-#home-smoking {
-  position: relative;
-  right: 13.6em;
-    bottom: 0.2em;
-}
-
-#wheelchair {
-  position: relative;
-  right: 16.5em;
-  bottom: 0.1em;
+.misc-descriptions > li {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
 }
 
 .home-preferences {
@@ -366,11 +352,4 @@ textarea {
   display: flex;
   justify-content: center;
   font-size: 20px;
-}
-
-.text-area {
-  border: 1px solid lightgray;
-  width: 400px;
-  height: 100%;
-  margin-bottom: 25px;
 }

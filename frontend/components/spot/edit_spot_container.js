@@ -11,7 +11,6 @@ const mapStateToProps = ({ errors, entities, session }) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  debugger
   return {
     processForm: (id, data) => dispatch(update(id, data)),
     clearErrors: () => dispatch(clearErrors()),

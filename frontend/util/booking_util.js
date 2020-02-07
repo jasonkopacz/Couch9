@@ -7,11 +7,15 @@ export const create = booking => {
 };
 
 export const update = booking => {
-  return $.ajax({
-    method: 'GET',
-    url: `/api/users/${booking.user_id}/bookings/${booking.id}/edit`,
-    data: { booking }
-  })
+  if (booking instanceof FormData) {
+    return $.ajax({
+      method: 'GET',
+      url: `/api/users/${booking.user_id}/bookings/${booking.id}/edit`,
+      data: { booking },
+      processData: false,
+      contentType: false
+    })
+  }
 };
 
 
@@ -23,8 +27,10 @@ export const fetchBookings = userId => {
 }
 
 export const fetchSingleBooking = (userId, bookingId) => {
-  return $.ajax({
-    method: 'GET',
-    url: `/api/users/${userId}/bookings/${bookingId}`
-  })
+  if (bookingId instanceof FormData) {
+      return $.ajax({
+      method: 'GET',
+      url: `/api/users/${userId}/bookings/${bookingId}`
+    })
+  }
 }
