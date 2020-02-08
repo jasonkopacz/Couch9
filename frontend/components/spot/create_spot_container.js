@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import { create, clearErrors } from '../../actions/spot_actions';
 import CreateSpot from './create_spot';
 
-const mapStateToProps = ({ errors, entities }) => {
+const mapStateToProps = ({ errors, entities, session }) => {
   return {
     errors: errors.session,
     user: entities.users,
-    currentUserId: store.getState().session.id
+    currentUser: entities.users[session.id]
   };
 };
 

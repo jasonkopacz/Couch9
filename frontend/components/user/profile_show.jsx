@@ -15,6 +15,7 @@ class ProfileShow extends React.Component {
     
     if (!this.state) return null;
     const user = this.state.user;
+    debugger
     return (
         <main>
         <main className="profile">
@@ -25,7 +26,7 @@ class ProfileShow extends React.Component {
                   <h2 className="user-name">{user.fname} {user.lname}</h2>
 
                 <div className="location">
-                  <button>{user.city}</button>
+                  <button>{user.location}</button>
                 </div>
               </section>
             </div>

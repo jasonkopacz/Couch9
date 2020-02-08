@@ -6,7 +6,7 @@ class CreateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: "",
+      location: "",
       gender: "",
       day: null,
       month: "",
@@ -229,8 +229,8 @@ class CreateForm extends React.Component {
                 <span>City</span>
                 <label className="create-form-city">
                   <input required type="text"
-                    value={this.state.city}
-                    onChange={this.update('city')}
+                    value={this.state.location}
+                    onChange={this.update('location')}
                     className="create-input-password"
                     placeholder="Where do you live?"
                   />

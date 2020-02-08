@@ -4,7 +4,7 @@ class EditSpot extends React.Component {
   constructor(props) {
     super(props);
     const spot = this.props.currentUser.spot || {};
-
+    
     this.state = {
       id: spot.id,
       host_id: spot.host_id,
@@ -59,6 +59,7 @@ class EditSpot extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const createForm = Object.assign({}, this.state);
+    debugger
     this.props.processForm(createForm.id, createForm)
     .then(() => this.props.history.push(`/api/users`))
   };
@@ -100,9 +101,9 @@ class EditSpot extends React.Component {
                   <h2>OVERVIEW</h2>
                   <ul>
                     <li>Languages</li>
-                    <li>Age Gender</li>
-                    <li>Occupation</li>
-                    <li>Education</li>
+                    <li>{this.props.currentUser.age} {this.props.currentUser.gender}</li>
+                    <li>{this.props.currentUser.occupation}</li>
+                    <li>{this.props.currentUser.education}</li>
                   </ul>
                 </div>
               </div>
@@ -300,7 +301,7 @@ class EditSpot extends React.Component {
                         <label htmlFor="have-kids">Kids at Home</label>
                         <input type="checkbox" name="have-kids" id="have-kids" value={this.state.has_children}
                           className="has_kids" className="save-cb-state"
-                          onChange={this.checkboxUpdate("has_kids")} 
+                          onChange={this.checkboxUpdate("has_children")} 
                           checked={this.state.has_children ? "checked" : ""}/>
                       </li>
                       <li>

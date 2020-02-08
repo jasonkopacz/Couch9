@@ -24,13 +24,16 @@ export const getData = (search) => {
 
 
 export const update = (id, data) => {
-  if (data instanceof FormData) {
+  // debugger
+  // if (!data instanceof FormData) {
+    // debugger
     return $.ajax({
       method: 'PATCH',
+      // type: 'PATCH',
       url: `/api/spots/${id}`,
       data: { data },
       processData: false,
       contentType: false
     });
-  }
+  // }
 };

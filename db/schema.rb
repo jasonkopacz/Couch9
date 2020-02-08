@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_05_213355) do
+ActiveRecord::Schema.define(version: 2020_02_08_002300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,11 +41,8 @@ ActiveRecord::Schema.define(version: 2020_02_05_213355) do
     t.boolean "smoking_at_home", default: false
     t.boolean "wheelchair_accessible", default: false
     t.text "sleeping_arrangements"
-    t.text "more_details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "available_nights"
-    t.boolean "request_preferences"
     t.text "description_of_sleeping_arrangements"
     t.text "roommate_situation"
     t.text "public_transportation"
@@ -82,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_02_05_213355) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["friendable_type", "friendable_id"], name: "index_users_on_friendable_type_and_friendable_id"
     t.index ["imageable_type", "imageable_id"], name: "index_users_on_imageable_type_and_imageable_id"

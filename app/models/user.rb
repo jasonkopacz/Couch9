@@ -22,6 +22,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  location        :string
 #
 
 class User < ApplicationRecord

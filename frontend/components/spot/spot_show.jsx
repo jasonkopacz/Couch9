@@ -1,10 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SpotShow extends React.Component {
 
   render() {
     const user = this.props.profileOwner ? this.props.profileOwner : this.props.users[this.props.currentUserId];
     const spot = user.spot ? user.spot : {};
+    const lastMinute = spot.last_minute_requests ? "Yes" : "No";
     const kidFriendly = spot.kid_friendly ? "Yes" : "No";
     const petFriendly = spot.pet_friendly ? "Yes" : "No";
     const smokingAllowed = spot.smoking_allowed ? "Yes" : "No";
@@ -21,7 +23,7 @@ class SpotShow extends React.Component {
               <h2>{user.fname}s Preferences</h2>
               <ul>
                 <li>Max Number of Guests: {spot.max_guests}</li>
-                <li>Last-Minute Requests Okay? {spot.last_minute_requests}</li>
+                <li>Last-Minute Requests Okay? {lastMinute}</li>
                 <li>Preferred Gender to Host: {spot.preferred_gender}</li>
                 <li>Kid Friendly? {kidFriendly}</li>
                 <li>Pet Friendly? {petFriendly}</li>
@@ -59,7 +61,7 @@ class SpotShow extends React.Component {
   }
 }
 
-export default SpotShow;
+export default withRouter(SpotShow);
 
 
 

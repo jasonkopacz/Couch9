@@ -16,11 +16,8 @@
 #  smoking_at_home                      :boolean          default(FALSE)
 #  wheelchair_accessible                :boolean          default(FALSE)
 #  sleeping_arrangements                :text
-#  more_details                         :text
 #  created_at                           :datetime         not null
 #  updated_at                           :datetime         not null
-#  available_nights                     :string
-#  request_preferences                  :boolean
 #  description_of_sleeping_arrangements :text
 #  roommate_situation                   :text
 #  public_transportation                :text
