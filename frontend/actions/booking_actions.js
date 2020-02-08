@@ -58,6 +58,7 @@ export const fetchBookings = (id) => dispatch => {
 
 export const fetchSingleBooking = (user, id) => dispatch => {
   return APIUtil.fetchSingleBooking(user, id).then(payload => {
+    debugger
     dispatch(receiveSingleBooking(payload));
     return payload;
   },

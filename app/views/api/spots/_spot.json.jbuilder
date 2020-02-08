@@ -1,6 +1,5 @@
 json.set! :spots do
   json.set! spot.id do
-  debugger
     json.extract! spot, :id, :host_id, :location_id, :sun, :mon, :tue, :wed, :thu, :fri, :sat, 
       :max_guests, :last_minute_requests, :preferred_gender, :has_children, :has_pets, 
       :smoking_at_home, :sleeping_arrangements, :description_of_sleeping_arrangements, 

@@ -65,21 +65,26 @@ class EditSpot extends React.Component {
   };
 
   update(field) {
+    const that = this;
     return e => {
-      this.setState({
+      debugger
+      that.setState({
         [field]: e.currentTarget.value
       });
     }
   }
 
   checkboxUpdate(field) {
+    const that = this;
     return e => {
-      if (this.state[field] === false) {
-        this.setState({
+      if (that.state[field] === false) {
+        debugger
+        that.setState({
           [field]: true
         });
     } else {
-        this.setState({
+      debugger
+        that.setState({
           [field]: false
         })
       }

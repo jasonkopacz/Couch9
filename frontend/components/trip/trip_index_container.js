@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { clearErrors } from '../../actions/spot_actions';
 import TripIndex from './trip_index';
 import { openModal } from '../../actions/modal_actions';
-import { fetchSingleBooking, fetchBookings } from '../../util/booking_util';
+import { fetchSingleBooking, fetchBookings } from '../../actions/booking_actions';
 
 const mapStateToProps = ({ errors, entities, session }) => {
   return {

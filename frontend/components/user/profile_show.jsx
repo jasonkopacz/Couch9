@@ -15,7 +15,6 @@ class ProfileShow extends React.Component {
     
     if (!this.state) return null;
     const user = this.state.user;
-    debugger
     return (
         <main>
         <main className="profile">

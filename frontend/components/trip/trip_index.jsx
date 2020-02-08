@@ -17,7 +17,8 @@ class TripIndex extends React.Component {
 
     handleEdit(e) {
         e.preventDefault();
-        const booking = this.props.fetchSingleBooking(this.props.currentUser.id, e.target.value);
+        debugger
+        const booking = this.props.fetchSingleBooking(this.props.currentUser.id, parseInt(e.target.value));
         this.setState({
             booking
         })

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { create, clearErrors, requestSpot } from '../../actions/spot_actions';
+import { update, clearErrors, requestSpot } from '../../actions/spot_actions';
 import EditSpot from './edit_spot';
-import { update } from '../../util/spot_util';
+// import { update } from '../../util/spot_util';
 
 const mapStateToProps = ({ errors, entities, session }) => {
   return {
