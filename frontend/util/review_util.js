@@ -13,7 +13,7 @@ export const fetchReviews = userId => {
   })
 }
 
-export const fetchSingleeview = (userId, reviewId) => {
+export const fetchSingleReview = (userId, reviewId) => {
       return $.ajax({
       method: 'GET',
       url: `/api/users/${userId}/reviews/${reviewId}`

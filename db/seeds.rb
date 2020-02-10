@@ -156,10 +156,14 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: "San Francisco, California",
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
- booking1 = Booking.create!({destination: "Paris", arrival_date: "09/09/2020", 
+booking1 = Booking.create!({destination: "Paris", arrival_date: "09/09/2020", 
   departure_date: "10/10/2020", number_of_travelers: 2, trip_description: "gonna be fun", user_id: 1})
+booking2 = Booking.create!({destination: "New York City", arrival_date: "09/10/2020", 
+  departure_date: "10/10/2020", number_of_travelers: 1, trip_description: "The big apple!", user_id: 2})
+booking3 = Booking.create!({destination: "Paris", arrival_date: "09/09/2020", 
+  departure_date: "10/10/2020", number_of_travelers: 2, trip_description: "gonna be awesome", user_id: 1})
 
 
-review1 = Review.create!({author_id: 1, host_id: 2, surfer_id: 1, body: "Great Time spent here. Awesome host."})
-review2 = Review.create!({author_id: 2, host_id: 1, surfer_id: 2, body: "Best place ever."})
-review3 = Review.create!({author_id: 2, host_id: 2, surfer_id: 1, body: "Great surfer."})
+review1 = Review.create!({author_id: 1, host_id: 2, surfer_id: 1, booking_id: 1, body: "Great Time spent here. Awesome host."})
+review2 = Review.create!({author_id: 2, host_id: 1, surfer_id: 2, booking_id: 2, body: "Best place ever."})
+review3 = Review.create!({author_id: 2, host_id: 2, surfer_id: 1, booking_id: 3, body: "Great surfer."})

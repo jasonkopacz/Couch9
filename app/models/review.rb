@@ -2,11 +2,12 @@
 #
 # Table name: reviews
 #
-#  id        :bigint           not null, primary key
-#  author_id :integer          not null
-#  host_id   :integer          not null
-#  body      :text             not null
-#  surfer_id :integer
+#  id         :bigint           not null, primary key
+#  author_id  :integer          not null
+#  host_id    :integer          not null
+#  body       :text             not null
+#  surfer_id  :integer
+#  booking_id :integer
 #
 
 class Review < ApplicationRecord
@@ -27,5 +28,7 @@ class Review < ApplicationRecord
     primary_key: :id,
     foreign_key: :surfer_id,
     class_name: :User
+
+    belongs_to :booking
 
 end

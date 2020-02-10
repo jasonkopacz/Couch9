@@ -65,3 +65,14 @@ export const fetchSingleBooking = (user, id) => dispatch => {
     dispatch(receiveErrors(err.responseJSON))
   });
 };
+
+
+export const fetchAllBookings = () => dispatch => {
+  return APIUtil.fetchAllBookings().then(payload => {
+    dispatch(receiveAllBookings(payload));
+    return payload;
+  },
+  err => {
+    dispatch(receiveErrors(err.responseJSON))
+  });
+};

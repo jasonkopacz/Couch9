@@ -33,4 +33,10 @@ class Api::ReviewsController < ApplicationController
           render json ["You are not logged in."]
         end
       end
+
+      private
+
+      def review_params
+        params.require(:booking).permit(:body)
+      end
 end

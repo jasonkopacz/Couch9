@@ -6,7 +6,12 @@ export default (state = {}, action) => {
     case RECEIVE_CURRENT_BOOKING:
       return Object.assign({}, state, { [action.payload.id]: action.payload });
     case RECEIVE_ALL_BOOKINGS:
-      return Object.assign({}, state, Object.values(action.payload));
+      const bookingItems = {};
+      const bookings = Object.values(action.payload);
+      bookings.forEach(booking => {
+        bookingItems[booking.id] = booking
+      })
+      return Object.assign({}, state, bookingItems);
     case RECEIVE_SINGLE_BOOKING:
       return Object.assign({}, state, {[action.payload.id]: action.payload});
     default:

@@ -1,4 +1,4 @@
-json.extract! review, :id, :author_id, :host_id, :surfer_id, :body
+json.extract! review, :id, :author_id, :host_id, :surfer_id, :booking_id, :body
 
 json.set! :users do
   json.set! review.author.id do

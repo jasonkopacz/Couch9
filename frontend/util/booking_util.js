@@ -28,3 +28,10 @@ export const fetchSingleBooking = (userId, bookingId) => {
       url: `/api/users/${userId}/bookings/${bookingId}`
     })
 }
+
+export const fetchAllBookings = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/bookings'
+  })
+}

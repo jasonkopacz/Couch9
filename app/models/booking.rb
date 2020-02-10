@@ -18,5 +18,10 @@ class Booking < ApplicationRecord
   validates :destination, :arrival_date, :departure_date, :number_of_travelers, :trip_description, presence: true
 
   belongs_to :user
+  
+  has_many :reviews,
+  primary_key: :id,
+  foreign_key: :booking_id,
+  class_name: :Review
 
 end
