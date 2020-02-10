@@ -1,43 +1,67 @@
 import React from 'react';
+import FromSurfer from '../../review/from_surfer_container';
+import FromHost from '../../review/from_host_container';
 
 class ReviewTab extends React.Component {
+  constructor(props) {
+    super(props) 
+    // this.handleClick = this.handleClick.bind(this);
+    // this.addClassTo = this.addClassTo.bind(this);
+    this.showHostReviews = this.showHostReviews.bind(this);
+    this.showSurfReviews = this.showSurfReviews.bind(this);
+  }
+
+  componentDidMount() {
+    debugger
+    return this.props.fetchReviews(this.props.currentUser.id);
+  }
+
+  showHostReviews() {
+    debugger
+    const reviews_as_host = this.props.reviews_as_host;
+    const hostReviews = reviews_as_host.map((review, id) => {
+      return (
+        <FromSurfer review={review} />
+      )
+    })
+    return hostReviews;
+  }
+
+  showSurfReviews() {
+    debugger
+    const reviews_from_host = this.props.reviews_from_host;
+    const surfReviews = reviews_from_host.map((review, id) => {
+      return (
+        <FromHost review={review} />
+      )
+    })
+    return surfReviews;
+  }
+
   render() {
+    
+    
+
+    
+
+
     return (
       <main>
-        <section className="my-spot">
-          <h2>Users Home</h2>
-          <div className="my-spot-box">
-            <div className="preferences">
-              <ul>
-                <li className="left-reviews">Reviews</li>
-                <li className="left-languages">Languages</li>
-                <li className="age-gender">27 M</li>
-              </ul>
-            </div>
-            <div className="home">
-              <ul>
-                <li className="occupation">Occupation</li>
-                <li className="education">Education</li>
-                <li className="hometown">Hometown</li>
-              </ul>
-            </div>
-            <div className="arrangements">
-              <ul>
-                <li className="occupation">Occupation</li>
-                <li className="education">Education</li>
-                <li className="hometown">Hometown</li>
-              </ul>
-            </div>
-            <div className="details">
-              <ul>
-                <li className="occupation">Occupation</li>
-                <li className="education">Education</li>
-                <li className="hometown">Hometown</li>
-              </ul>
+        <header>
+          <div id="surfers" onClick={() => this.showHostReviews()}> 
+            From Surfers
+            <div className="hidden-host-reviews">
+
             </div>
           </div>
-        </section>
-      </main >
+          <div id="hosts" onClick={() => this.showSurfReviews()}>
+            From Hosts
+            <div className="hidden-surf-reviews">
+            
+            </div>
+          </div>
+        </header>
+      </main>
     )
   }
 }

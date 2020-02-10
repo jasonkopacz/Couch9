@@ -59,7 +59,6 @@ class EditSpot extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const createForm = Object.assign({}, this.state);
-    debugger
     this.props.processForm(createForm.id, createForm)
     .then(() => this.props.history.push(`/api/users`))
   };
@@ -67,7 +66,6 @@ class EditSpot extends React.Component {
   update(field) {
     const that = this;
     return e => {
-      debugger
       that.setState({
         [field]: e.currentTarget.value
       });
@@ -78,12 +76,10 @@ class EditSpot extends React.Component {
     const that = this;
     return e => {
       if (that.state[field] === false) {
-        debugger
         that.setState({
           [field]: true
         });
     } else {
-      debugger
         that.setState({
           [field]: false
         })

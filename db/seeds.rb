@@ -158,3 +158,8 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
 
  booking1 = Booking.create!({destination: "Paris", arrival_date: "09/09/2020", 
   departure_date: "10/10/2020", number_of_travelers: 2, trip_description: "gonna be fun", user_id: 1})
+
+
+review1 = Review.create!({author_id: 1, host_id: 2, surfer_id: 1, body: "Great Time spent here. Awesome host."})
+review2 = Review.create!({author_id: 2, host_id: 1, surfer_id: 2, body: "Best place ever."})
+review3 = Review.create!({author_id: 2, host_id: 2, surfer_id: 1, body: "Great surfer."})

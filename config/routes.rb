@@ -5,10 +5,9 @@ Rails.application.routes.draw do
     get 'search', to: 'spots#search', as: 'search'
     resources :users, only: [:create, :destroy, :show, :index, :update] do
       resources :bookings, only: [:create, :destroy, :show, :index, :edit]
+      resources :reviews, only: [:create, :show, :destroy, :index]
     end
     resource :session, only: [:create, :destroy]
-    resources :spots, only: [:create, :show, :destroy, :update] do
-      
-    end
+    resources :spots, only: [:create, :show, :destroy, :update]
   end
 end
