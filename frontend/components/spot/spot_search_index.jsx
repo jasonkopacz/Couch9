@@ -16,7 +16,6 @@ class SpotSearchIndex extends React.Component {
   render() {
     if (!this.props.searchResults) return null;
     const { searchResults } = this.props;
-
     return (
       <div>
         {searchResults[0].location_name}

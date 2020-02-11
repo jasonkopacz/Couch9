@@ -1,11 +1,13 @@
 import React from 'react';
 import Tabs from './tabs/tabs';
+import { Link } from 'react-router-dom';
 
 class ProfileShow extends React.Component {
   constructor(props) {
     super(props);
   }
   componentDidMount() {
+    this.props.fetchBookings(this.props.currentUser.id)
     this.props.requestUser(this.props.userId)
     .then(user => this.setState({
       user
@@ -35,6 +37,13 @@ class ProfileShow extends React.Component {
               <section className="host-availability">
                 <div className="availability-header">
                   <div className="availability">Host availability</div>
+                  <Link to={{
+                      pathname: '/api/reviews/new',
+                      state: {
+                        user
+                      }
+                    }} 
+                    className="review-button">Write A Review</Link >
                 </div>
               </section>
               <section className="profile-nav">

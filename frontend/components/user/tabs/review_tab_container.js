@@ -5,7 +5,6 @@ import { fetchBookings, fetchAllBookings } from '../../../actions/booking_action
 import { requestUser, requestUsers } from '../../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     currentUser: state.entities.users[state.session.id],
     allUsers: state.entities.users,

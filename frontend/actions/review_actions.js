@@ -37,7 +37,6 @@ export const create = review => dispatch => {
 
 
 export const fetchReviews = (id) => dispatch => {
-    debugger
   return APIUtil.fetchReviews(id).then(payload => {
     dispatch(receiveAllReviews(payload));
     return payload;

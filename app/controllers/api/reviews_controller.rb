@@ -1,11 +1,13 @@
 class Api::ReviewsController < ApplicationController
     def create
         @review = Review.new(review_params)
-        @review.user_id = current_user.id
+        @review.author_id = current_user.id
+        @user_id = current_user.id
         if @review.save
           render "api/reviews/show"
         else
           render json: @review.errors.full_messages, status: 422
+          
         end
       end
 
@@ -17,7 +19,6 @@ class Api::ReviewsController < ApplicationController
         @reviews_from_host = Review.where("author_id != ? AND surfer_id = ?", @user.id, @user.id)
         # @reviews_from_host = Review.where("author_id != mine AND surfer_id = id",
         # {mine: @user.id, id: @user.id})
-        # debugger
       end
     
       def show
@@ -37,6 +38,7 @@ class Api::ReviewsController < ApplicationController
       private
 
       def review_params
-        params.require(:booking).permit(:body)
+        params.require(:review).permit(:body, :recommended, :surfer_id,
+          :host_id, :author_id, :yes, :no, :surf, :host)
       end
 end

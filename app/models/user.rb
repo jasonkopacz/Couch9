@@ -40,10 +40,15 @@ class User < ApplicationRecord
     foreign_key: :host_id,
     class_name: :Spot
 
-  has_many :bookings,
+  has_many :host_bookings,
     primary_key: :id,
-    foreign_key: :user_id,
+    foreign_key: :host_id,
     class_name: :Booking
+
+  # has_many :surfer_bookings,
+  #   primary_key: :id,
+  #   foreign_key: :surfer_id,
+  #   class_name: :Booking
 
   # has_many :reviews_from_surfers,
   #   primary_key: :id,

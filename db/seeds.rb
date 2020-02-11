@@ -164,6 +164,6 @@ booking3 = Booking.create!({destination: "Paris", arrival_date: "09/09/2020",
   departure_date: "10/10/2020", number_of_travelers: 2, trip_description: "gonna be awesome", user_id: 1})
 
 
-review1 = Review.create!({author_id: 1, host_id: 2, surfer_id: 1, booking_id: 1, body: "Great Time spent here. Awesome host."})
-review2 = Review.create!({author_id: 2, host_id: 1, surfer_id: 2, booking_id: 2, body: "Best place ever."})
-review3 = Review.create!({author_id: 2, host_id: 2, surfer_id: 1, booking_id: 3, body: "Great surfer."})
+review1 = Review.create!({author_id: 1, host_id: 2, surfer_id: 1, booking_id: 1, body: "Great Time spent here. Awesome host.", recommended: true})
+review2 = Review.create!({author_id: 2, host_id: 1, surfer_id: 2, booking_id: 2, body: "Best place ever.", recommended: true})
+review3 = Review.create!({author_id: 2, host_id: 2, surfer_id: 1, booking_id: 3, body: "awful surfer.", recommended: false})

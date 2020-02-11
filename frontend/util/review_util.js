@@ -1,7 +1,7 @@
 export const create = review => {
   return $.ajax({
     method: 'POST',
-    url: `/api/users/${review.user_id}/reviews`,
+    url: `/api/users/${review.author_id}/reviews`,
     data: { review }
   })
 };

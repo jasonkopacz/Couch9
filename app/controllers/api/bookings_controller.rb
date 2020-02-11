@@ -34,7 +34,7 @@ class Api::BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:destination, :arrival_date, :departure_date,
-      :number_of_travelers, :trip_description)
+      :number_of_travelers, :trip_description, :host_id, :surfer_id)
   end
 
 end
