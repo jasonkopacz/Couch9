@@ -16,6 +16,7 @@ import trip_index_container from './trip/trip_index_container';
 import DashboardNavContainer from './nav/dashboard_nav_container';
 import Footer from './nav/footer';
 import CreateReview from './review/create_review_container';
+import LocationSearchContainer from './location/search_container';
 
 const App = () => {
 
@@ -36,8 +37,9 @@ const App = () => {
       <ProtectedRoute exact path="/spots/edit" component={EditSpotContainer}/>
       <Route exact path="/api/spots/:spot_id" component={SpotShowContainer}/>
       <ProtectedRoute exact path="/api/bookings" component={trip_index_container} />
-      <ProtectedRoute path="/api/spots/search/" component={spot_search_index_container} />
+      {/* <ProtectedRoute path="/api/spots/search/" component={spot_search_index_container} /> */}
       <ProtectedRoute path="/api/reviews/new" component={CreateReview} />
+      <ProtectedRoute path="/api/locations/search" component={LocationSearchContainer} />
       <Route path="/" component={Footer} />
     </>
 

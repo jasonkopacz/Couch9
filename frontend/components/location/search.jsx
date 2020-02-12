@@ -1,7 +1,6 @@
 import React from 'react';
-import SpotSearchItem from './spot_search_item_container'
 
-class SpotSearchIndex extends React.Component {
+class LocationSearch extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -20,18 +19,18 @@ class SpotSearchIndex extends React.Component {
     const items = searchResults.map((result, i) => {
       return (
         <ul>
-          <li key={result.id}>
-            <div>{result.fname} {result.lname}</div>
+          <li key={i}>
+            <div key={result.id}>{result.name}</div>
           </li>
         </ul>
       )
     })
     return (
-      <div>
+      <div className="locations-search">
         {items}
       </div>
     )
   }
 }
 
-export default SpotSearchIndex;
+export default LocationSearch;

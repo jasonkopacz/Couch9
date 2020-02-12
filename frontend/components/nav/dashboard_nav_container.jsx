@@ -3,7 +3,7 @@ import { signup, login, logout } from '../../actions/session_actions';
 import DashboardNav from './dashboard_nav';
 import { clearErrors } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
-import { searchQuery } from '../../actions/spot_actions';
+import { searchQuery } from '../../actions/location_actions';
 
 const mapStateToProps = ({ errors, entities, session }) => {
   const id = session.id;

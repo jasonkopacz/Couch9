@@ -15,10 +15,10 @@ class DashboardNav extends React.Component {
   }
 
   handleSubmit() {
-    const search = document.getElementById('searchQuery').value;
+    const search = document.getElementById('searchQueryTop').value;
 
     this.props.searchQuery(search).then(() => {
-      this.props.history.push("/api/spots/search");}
+      this.props.history.push("/api/locations/search");}
       );
   }
 

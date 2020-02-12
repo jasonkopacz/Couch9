@@ -4,7 +4,7 @@ import DashboardBody from './dashboard_body';
 import { clearErrors } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 import { fetchBookings } from '../../actions/booking_actions';
-import { searchQuery } from '../../actions/spot_actions';
+import { searchQuery } from '../../actions/location_actions';
 
 const mapStateToProps = ({ session, entities: { users, bookings }, errors }) => {
   return {

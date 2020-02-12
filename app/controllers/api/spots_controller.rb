@@ -13,8 +13,8 @@ class Api::SpotsController < ApplicationController
   end
 
   def search
-    @search_query = params[:q].upcase()
-    @spots = Spot.where("UPPER(location_name) LIKE ?", "%" + @search_query + "%")
+    @search_query = params[:q].upcase
+    @spots = Spot.where("UPPER(location_name) LIKE ?", @search_query)
     if @spots.length > 0
       render "api/spots/search"
     else
@@ -24,7 +24,7 @@ class Api::SpotsController < ApplicationController
 
   def destroy
     @spot = Spot.find(params[:id])
-    if current_user.id == @spot.host_id
+    if current_user.id == @spot.host_id 
       @spot.destroy
       render "api/spots/spot"
     else

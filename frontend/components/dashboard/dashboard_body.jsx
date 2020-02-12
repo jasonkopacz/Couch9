@@ -21,7 +21,7 @@ class DashboardBody extends React.Component {
     const search = document.getElementById('searchQuery').value;
 
     this.props.searchQuery(search).then(() => {
-      this.props.history.push("/api/spots/search");}
+      this.props.history.push("/api/locations/search");}
       );
   }
 

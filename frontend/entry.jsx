@@ -5,6 +5,14 @@ import Root from './components/root';
 // import {signup, login, logout } from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
+  function initialize() {
+    var input = document.getElementById('searchQuery');
+    new google.maps.places.Autocomplete(input);
+    var input2 = document.getElementById('searchQueryTop');
+    new google.maps.places.Autocomplete(input2);
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+  
   let store;
   if (window.currentUser) {
     const preloadedState = {
