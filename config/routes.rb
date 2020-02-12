@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :reviews, only: [:create, :show, :destroy, :index]
     end
     resource :session, only: [:create, :destroy]
-    resources :spots, only: [:create, :show, :destroy, :update]
+    resources :spots
     resources :bookings, only: [:index]
     resources :locations, only: [:index, :show]
     get 'search', to: '/api/locations#search'

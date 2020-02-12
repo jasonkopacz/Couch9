@@ -24,11 +24,10 @@ export const fetchSpot = id => (
 
 
 export const update = (id, data) => {
+  // debugger
     return $.ajax({
       method: 'PATCH',
       url: `/api/spots/${id}`,
       data: { data },
-      processData: false,
-      contentType: false
     });
 };

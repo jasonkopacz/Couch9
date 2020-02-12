@@ -58,8 +58,8 @@ class EditSpot extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const createForm = Object.assign({}, this.state);
-    this.props.processForm(createForm.id, createForm)
+    // debugger
+    this.props.processForm(this.state.id, this.state)
     .then(() => this.props.history.push(`/api/users`))
   };
 
