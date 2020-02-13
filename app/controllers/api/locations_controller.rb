@@ -9,8 +9,15 @@ class Api::LocationsController < ApplicationController
     end
   
     def search
+      # @search_q = {}
+      # @search_query.split(",").each { |word| @search_q[word] = true}
+      # @q = @search_query.split(",")
+      # debugger
+      # @locations = Location.where("'%'name'%' LIKE ANY '%'#{@q}'%'")
+      
+      
       @search_query = params[:q]
-      @locations = Location.where("name LIKE ?", @search_query)
+      @locations = Location.where("name LIKE ?", (@search_query))
       if @locations.length > 0
         render "api/locations/search"
       else

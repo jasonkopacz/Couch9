@@ -18,8 +18,11 @@ class Api::BookingsController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:user_id])
-    @bookings = Booking.where("user_id = ?", @user.id)
+    @bookings = Booking.all
+  end
+
+  def all
+    @bookings = Booking.where("user_id = ?", params[:user_id])
   end
 
   def show

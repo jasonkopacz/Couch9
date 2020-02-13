@@ -65,6 +65,7 @@ class ReviewTab extends React.Component {
       hostReviews = reviews_as_host.map((review, id) => {
           booking = that.props.allBookings[review.booking_id]
           author = that.props.allUsers[review.author_id]
+          
         return (
           <ul>
             <li key={review.id}>

@@ -15,6 +15,10 @@ Location.destroy_all
 location1 = Location.create!({name: "New York, NY, USA", lat: "40.7128N", long: "74.0060W"})
 location2 = Location.create!({name: "Philladelphia, PA, USA", lat: "39.9526N", long: "75.1652W"})
 location3 = Location.create!({name: "San Francisco, CA, USA", lat: "37.7749N", long: "122.4194W"})
+location4 = Location.create!({name: "Rome, Italy", lat: "41.9028N", long: "12.4964E"})
+location5 = Location.create!({name: "Paris, France", lat: "48.8566N", long: "2.3522E"})
+
+
 
 demo_user = User.create!({fname: "Jason", lname: "Kopacz", email: "jk@gmail.com",
 password: "demouser", age: 27, gender: "M", occupation: "goon",
@@ -39,7 +43,7 @@ gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::Univ
 about_me: Faker::Movies::LordOfTheRings.quote})
 user5 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email4@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(2).name,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(3).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user6 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email5@gmail.com", password: "password", age: Faker::Number.between(18, 100),
@@ -47,19 +51,19 @@ gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::Univ
 about_me: Faker::Movies::LordOfTheRings.quote})
 user7 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email6@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(3).name,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(4).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user8 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email7@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(3).name,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(4).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user9 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email8@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(3).name,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(5).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user10 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email9@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(1).name,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(5).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 
 
@@ -135,7 +139,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(3),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot9 = Spot.create!({host_id: User.find_by(email: "email7@gmail.com").id, location_id: 3, max_guests: 2, 
+spot9 = Spot.create!({host_id: User.find_by(email: "email7@gmail.com").id, location_id: 4, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -144,7 +148,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(3),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot10 = Spot.create!({host_id: User.find_by(email: "email8@gmail.com").id, location_id: 3, max_guests: 2, 
+spot10 = Spot.create!({host_id: User.find_by(email: "email8@gmail.com").id, location_id: 5, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -153,7 +157,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(3),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot11 = Spot.create!({host_id: User.find_by(email: "email9@gmail.com").id, location_id: 3, max_guests: 2, 
+spot11 = Spot.create!({host_id: User.find_by(email: "email9@gmail.com").id, location_id: 5, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 

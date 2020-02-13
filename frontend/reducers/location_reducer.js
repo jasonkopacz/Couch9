@@ -1,4 +1,4 @@
-import { GET_SEARCH_RESULTS, CLEAR_SEARCH_RESULTS } from '../actions/location_actions';
+import { GET_SEARCH_RESULTS, CLEAR_SEARCH_RESULTS, RECEIVE_LOCATIONS } from '../actions/location_actions';
 
 
 export default (state = {}, action) => {
@@ -8,6 +8,8 @@ export default (state = {}, action) => {
         return Object.assign({}, state, action.searchResults);
       case CLEAR_SEARCH_RESULTS:
         return Object.assign({}, state);
+      case RECEIVE_LOCATIONS:
+        return Object.assign({}, state, action.payload)
     default:
       return state;
   }

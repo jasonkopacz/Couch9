@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import Modal from '../modal/modal';
 import SpotSearchIndex from '../spot/spot_search_index';
 
@@ -14,7 +14,8 @@ class DashboardBody extends React.Component {
   }
 
   componentDidMount () {  
-    return this.props.fetchBookings(this.props.currentUser.id)
+    this.props.fetchBookings(this.props.currentUser.id)
+    this.props.fetchLocations();
   }
 
   handleSubmit() {
@@ -29,6 +30,7 @@ class DashboardBody extends React.Component {
   render() {
     const { bookings } = this.props;
     const bookingItems = bookings.map((booking, id) => {
+      debugger
       const ms = new Date(booking.departure_date).getTime() - new Date(booking.arrival_date).getTime();
       const days = ms / (1000 * 3600 * 24);
       const nights = days > 1 ? "Nights" : "Night"; 
@@ -52,7 +54,10 @@ class DashboardBody extends React.Component {
           </div>
         </main>
       )
+
+      
     })
+    if (!this.props.locations) return null;
     return (
       <main className="dashboard">
         <div className="left-column-wrapper">
@@ -86,24 +91,40 @@ class DashboardBody extends React.Component {
               </h2>
             </header>
              <div className="pictures">
-               <a className="paris">
+               <Link to={{
+                  pathname: `/api/locations/show/${5}`,
+                  state: {
+                    item: this.props.locations[5]
+                  }
+                }} className="paris">
                  <header>
                    <h1>Paris, France</h1>
                    <p>70,000+ hosts</p>
                  </header>
-               </a>
-                <a className="rome">
-                 <header>
+               </Link>
+                <Link to={{
+                  pathname: `/api/locations/show/${4}`,
+                  state: {
+                    item: this.props.locations[4]
+                  }
+                }} className="rome">
+                <header>
                    <h1>Rome, Italy</h1>
                    <p>22,900+ hosts</p>
                  </header>
-               </a>
-                <a className="nyc">
+               </Link>
+                <Link to={{
+                  pathname: `/api/locations/show/${1}`,
+                  state: {
+                    item: this.props.locations[1]
+                  }
+                }}
+                  className="nyc">
                  <header>
                    <h1>New York City, New York</h1>
                    <p>50,000+ hosts</p>
                  </header>
-               </a>
+               </Link>
              </div>
              <div className="host-search">
                <h3>Find hosts wherever I'm going:</h3>

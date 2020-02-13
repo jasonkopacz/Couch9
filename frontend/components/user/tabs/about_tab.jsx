@@ -5,6 +5,7 @@ class AboutTab extends React.Component {
   render() {
     const user = this.props.user ? this.props.user :
       this.props.currentUser;
+      const reviews = user.reviews_as_host.length + user.reviews_from_host.length
       const languages = user.email === "jk@gmail.com" ? "English, Vietnamese" : "Languages"; 
     return (
       <main>
@@ -13,7 +14,7 @@ class AboutTab extends React.Component {
           <div className="overview-box">
             <div className="overview-left-column">
               <ul>
-                <li className="left-reviews">❝ Reviews</li>
+                <li className="left-reviews">❝ {reviews} Reviews</li>
                 <li className="left-languages">&#128488; {languages}</li>
                 <li className="age-gender">	&#9893; {user.age}, {user.gender}</li>
               </ul>

@@ -8,7 +8,7 @@ const mapStateToProps = ({ errors, entities, session }) => {
     errors: errors.session,
     users: entities.users,
     currentUser: entities.users[session.id],
-    // bookings: entities.bookings
+    bookings: entities.bookings
   };
 };
 
