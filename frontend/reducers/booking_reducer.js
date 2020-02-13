@@ -2,12 +2,13 @@ import { RECEIVE_CURRENT_BOOKING, RECEIVE_ALL_BOOKINGS, RECEIVE_SINGLE_BOOKING, 
 
 export default (state = {}, action) => {
   Object.freeze(state);
+  const bookingItems = {};
+  let bookings;
   switch (action.type) {
     case RECEIVE_CURRENT_BOOKING:
       return Object.assign({}, state, { [action.payload.id]: action.payload });
     case RECEIVE_ALL_BOOKINGS:
-      const bookingItems = {};
-      const bookings = Object.values(action.payload);
+      bookings = Object.values(action.payload);
       bookings.forEach(booking => {
         bookingItems[booking.id] = booking
       })
@@ -15,7 +16,11 @@ export default (state = {}, action) => {
     case RECEIVE_SINGLE_BOOKING:
       return Object.assign({}, {[action.payload.id]: action.payload});
     case RECEIVE_USERS_BOOKINGS:
-      return { [action.payload.id]: action.payload }
+      bookings = Object.values(action.payload);
+      bookings.forEach(booking => {
+        bookingItems[booking.id] = booking
+      })
+      return Object.assign({}, state, bookingItems);
     default:
       return state;
   }

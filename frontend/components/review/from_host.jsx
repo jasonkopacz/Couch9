@@ -5,6 +5,7 @@ class FromHost extends React.Component {
 
     render () {
         const { review, booking, author } = this.props
+        const color = review.recommended ? "green" : "red"
         return (
             <main>
                 <section className="review-container">
@@ -18,8 +19,11 @@ class FromHost extends React.Component {
                             <h4></h4>
                         </div>
                     </header>
+                    <span>
+                        <p className={color}>{review.recommended ? "Positive" : "Negative"}</p>
+                    </span>
                     <div className="review-body">
-                        {review.body}
+                        <p>{review.body}</p>
                     </div>
                 </section>
             </main>

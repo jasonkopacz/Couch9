@@ -15,7 +15,6 @@ class LocationShow extends React.Component {
 
   render() {
       const item = this.props.location.state.item
-      debugger
     return (
       <div className="location-show">
         {item.name}

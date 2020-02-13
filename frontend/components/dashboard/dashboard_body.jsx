@@ -30,7 +30,6 @@ class DashboardBody extends React.Component {
   render() {
     const { bookings } = this.props;
     const bookingItems = bookings.map((booking, id) => {
-      debugger
       const ms = new Date(booking.departure_date).getTime() - new Date(booking.arrival_date).getTime();
       const days = ms / (1000 * 3600 * 24);
       const nights = days > 1 ? "Nights" : "Night"; 

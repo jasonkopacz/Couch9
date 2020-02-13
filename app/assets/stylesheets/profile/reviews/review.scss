@@ -1,0 +1,108 @@
+
+.review-container > header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 5px;
+    color: #27374c;
+    padding: 10px;
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+
+}
+.review-header {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 5px;
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+
+}
+
+.review-header > h4:hover {
+    color: #ed6542;
+}
+
+.badge:hover {
+    background-color: #ed6542;
+}
+
+#active {
+    color: #ed6542; 
+}
+
+#active-badge {
+    background-color: #ed6542;
+}
+
+.review-header > a {
+    color:#287FB8;
+}
+
+.review-item {
+    background-color: white;
+    padding: 20px;
+}
+
+// #surfers, #hosts {
+//     border-bottom: 2px solid rgba(0,0,0,0.15);
+// }
+
+// .hidden-host-reviews, .hidden-surf-reviews {
+//     border-bottom: 2px solid rgba(0,0,0,0.15);
+// }
+
+.review-item {
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+
+.user-info > h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.user-info > h3 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.review-body > p {
+    font-size: 16px;
+}
+
+.stay-info > h3 {
+    font-size: 14px;
+    color: lightgray;
+    font-weight: normal;
+}
+
+.green {
+    color: #41b866;
+    padding: 10px 0px 20px 0px;
+}
+
+.red {
+    color: red;
+    padding: 10px 0px 20px 0px;
+}
+
+.badge {
+    background-color: #287FB8;
+    color: white;
+    border-radius: 3.75em;
+    color: #fff;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: bold;
+    line-height: 1;
+    margin-left: 10px;
+    padding: 4px 7px;
+    vertical-align: 1px;
+}

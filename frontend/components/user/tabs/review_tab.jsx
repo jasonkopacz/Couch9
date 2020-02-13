@@ -68,7 +68,7 @@ class ReviewTab extends React.Component {
           
         return (
           <ul>
-            <li key={review.id}>
+            <li key={review.id} className="review-item">
               <FromSurfer review={review} booking={booking} author={author}  />
             </li>
           </ul>
@@ -83,7 +83,7 @@ class ReviewTab extends React.Component {
         author = that.props.allUsers[review.author_id]
         return (
           <ul>
-            <li key={review.id}>
+            <li key={review.id} className="review-item">
               <FromHost review={review} booking={booking} author={author}/>
             </li>
           </ul>
@@ -91,25 +91,34 @@ class ReviewTab extends React.Component {
       })
     }
 
-    
+    const selected1 = this.state.renderHostReviews ? "active" : ""
+    const selected2 = this.state.renderSurfReviews ? "active" : ""
+    const selected3 = this.state.renderHostReviews ? "active-badge" : "" 
+    const selected4 = this.state.renderSurfReviews ? "active-badge" : ""
 
 
     return (
       <main>
-        <header>
-          <div id="surfers" onClick={this.showHostReviews}> 
-            From Surfers
+        <header className="reviews-header">
+          <h2>REVIEWS</h2>
+        </header>
+        <header className="review-header">
+          <a onClick={this.showHostReviews} id={selected1}>From Surfers <span className="badge" id={selected3}>{this.props.reviews_as_host.length}</span></a>
+          <a onClick={this.showSurfReviews} id={selected2}>From Hosts <span className="badge" id={selected4}>{this.props.reviews_from_host.length}</span></a>
+        </header>
+        <body className="review-body">
+          <div id="surfers"> 
             <div className="hidden-host-reviews">
               {hostReviews}
             </div>
           </div>
-          <div id="hosts" onClick={this.showSurfReviews}>
-            From Hosts
+          <div id="hosts">
             <div className="hidden-surf-reviews">
               {surfReviews}
             </div>
           </div>
-        </header>
+          
+        </body>
       </main>
     )
   }
