@@ -11,17 +11,10 @@ class TripIndex extends React.Component {
         this.handleEdit = this.handleEdit.bind(this);
     }
 
-    // componentDidMount() {
-    //     return this.props.fetchBookings(this.props.currentUser.id)
-    // }
-
     handleEdit(e) {
         e.preventDefault();
-        const booking = this.props.fetchSingleBooking(this.props.currentUser.id, parseInt(e.target.value));
-        this.setState({
-            booking
-        })
-        this.props.openModal("edit_booking")
+        this.props.fetchSingleBooking(this.props.currentUser.id, parseInt(e.target.value))
+        .then(() => {this.props.openModal("edit_booking")})        
     }
 
     render () {

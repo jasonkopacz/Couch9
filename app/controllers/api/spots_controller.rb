@@ -36,7 +36,6 @@ class Api::SpotsController < ApplicationController
     if logged_in?
       @spot = Spot.find(params[:id])
       @spot.update_attributes(spot_params)
-      debugger
       render "api/spots/show"
     else
       render json: ['You can not do that']
@@ -47,8 +46,7 @@ class Api::SpotsController < ApplicationController
   private
 
   def spot_params
-    debugger
-    params.except(:format).permit(
+    params.require(:data).permit(
       :id, :host_id, :location_id, :sun, :max_guests,
       :last_minute_requests, :preferred_gender, :kid_friendly, :pet_friendly, :smoking_allowed,
       :has_pets, :has_children, :smoking_at_home, :wheelchair_accessible, :sleeping_arrangements,

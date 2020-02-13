@@ -13,7 +13,7 @@ export default (state = {}, action) => {
       })
       return Object.assign({}, state, bookingItems);
     case RECEIVE_SINGLE_BOOKING:
-      return Object.assign({}, state, {[action.payload.id]: action.payload});
+      return Object.assign({}, {[action.payload.id]: action.payload});
     default:
       return state;
   }

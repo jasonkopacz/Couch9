@@ -9,17 +9,21 @@ class Api::BookingsController < ApplicationController
     end
   end
 
-  def edit
-    @booking = Booking.find(params[:id])
+  def update
+    if logged_in?
+      @booking = Booking.find(params[:id])
+      @booking.update(booking_params)
+      render "api/bookings/show"
+    end
   end
 
-  def show
+  def index
     @user = User.find(params[:user_id])
     @bookings = Booking.where("user_id = ?", @user.id)
   end
 
-  def index
-    @bookings = Booking.all
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   def destroy
@@ -33,7 +37,7 @@ class Api::BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:destination, :arrival_date, :departure_date,
+    params.require(:booking).permit(:id, :destination, :arrival_date, :departure_date,
       :number_of_travelers, :trip_description, :host_id, :surfer_id)
   end
 

@@ -3,13 +3,13 @@ import { withRouter } from 'react-router-dom';
 
 class EditBooking extends React.Component {
   constructor(props) {
-    super(props);
+    super(props);    
     this.state = {
-      destination: '',
-      arrival_date: '',
-      departure_date: '',
-      number_of_travelers: 0,
-      trip_description: ''
+      destination: props.booking.destination || '',
+      arrival_date: props.booking.arrival_date ||'',
+      departure_date: props.booking.departure_date || '',
+      number_of_travelers: props.booking.number_of_travelers || 0,
+      trip_description: props.booking.trip_description || ''
 
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,8 +23,10 @@ class EditBooking extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const booking = Object.assign({}, this.state);
-    this.props.update(booking).then(this.props.closeModal);
+    const booking = Object.assign({user_id: this.props.currentUser.id, id: this.props.booking.id}, this.state);
+    this.props.update(booking)
+    this.props.fetchBookings(this.props.currentUser.id)
+    .then(this.props.closeModal);
   }
 
 

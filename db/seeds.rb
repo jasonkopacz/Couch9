@@ -18,48 +18,48 @@ location3 = Location.create!({name: "San Francisco, CA, USA", lat: "37.7749N", l
 
 demo_user = User.create!({fname: "Jason", lname: "Kopacz", email: "jk@gmail.com",
 password: "demouser", age: 27, gender: "M", occupation: "goon",
-education: "Rutgers University", location: Location.find(1), 
+education: "Rutgers University", location: Location.find(1).name, 
 about_me: "Software Engineer :D"})
 
 user1 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Faker::Address.state,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(1).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user2 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email1@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Faker::Address.state,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(1).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user3 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email2@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Faker::Address.state,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(2).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user4 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email3@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Faker::Address.state,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(2).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user5 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email4@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Faker::Address.state,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(2).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user6 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email5@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Faker::Address.state,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(3).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user7 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email6@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Faker::Address.state,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(3).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user8 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email7@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Faker::Address.state,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(3).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user9 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email8@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Faker::Address.state,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(3).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 user10 = User.create!({fname: Faker::Name.first_name, lname: Faker::Name.last_name, 
 email: "email9@gmail.com", password: "password", age: Faker::Number.between(18, 100),
-gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Faker::Address.state,
+gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::University.name, location: Location.find(1).name,
 about_me: Faker::Movies::LordOfTheRings.quote})
 
 

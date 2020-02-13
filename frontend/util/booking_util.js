@@ -8,8 +8,8 @@ export const create = booking => {
 
 export const update = booking => {
     return $.ajax({
-      method: 'GET',
-      url: `/api/users/${booking.user_id}/bookings/${booking.id}/edit`,
+      method: 'PATCH',
+      url: `/api/users/${booking.user_id}/bookings/${booking.id}`,
       data: { booking },
     })
 };

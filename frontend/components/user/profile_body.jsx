@@ -4,6 +4,9 @@ import {Link} from 'react-router-dom';
 import Tabs from './tabs/tabs';
 
 class ProfileBody extends React.Component {
+  componentDidMount() {
+    this.props.requestUser(this.props.currentUser.id)
+  }
 
   render() {
     const user = this.props.currentUser;

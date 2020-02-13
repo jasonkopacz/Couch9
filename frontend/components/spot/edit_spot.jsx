@@ -58,7 +58,6 @@ class EditSpot extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
     this.props.processForm(this.state.id, this.state)
     .then(() => this.props.history.push(`/api/users`))
   };
