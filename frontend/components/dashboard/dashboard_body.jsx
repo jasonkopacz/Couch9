@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Modal from '../modal/modal';
 import SpotSearchIndex from '../spot/spot_search_index';
+import Search from '../location/search_container';
 
 class DashboardBody extends React.Component {
   constructor(props) {
@@ -20,10 +21,10 @@ class DashboardBody extends React.Component {
 
   handleSubmit() {
     const search = document.getElementById('searchQuery').value;
-
+    const that = this;
     this.props.searchQuery(search).then(() => {
-      this.props.history.push("/api/locations/search");}
-      );
+      that.props.history.push("/api/locations/search");
+    });
   }
 
 
@@ -91,7 +92,7 @@ class DashboardBody extends React.Component {
             </header>
              <div className="pictures">
                <Link to={{
-                  pathname: `/api/locations/show/${5}`,
+                  pathname: `api/locations/show/${5}`,
                   state: {
                     item: this.props.locations[5]
                   }
@@ -102,7 +103,7 @@ class DashboardBody extends React.Component {
                  </header>
                </Link>
                 <Link to={{
-                  pathname: `/api/locations/show/${4}`,
+                  pathname: `api/locations/show/${4}`,
                   state: {
                     item: this.props.locations[4]
                   }
@@ -113,7 +114,7 @@ class DashboardBody extends React.Component {
                  </header>
                </Link>
                 <Link to={{
-                  pathname: `/api/locations/show/${1}`,
+                  pathname: `api/locations/show/${1}`,
                   state: {
                     item: this.props.locations[1]
                   }

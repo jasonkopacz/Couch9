@@ -16,9 +16,9 @@ class DashboardNav extends React.Component {
 
   handleSubmit() {
     const search = document.getElementById('searchQueryTop').value;
-
+    const that = this;
     this.props.searchQuery(search).then(() => {
-      this.props.history.push("/api/locations/search");}
+      that.props.history.push("/api/locations/search");}
       );
   }
 
@@ -58,7 +58,7 @@ class DashboardNav extends React.Component {
               </Link>
             </li>
             <li className="dashboard-link-5-body">
-              <Link to='/api/users' className="nav-link-5">Profile
+              <Link to='api/users' className="nav-link-5">Profile
                 <img src={window.profile}></img>
               </Link>
             </li>

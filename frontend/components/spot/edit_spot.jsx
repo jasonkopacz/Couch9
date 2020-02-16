@@ -119,7 +119,7 @@ class EditSpot extends React.Component {
                   <h2>My Home</h2>
                   <div className="header-buttons">
                     <input type="submit" value="Save" />
-                    <a href="/api/users">Cancel</a>
+                    <a href="api/users">Cancel</a>
                   </div>
                 </header>
                 <section className="home-preferences">

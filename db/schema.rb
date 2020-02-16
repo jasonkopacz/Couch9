@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_204838) do
+ActiveRecord::Schema.define(version: 2020_02_16_192124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_204838) do
     t.boolean "thu"
     t.boolean "fri"
     t.boolean "sat"
+    t.string "host_name"
     t.index ["location_id"], name: "index_spots_on_location_id"
   end
 

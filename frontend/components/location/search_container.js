@@ -4,11 +4,12 @@ import { clearSearch } from '../../actions/location_actions';
 import LocationSearch from './search';
 
 const mapStateToProps = ( {entities, errors, session} ) => {
+  debugger
   return {
     errors: errors.session,
     users: entities.users,
     currentUser: entities.users[session.id],
-    searchResults: Object.values(entities.locations)
+    searchResults: entities.locations.searchResult
   };
 };
 

@@ -12,13 +12,15 @@ class Api::LocationsController < ApplicationController
       # @search_q = {}
       # @search_query.split(",").each { |word| @search_q[word] = true}
       # @q = @search_query.split(",")
-      # debugger
       # @locations = Location.where("'%'name'%' LIKE ANY '%'#{@q}'%'")
       
       
       @search_query = params[:q]
-      @locations = Location.where("name LIKE ?", (@search_query))
-      if @locations.length > 0
+      debugger
+      @location = Location.where("name LIKE ?", (@search_query)).first
+      debugger
+      @spots = Spot.where("location_id = ?", @location["id"])
+      if @location
         render "api/locations/search"
       else
         render "api/locations/index"

@@ -23,7 +23,7 @@ class AboutTab extends React.Component {
               <ul>
                 <li className="occupation">&#129520; {user.occupation}</li>
                 <li className="education">&#128214; {user.education}</li>
-                <li className="hometown">&#128506; {user.location}</li>
+                <li className="hometown">&#128506; {user.location.name}</li>
               </ul>
             </div>
           </div>

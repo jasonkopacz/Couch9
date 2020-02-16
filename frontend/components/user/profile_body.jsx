@@ -29,7 +29,7 @@ class ProfileBody extends React.Component {
               <section className="host-availability">
               <div className="availability-header">
                 <div className="availability">Host Availability</div>
-                <Link to="/spots/edit" user={user}>Edit Profile</Link>
+                <Link to="spots/edit" user={user}>Edit Profile</Link>
               </div>
             </section>
             <section className="profile-nav">

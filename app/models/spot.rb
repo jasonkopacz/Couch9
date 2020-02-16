@@ -31,6 +31,7 @@
 #  thu                                  :boolean
 #  fri                                  :boolean
 #  sat                                  :boolean
+#  host_name                            :string
 #
 
 class Spot < ApplicationRecord

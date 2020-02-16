@@ -67,7 +67,8 @@ gender: Faker::Gender.type, occupation: Faker::Job.title, education: Faker::Univ
 about_me: Faker::Movies::LordOfTheRings.quote})
 
 
-spot1 = Spot.create!({host_id: User.find_by(email: "jk@gmail.com").id, location_id: 1, max_guests: 4, 
+spot1 = Spot.create!({host_id: User.find_by(email: "jk@gmail.com").id, 
+host_name: User.find(1).fname + " " + User.find(1).lname, location_id: 1, max_guests: 4, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -76,7 +77,8 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1),
  sun: true, mon: true, tue: true, wed: true, thu: true, fri: true, sat: true})
 
-spot2 = Spot.create!({host_id: User.find_by(email: "email@gmail.com").id, location_id: 1, max_guests: 2, 
+spot2 = Spot.create!({host_id: User.find_by(email: "email@gmail.com").id, 
+host_name: User.find(2).fname + " " + User.find(2).lname, location_id: 1, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -85,7 +87,8 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot3 = Spot.create!({host_id: User.find_by(email: "email1@gmail.com").id, location_id: 1, max_guests: 2, 
+spot3 = Spot.create!({host_id: User.find_by(email: "email1@gmail.com").id, 
+host_name: User.find(3).fname + " " + User.find(3).lname, location_id: 1, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -94,7 +97,8 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot4 = Spot.create!({host_id: User.find_by(email: "email2@gmail.com").id, location_id: 1, max_guests: 2, 
+spot4 = Spot.create!({host_id: User.find_by(email: "email2@gmail.com").id, 
+host_name: User.find(4).fname + " " + User.find(4).lname, location_id: 1, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -103,7 +107,8 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot5 = Spot.create!({host_id: User.find_by(email: "email3@gmail.com").id, location_id: 2, max_guests: 2, 
+spot5 = Spot.create!({host_id: User.find_by(email: "email3@gmail.com").id, 
+host_name: User.find(5).fname + " " + User.find(5).lname, location_id: 2, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -112,7 +117,8 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(2),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot6 = Spot.create!({host_id: User.find_by(email: "email4@gmail.com").id, location_id: 2, max_guests: 2, 
+spot6 = Spot.create!({host_id: User.find_by(email: "email4@gmail.com").id, 
+host_name: User.find(6).fname + " " + User.find(6).lname, location_id: 2, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -121,7 +127,8 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(2),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot7 = Spot.create!({host_id: User.find_by(email: "email5@gmail.com").id, location_id: 2, max_guests: 2, 
+spot7 = Spot.create!({host_id: User.find_by(email: "email5@gmail.com").id, 
+host_name: User.find(7).fname + " " + User.find(7).lname, location_id: 2, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -130,7 +137,8 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(2),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot8 = Spot.create!({host_id: User.find_by(email: "email6@gmail.com").id, location_id: 3, max_guests: 2, 
+spot8 = Spot.create!({host_id: User.find_by(email: "email6@gmail.com").id, 
+host_name: User.find(8).fname + " " + User.find(8).lname, location_id: 3, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -139,7 +147,8 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(3),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot9 = Spot.create!({host_id: User.find_by(email: "email7@gmail.com").id, location_id: 4, max_guests: 2, 
+spot9 = Spot.create!({host_id: User.find_by(email: "email7@gmail.com").id, 
+host_name: User.find(9).fname + " " + User.find(9).lname, location_id: 4, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -148,7 +157,8 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(3),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot10 = Spot.create!({host_id: User.find_by(email: "email8@gmail.com").id, location_id: 5, max_guests: 2, 
+spot10 = Spot.create!({host_id: User.find_by(email: "email8@gmail.com").id, 
+host_name: User.find(10).fname + " " + User.find(10).lname, location_id: 5, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
@@ -157,7 +167,8 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(3),
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
-spot11 = Spot.create!({host_id: User.find_by(email: "email9@gmail.com").id, location_id: 5, max_guests: 2, 
+spot11 = Spot.create!({host_id: User.find_by(email: "email9@gmail.com").id, 
+host_name: User.find(11).fname + " " + User.find(11).lname, location_id: 5, max_guests: 2, 
 last_minute_requests: true, preferred_gender: "Any", kid_friendly: true, 
 pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 

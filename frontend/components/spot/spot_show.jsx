@@ -2,6 +2,9 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 class SpotShow extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
   render() {
     const user = this.props.profileOwner ? this.props.profileOwner : this.props.users[this.props.currentUserId];

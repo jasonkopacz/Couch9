@@ -12,7 +12,6 @@ class TripIndex extends React.Component {
     }
 
     componentDidMount() {
-      debugger
       return this.props.fetchBookings(this.props.currentUser.id)
     }
 
@@ -27,9 +26,7 @@ class TripIndex extends React.Component {
     }
 
     render () {
-      debugger
       const bookings = this.props.bookings;
-      debugger
       const bookingItems = bookings.map((booking, id) => {
       const ms = new Date(booking.departure_date).getTime() - new Date(booking.arrival_date).getTime();
       const days = ms / (1000 * 3600 * 24);

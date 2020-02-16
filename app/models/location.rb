@@ -4,8 +4,8 @@
 #
 #  id   :bigint           not null, primary key
 #  name :text             not null
-#  lat  :integer
-#  long :integer
+#  lat  :string
+#  long :string
 #
 
 class Location < ApplicationRecord

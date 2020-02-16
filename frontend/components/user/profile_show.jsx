@@ -27,7 +27,7 @@ class ProfileShow extends React.Component {
                   <h2 className="user-name">{user.fname} {user.lname}</h2>
 
                 <div className="location">
-                  <button>{user.location}</button>
+                  <button>{user.location.name}</button>
                 </div>
               </section>
             </div>
@@ -38,7 +38,7 @@ class ProfileShow extends React.Component {
                 <div className="availability-header">
                   <div className="availability">Host availability</div>
                   <Link to={{
-                      pathname: '/api/reviews/new',
+                      pathname: 'api/reviews/new',
                       state: {
                         user
                       }

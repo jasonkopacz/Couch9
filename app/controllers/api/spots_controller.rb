@@ -12,15 +12,15 @@ class Api::SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
   end
 
-  def search
-    @search_query = params[:q].upcase
-    @spots = Spot.where("UPPER(location_name) LIKE ?", @search_query)
-    if @spots.length > 0
-      render "api/spots/search"
-    else
-      render json: ["That spot doesn't exist"]
-    end
-  end
+  # def search
+  #   @search_query = params[:q].upcase
+  #   @spots = Spot.where("UPPER(location_name) LIKE ?", @search_query)
+  #   if @spots.length > 0
+  #     render "api/spots/search"
+  #   else
+  #     render json: ["That spot doesn't exist"]
+  #   end
+  # end
 
   def destroy
     @spot = Spot.find(params[:id])

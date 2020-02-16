@@ -6,10 +6,12 @@ import Root from './components/root';
 
 document.addEventListener("DOMContentLoaded", () => {
   function initialize() {
-    var input = document.getElementById('searchQuery');
+    let input = document.getElementById('searchQuery');
     new google.maps.places.Autocomplete(input);
-    var input2 = document.getElementById('searchQueryTop');
+    let input2 = document.getElementById('searchQueryTop');
     new google.maps.places.Autocomplete(input2);
+    let input3 = document.getElementById('dest-search');
+    new google.maps.places.Autocomplete(input3);
   }
   google.maps.event.addDomListener(window, 'load', initialize);
   

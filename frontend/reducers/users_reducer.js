@@ -3,6 +3,7 @@ import { GET_USER, GET_USERS } from '../actions/user_actions';
 import { RECEIVE_CURRENT_SPOT } from '../actions/spot_actions';
 import { RECEIVE_CURRENT_BOOKING, RECEIVE_ALL_BOOKINGS } from '../actions/booking_actions';
 import { RECEIVE_ALL_REVIEWS } from '../actions/review_actions';
+// import {GET_SEARCH_RESULTS } from '../actions/location_actions';
 
 export default (state = {}, action) => {
   Object.freeze(state);
