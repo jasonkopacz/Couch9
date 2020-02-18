@@ -4,37 +4,28 @@ import { Link } from 'react-router-dom';
 class LocationSearch extends React.Component {
   constructor(props) {
     super(props);
-    debugger
   }
 
   componentDidMount() {
     return this.props.searchResults;
-    debugger
   }
 
   componentWillUnmount () {
     this.props.clearSearch;
-    debugger
   }
 
   render() {
-    // const items = searchResults.map((result, i) => {
-    //   return (
-    //     <ul>
-    //       <li key={i}>
-    //         <div key={result.id}>{result.name}</div>
-    //       </li>
-    //     </ul>
-    //   )
-    // })
     if (!this.props.searchResults) return null;
     const searchResults = this.props.searchResults
     const results = Object.values(searchResults.spots)
-    const items = results.map(result => {
+    const items = results.map((result, i) => {
       return (
-        <div>
-          <Link to={`/api/users/${result.host_id}`}>
-            {result.host_name}
+        <div className="host-div" key={i}>
+          <Link to={`/api/users/${result.host_id}`} key={Math.random()} className="host-item">
+            <img className="prof-pic" src={window.default} alt="prof-pic"/>
+          </Link>
+          <Link to={`/api/users/${result.host_id}`} key={Math.random()} className="host-item">
+            <h3 className="host-name">{result.host_name}</h3>
           </Link>
         </div>
       )
@@ -44,14 +35,14 @@ class LocationSearch extends React.Component {
         <header className="search-name">
           <h2>{searchResults.name}</h2>
         </header>
-        <section>
-          <header>
+        <section className="body-section">
+          <header className="local-header">
             <h2>&#127968; Local Hosts</h2>
           </header>
-          <div>
+          <div className="hosts-body">
             <h3>
-              Stay with one of the {Object.values(searchResults.spots).length} 
-              hosts in {searchResults.name}
+              Stay with one of the {Object.values(searchResults.spots).length + " "}  
+               hosts in {searchResults.name}
             </h3>
             <span className="host-clickables">
               {items}

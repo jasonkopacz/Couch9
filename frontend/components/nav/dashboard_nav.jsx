@@ -58,16 +58,14 @@ class DashboardNav extends React.Component {
               </Link>
             </li>
             <li className="dashboard-link-5-body">
-              <Link to='api/users' className="nav-link-5">Profile
+              <Link to='/api/users' className="nav-link-5">Profile
                 <img src={window.profile}></img>
               </Link>
             </li>
             <li tabIndex="0" className="dashboard-link-6-body">
                 <img src={window.cog}></img>
               <ul id="dropdown-menu">
-                <li>Account and Settings</li>
-                <li onClick={this.handleLogout} className="nav-logout">Logout
-                </li>
+                <li onClick={this.handleLogout} className="nav-logout">Logout</li>
               </ul>
               Settings
             </li>

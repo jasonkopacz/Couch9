@@ -67,7 +67,7 @@ class ReviewTab extends React.Component {
           author = that.props.allUsers[review.author_id]
           
         return (
-          <ul>
+          <ul key={id}>
             <li key={review.id} className="review-item">
               <FromSurfer review={review} booking={booking} author={author}  />
             </li>
@@ -82,7 +82,7 @@ class ReviewTab extends React.Component {
         booking = that.props.allBookings[review.booking_id]
         author = that.props.allUsers[review.author_id]
         return (
-          <ul>
+          <ul key={id}>
             <li key={review.id} className="review-item">
               <FromHost review={review} booking={booking} author={author}/>
             </li>
@@ -106,7 +106,7 @@ class ReviewTab extends React.Component {
           <a onClick={this.showHostReviews} id={selected1}>From Surfers <span className="badge" id={selected3}>{this.props.reviews_as_host.length}</span></a>
           <a onClick={this.showSurfReviews} id={selected2}>From Hosts <span className="badge" id={selected4}>{this.props.reviews_from_host.length}</span></a>
         </header>
-        <body className="review-body">
+        <div className="review-body">
           <div id="surfers"> 
             <div className="hidden-host-reviews">
               {hostReviews}
@@ -118,7 +118,7 @@ class ReviewTab extends React.Component {
             </div>
           </div>
           
-        </body>
+        </div>
       </main>
     )
   }

@@ -36,20 +36,20 @@ class DashboardBody extends React.Component {
       const nights = days > 1 ? "Nights" : "Night"; 
       const word = booking.number_of_travelers !== 1 ? 'Travelers' : 'Traveler';
       return (
-        <main>
-          <header className="main-header-booking">{booking.destination}</header>
-          <div key={id} className="trip-container">
+        <main key={Math.random()}>
+          <header key={Math.random()}className="main-header-booking">{booking.destination}</header>
+          <div key={Math.random()} className="trip-container">
             <li key={id} className="trip">
-              <header className="public">Public Trip</header>
-              <div className="booking-destination">Visiting: <a> {booking.destination}</a> </div>
-              <div className="middle">
-                <span className="half">
-                  <div>&#127968; {days} {nights}</div> 
-                  <div>&#128197; {booking.arrival_date} &rarr; {booking.departure_date}</div>
+              <header key={Math.random()} className="public">Public Trip</header>
+              <div key={Math.random()} className="booking-destination">Visiting: <a key={Math.random()}> {booking.destination}</a> </div>
+              <div key={Math.random()} className="middle">
+                <span key={Math.random()} className="half">
+                  <div key={Math.random()}>&#127968; {days} {nights}</div> 
+                  <div key={Math.random()}>&#128197; {booking.arrival_date} &rarr; {booking.departure_date}</div>
                 </span> 
-                <div className="num-trav">👤 {booking.number_of_travelers} {word}</div> 
+                <div key={Math.random()} className="num-trav">👤 {booking.number_of_travelers} {word}</div> 
               </div>
-              <div className="descrip">{booking.trip_description}</div>       
+              <div key={Math.random()} className="descrip">{booking.trip_description}</div>       
             </li>
           </div>
         </main>
@@ -92,7 +92,7 @@ class DashboardBody extends React.Component {
             </header>
              <div className="pictures">
                <Link to={{
-                  pathname: `api/locations/show/${5}`,
+                  pathname: `/api/locations/show/${5}`,
                   state: {
                     item: this.props.locations[5]
                   }
@@ -103,7 +103,7 @@ class DashboardBody extends React.Component {
                  </header>
                </Link>
                 <Link to={{
-                  pathname: `api/locations/show/${4}`,
+                  pathname: `/api/locations/show/${4}`,
                   state: {
                     item: this.props.locations[4]
                   }
@@ -114,7 +114,7 @@ class DashboardBody extends React.Component {
                  </header>
                </Link>
                 <Link to={{
-                  pathname: `api/locations/show/${1}`,
+                  pathname: `/api/locations/show/${1}`,
                   state: {
                     item: this.props.locations[1]
                   }
@@ -141,7 +141,7 @@ class DashboardBody extends React.Component {
           </section>
           <section className="bookings">
               <h2>&#9992; MY TRAVEL PLANS</h2>
-            <div className="preferences">
+            <div key={Math.random()} className="preferences">
               {bookingItems}
             </div>
             <div className="trip-mod">

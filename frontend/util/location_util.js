@@ -1,5 +1,4 @@
 export const getData = (search) => {
-  debugger
     return $.ajax({
       method: 'GET',
       url: `api/search/`,
@@ -13,5 +12,12 @@ export const fetchLocations = () => {
   return $.ajax({
     method: 'GET',
     url: 'api/locations'
+  })
+}
+
+export const fetchSingleLocation = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/locations/${id}`
   })
 }

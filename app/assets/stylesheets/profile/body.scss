@@ -113,6 +113,11 @@
   text-decoration: none;
 }
 
+.review-header:hover {
+  color: #ED6504;
+  text-decoration: none;  
+}
+
 .tabs-header ul {
   display: flex;
   flex-direction: row;
@@ -195,11 +200,11 @@
   color: #27374c;
 }
 
-.location button {
+.location > a {
   color: #287FB8;
   font-size: 1rem;
 }
 
-.location button:hover {
+.location > a:hover {
   color: #ED6504;
 }

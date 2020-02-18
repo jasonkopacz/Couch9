@@ -1,4 +1,3 @@
-debugger
 json.set! @location.id do 
     json.extract! @location, :id, :name, :lat, :long
     json.set! :spots do 

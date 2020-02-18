@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 import { clearErrors } from '../../actions/spot_actions';
-import { clearSearch } from '../../actions/location_actions';
+import { clearSearch, searchQuery } from '../../actions/location_actions';
 import LocationSearch from './search';
 
 const mapStateToProps = ( {entities, errors, session} ) => {
-  debugger
   return {
     errors: errors.session,
     users: entities.users,
@@ -16,7 +15,8 @@ const mapStateToProps = ( {entities, errors, session} ) => {
 const mapDispatchToProps = dispatch => {
   return {
     clearSearch: () => dispatch(clearSearch()),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    searchQuery: (item) => dispatch(searchQuery(item))
   };
 };
 

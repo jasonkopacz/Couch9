@@ -23,11 +23,11 @@ class ProfileShow extends React.Component {
           <div className="left-column-wrapper">
             <div className="left-column">
               <section className="user">
-                <img src={window.profpic} />
+                <img src={window.default} />
                   <h2 className="user-name">{user.fname} {user.lname}</h2>
 
                 <div className="location">
-                  <button>{user.location.name}</button>
+                  <Link to={`/api/locations/show/${user.location.id}`}>{user.location.name}</Link>
                 </div>
               </section>
             </div>

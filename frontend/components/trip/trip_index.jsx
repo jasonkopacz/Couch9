@@ -15,9 +15,9 @@ class TripIndex extends React.Component {
       return this.props.fetchBookings(this.props.currentUser.id)
     }
 
-    componentDidUpdate() {
-      this.props.fetchBookings(this.props.currentUser.id)
-    }
+    // componentDidUpdate() {
+    //   this.props.fetchBookings(this.props.currentUser.id)
+    // }
 
     handleEdit(e) {
         e.preventDefault();
@@ -32,19 +32,19 @@ class TripIndex extends React.Component {
       const days = ms / (1000 * 3600 * 24);
       const nights = days > 1 ? "Nights" : "Night"; 
       return (
-        <main>
-          <div key={id} className="trip-container">
+        <main key={Math.random()}>
+          <div key={Math.random()} className="trip-container">
             <li key={id} className="trip">
-              <div className="booking-destination"><h2 id="bd">Trip to {booking.destination}</h2></div>
-              <div className="middle">
-                <span className="half">
-                  <div>{booking.arrival_date} - {booking.departure_date} ({days} {nights})</div> 
+              <div key={Math.random()} className="booking-destination"><h2 key={Math.random()} id="bd">Trip to {booking.destination}</h2></div>
+              <div key={Math.random()} className="middle">
+                <span key={Math.random()} className="half">
+                  <div key={Math.random()}>{booking.arrival_date} - {booking.departure_date} ({days} {nights})</div> 
                 </span>  
               </div>
-              <div className="descrip">{booking.trip_description}</div>       
+              <div key={Math.random()} className="descrip">{booking.trip_description}</div>       
             </li>
             <div>
-                <button className="edit-booking" onClick={this.handleEdit} value={booking.id}>Edit</button>
+                <button key={Math.random()} className="edit-booking" onClick={this.handleEdit} value={booking.id}>Edit</button>
             </div>
           </div>
         </main>

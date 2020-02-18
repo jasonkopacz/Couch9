@@ -89,6 +89,7 @@ class EditSpot extends React.Component {
   render() {
     return (
       <main>
+        {this.renderErrors}
         <article className="spot-page">
           <form className="create-spot-form" onSubmit={this.handleSubmit}>
             <div className="spot-left-column">
@@ -115,7 +116,6 @@ class EditSpot extends React.Component {
               </header>
               <main className="main-body">
                 <header className="home-header">
-                  {this.renderErrors}
                   <h2>My Home</h2>
                   <div className="header-buttons">
                     <input type="submit" value="Save" />
@@ -273,7 +273,7 @@ class EditSpot extends React.Component {
 
                   <div className="description-sleep">
                     <h3 className="dt">Description of Sleeping Arrangement</h3>
-                      <textarea name="description-sleep" id="" cols="40" rows="8"
+                      <textarea name="description-sleep" cols="40" rows="8"
                         value={this.state.description_of_sleeping_arrangements}
                         onChange={this.update("description_of_sleeping_arrangements")}>
                       </textarea>
@@ -281,7 +281,7 @@ class EditSpot extends React.Component {
 
                   <div className="roommate-situation">
                     <h3 className="dt">Roommate Situation</h3>
-                    <textarea name="roommate-situation" id="" cols="40" rows="8"
+                    <textarea name="roommate-situation" cols="40" rows="8"
                       value={this.state.roommate_situation}
                       onChange={this.update("roommate_situation")}>
                     </textarea>
@@ -323,7 +323,7 @@ class EditSpot extends React.Component {
 
                   <div className="public-transportation">
                     <h3 className="dt">Public Transportation</h3>
-                    <textarea name="public-transportation" id="" cols="40" rows="8"
+                    <textarea name="public-transportation" cols="40" rows="8"
                       value={this.state.public_transportation}
                       onChange={this.update("public_transportation")}>
                     </textarea>
@@ -331,7 +331,7 @@ class EditSpot extends React.Component {
 
                   <div className="shared">
                     <h3 className="dt">What I Can Share With Guests</h3>
-                    <textarea name="shared" id="" cols="40" rows="8"
+                    <textarea name="shared" cols="40" rows="8"
                       value={this.state.what_i_can_share_with_guests}
                       onChange={this.update("what_i_can_share_with_guests")}>
                     </textarea>
@@ -339,7 +339,7 @@ class EditSpot extends React.Component {
 
                   <div className="additional">
                     <h3 className="dt">Additional Information</h3>
-                    <textarea name="additional" id="" cols="40" rows="8"
+                    <textarea name="additional" cols="40" rows="8"
                       value={this.state.additional_information}
                       onChange={this.update("additional_information")}>
                     </textarea>

@@ -19,7 +19,7 @@ class ProfileBody extends React.Component {
               <h2 className="user-name">{this.props.currentUser.fname} {this.props.currentUser.lname}</h2>
 
               <div className="location">
-                <button>{this.props.currentUser.city}</button>
+                <Link to={`/api/locations/show/${user.location.id}`}>{user.location.name}</Link>
               </div>
             </section>
           </div>
@@ -29,7 +29,7 @@ class ProfileBody extends React.Component {
               <section className="host-availability">
               <div className="availability-header">
                 <div className="availability">Host Availability</div>
-                <Link to="spots/edit" user={user}>Edit Profile</Link>
+                <Link to="/spots/edit" user={user}>Edit Profile</Link>
               </div>
             </section>
             <section className="profile-nav">

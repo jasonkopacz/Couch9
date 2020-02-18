@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { clearErrors } from '../../actions/spot_actions';
-import { clearSearch } from '../../actions/location_actions';
+import { clearSearch, searchQuery, fetchSingleLocation } from '../../actions/location_actions';
 import LocationShow from './show';
 
 const mapStateToProps = ( {entities, errors, session} ) => {
@@ -8,14 +8,15 @@ const mapStateToProps = ( {entities, errors, session} ) => {
     errors: errors.session,
     users: entities.users,
     currentUser: entities.users[session.id],
-    // searchResults: Object.values(entities.locations)
+    locations: entities.locations
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     clearSearch: () => dispatch(clearSearch()),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    fetchSingleLocation: (id) => dispatch(fetchSingleLocation(id))
   };
 };
 

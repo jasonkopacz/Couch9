@@ -2,6 +2,7 @@ class Api::LocationsController < ApplicationController
   
     def show
       @location = Location.find(params[:id])
+      @spots = Spot.where("location_id = ?", @location.id)
     end
 
     def index
@@ -16,10 +17,13 @@ class Api::LocationsController < ApplicationController
       
       
       @search_query = params[:q]
-      debugger
-      @location = Location.where("name LIKE ?", (@search_query)).first
-      debugger
-      @spots = Spot.where("location_id = ?", @location["id"])
+      if @search_query.to_i == 0
+        @location = Location.where("name LIKE ?", (@search_query)).first
+        @spots = Spot.where("location_id = ?", @location.id)
+      elsif @search_query.to_i > 0
+        @location = Location.where("id = ?", @search_query.to_i).first
+        @spots = Spot.where("location_id = ?", @search_query.to_i) 
+      end
       if @location
         render "api/locations/search"
       else
