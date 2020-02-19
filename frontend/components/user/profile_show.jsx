@@ -14,6 +14,19 @@ class ProfileShow extends React.Component {
     }));
   }
   render() {
+    let review;
+    if (this.props.match.params.user_id != 1) {
+      review = 
+        <Link to={{
+          pathname: 'api/reviews/new',
+          state: {
+            user
+          }
+        }} 
+        className="review-button">Write A Review</Link >
+    } else {
+      review = ""
+    }
     
     if (!this.state) return null;
     const user = this.state.user;
@@ -37,13 +50,7 @@ class ProfileShow extends React.Component {
               <section className="host-availability">
                 <div className="availability-header">
                   <div className="availability">Host availability</div>
-                  <Link to={{
-                      pathname: 'api/reviews/new',
-                      state: {
-                        user
-                      }
-                    }} 
-                    className="review-button">Write A Review</Link >
+                  {review}
                 </div>
               </section>
               <section className="profile-nav">
