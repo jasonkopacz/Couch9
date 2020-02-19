@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_BOOKING, RECEIVE_ALL_BOOKINGS, RECEIVE_SINGLE_BOOKING, RECEIVE_USERS_BOOKINGS } from '../actions/booking_actions';
+import { RECEIVE_CURRENT_BOOKING, RECEIVE_ALL_BOOKINGS, RECEIVE_SINGLE_BOOKING, RECEIVE_USERS_BOOKINGS, CLEAR_BOOKINGS } from '../actions/booking_actions';
 
 export default (state = {}, action) => {
   Object.freeze(state);
@@ -21,6 +21,8 @@ export default (state = {}, action) => {
         bookingItems[booking.id] = booking
       })
       return Object.assign({}, state, bookingItems);
+    case CLEAR_BOOKINGS:
+      return {}
     default:
       return state;
   }

@@ -20,7 +20,6 @@ class DashboardNav extends React.Component {
     this.props.searchQuery(search).then(() => {
       that.props.history.push("/api/locations/search");}
       )
-      // .catch((err) => {debugger;that.props.history.push("/api/spots/all")})
   }
 
   render() {

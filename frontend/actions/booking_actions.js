@@ -4,6 +4,7 @@ export const RECEIVE_CURRENT_BOOKING = 'RECEIVE_CURRENT_BOOKING';
 export const RECEIVE_ALL_BOOKINGS = 'RECEIVE_ALL_BOOKINGS';
 export const RECEIVE_SINGLE_BOOKING = 'RECEIVE_SINGLE_BOOKING';
 export const RECEIVE_USERS_BOOKINGS = 'RECEIVE_USERS_BOOKINGS';
+export const CLEAR_BOOKINGS = 'CLEAR_BOOKINGS';
 
 export const receiveCurrentBooking = payload => {
   return {
@@ -83,4 +84,10 @@ export const fetchAllBookings = () => dispatch => {
   err => {
     dispatch(receiveErrors(err.responseJSON))
   });
+};
+
+export const clearBookings = () => {
+  return {
+    type: CLEAR_BOOKINGS
+  };
 };

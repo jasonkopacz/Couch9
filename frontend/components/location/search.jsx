@@ -10,9 +10,7 @@ class LocationSearch extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     if (Object.keys(this.props.location).length > 1) {
-      debugger
       this.setState({
         error: true
       })
@@ -62,7 +60,6 @@ class LocationSearch extends React.Component {
           )
       })
     }
-    debugger
     const stay = `Stay with one of the {Object.values(searchResults.spots).length + " "}  
     hosts in {searchResults.name}`
     const localHosts = searchResults.name ? "Local Hosts" : "No hosts in that area yet, here's a list of all current hosts!"

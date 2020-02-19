@@ -1,4 +1,4 @@
-@reviews_as_host.each do |review|
+@reviews_as_host_from_surfer.each do |review|
   json.set! review.id do
     json.partial! 'review', review: review
   end

@@ -11,7 +11,6 @@ export default (state = {}, action) => {
     case RECEIVE_UPDATED_SPOT:
       return Object.assign({}, state, action.payload.spot)
     case RECEIVE_ALL_SPOTS:
-      debugger
       return Object.assign({}, state, { [action.payload.id]: action.payload[id] })
     default:
       return state;

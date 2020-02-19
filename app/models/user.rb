@@ -68,7 +68,7 @@ class User < ApplicationRecord
     foreign_key: :surfer_id,
     class_name: :Review
 
-  has_many :reviews_as_host,
+  has_many :reviews_as_host_from_surfer,
     primary_key: :id,
     foreign_key: :host_id,
     class_name: :Review

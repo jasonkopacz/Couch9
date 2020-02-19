@@ -19,9 +19,7 @@ class LocationShow extends React.Component {
       const item = this.props.locations[this.props.match.params.location_id]
       if (item.spots === undefined) return null;
       const location = this.props.locations[this.props.match.params.location_id]
-      debugger
       const hosts = Object.values(location.spots)
-      debugger
       const items = hosts.map((host, i) => {
         return (
           <div className="host-div" key={i}>

@@ -13,10 +13,14 @@ class Api::ReviewsController < ApplicationController
 
       def index
         @user = User.find(params[:user_id])
+      
+        @reviews_as_host_from_surfer = Review.where("host_id = ? AND author_id != ? AND surfer_id != ?", @user.id, @user.id, @user.id)
+        # @reviews_as_host_for_surfer = Review.where("host_id = ? AND author_id = ?", @user.id, @user.id)
+        @reviews_for_host = Review.where("author_id = ? AND host_id != ?", @user.id, @user.id)
+        @reviews_from_host = Review.where("author_id != ? AND surfer_id = ? AND host_id != ?", @user.id, @user.id, @user.id)
+        # debugger
+        render "api/reviews/index"
         
-        @reviews_as_host = Review.where("host_id = ?", @user.id)
-        @reviews_for_host = Review.where("author_id = ?", @user.id)
-        @reviews_from_host = Review.where("author_id != ? AND surfer_id = ?", @user.id, @user.id)
         # @reviews_from_host = Review.where("author_id != mine AND surfer_id = id",
         # {mine: @user.id, id: @user.id})
       end

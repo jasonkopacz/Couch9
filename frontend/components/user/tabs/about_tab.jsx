@@ -5,7 +5,7 @@ class AboutTab extends React.Component {
   render() {
     const user = this.props.user ? this.props.user :
       this.props.currentUser;
-      const reviews = user.reviews_as_host.length + user.reviews_from_host.length
+      const reviews = user.reviews_as_host_from_surfer.length + user.reviews_from_host.length
       const languages = user.email === "jk@gmail.com" ? "English, Vietnamese" : "Languages"; 
     return (
       <main>
