@@ -15,10 +15,12 @@ class ProfileShow extends React.Component {
   }
   render() {
     let review;
+    if (!this.state) return null;
     if (this.props.match.params.user_id != 1) {
+      const user = this.state.user
       review = 
         <Link to={{
-          pathname: 'api/reviews/new',
+          pathname: '/api/reviews/new',
           state: {
             user
           }
@@ -28,7 +30,6 @@ class ProfileShow extends React.Component {
       review = ""
     }
     
-    if (!this.state) return null;
     const user = this.state.user;
     return (
         <main>

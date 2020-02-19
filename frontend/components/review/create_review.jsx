@@ -105,25 +105,26 @@ class CreateReview extends React.Component {
             
         }
         return(
+        <main className="review-page-container">
             <form className="review-form" onSubmit={this.handleSubmit}>
-                <header>
-                    <h1>WRITE A REFERENCE FOR {user.fname}</h1>
+                <header className="ref-header">
+                    <h1>WRITE A REFERENCE FOR {user.fname.toUpperCase()}</h1>
                 </header>
 
                 <section className="choose-booking">
                         {block}
                 </section>
 
-                <section>
+                <section className="rev-section">
                     <p>Would you recommend {user.fname}</p>
-                    <div>
+                    <div className="radio-review">
                         <input type="radio" id="recommend" 
                             onChange={this.radioUpdate("yes", "no")}
                             checked={this.state.yes ? "checked" : ""}>
                         </input>
                         <label htmlFor="recommend">Yes, I'd recommend</label>
                     </div> 
-                    <div>   
+                    <div className="radio-review">   
                         <input type="radio" id="no-recommend" 
                             onChange={this.radioUpdate("no", "yes")}
                             checked={this.state.no ? "checked" : ""}>
@@ -137,29 +138,32 @@ class CreateReview extends React.Component {
                         you can't edit or delete it
                     </p>
                 </section>
-                <section>
+                <section className="surf-or-host">
                     <p>Did {user.fname} surf or host?</p>
-                    <div>
+                    <div className="radio-review">
                         <input type="radio" id="surf" 
                             onChange={this.radioUpdate("surf", "host")}
                             checked={this.state.surf ? "checked" : ""}>
                         </input>
                         <label htmlFor="surf">Surf</label>
                     </div> 
-                    <div>   
+                    <div className="radio-review">   
                         <input type="radio" id="host" 
                             onChange={this.radioUpdate("host", "surf")}
                             checked={this.state.host ? "checked" : ""}>
                         </input>
                         <label htmlFor="host">Host</label>
                     </div>
-                </section>
                 <textarea id="memorable" cols="30" rows="10" 
                     placeholder={`What was memorable about ${user.fname}?`}
                     onChange={this.update("body")}>
                 </textarea>
-                <button type="submit" value="Create">Create</button>
+                </section>
+                <section className="submit">
+                    <button className="review-button" type="submit" value="Create">Create</button>
+                </section>
             </form >
+        </main>
         )
     }
 }
