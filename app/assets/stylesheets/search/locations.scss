@@ -58,11 +58,12 @@
 }
 
 .host-div {
-    margin: 20px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 25%;
 }
 
 .prof-pic {
@@ -72,4 +73,13 @@
 
 .host-name {
     font-weight: normal;
+    text-align: center;
+}
+
+.host-location, .host-name {
+    color: #287FB8;
+}
+
+.host-location:hover, .host-name:hover {
+    color: #ED6504;
 }

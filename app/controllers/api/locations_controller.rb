@@ -17,17 +17,19 @@ class Api::LocationsController < ApplicationController
       
       
       @search_query = params[:q]
-      if @search_query.to_i == 0
+      if @search_query.to_i == 0 && Location.where("name LIKE ?", @search_query).first == nil
+          @spots = Spot.all
+      elsif @search_query.to_i == 0 && Location.where("name LIKE ?", @search_query) != nil
         @location = Location.where("name LIKE ?", (@search_query)).first
         @spots = Spot.where("location_id = ?", @location.id)
       elsif @search_query.to_i > 0
         @location = Location.where("id = ?", @search_query.to_i).first
-        @spots = Spot.where("location_id = ?", @search_query.to_i) 
+        @spots = Spot.where("location_id = ?", @search_query.to_i)
       end
-      if @location
+      if @location && @spots
         render "api/locations/search"
       else
-        render "api/locations/index"
+        render "api/spots/index"
       end
     end
   

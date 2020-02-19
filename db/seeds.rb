@@ -74,7 +74,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
  sleeping_arrangements: "Private Bedroom", description_of_sleeping_arrangements: "placeholder",
  roommate_situation: "placeholder roommate", public_transportation: "placeholder transpo", 
- what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1),
+ what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1).name,
  sun: true, mon: true, tue: true, wed: true, thu: true, fri: true, sat: true})
 
 spot2 = Spot.create!({host_id: User.find_by(email: "email@gmail.com").id, 
@@ -84,7 +84,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
  sleeping_arrangements: "Private Bedroom", description_of_sleeping_arrangements: "placeholder",
  roommate_situation: "placeholder roommate", public_transportation: "placeholder transpo", 
- what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1),
+ what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1).name,
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
 spot3 = Spot.create!({host_id: User.find_by(email: "email1@gmail.com").id, 
@@ -94,7 +94,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
  sleeping_arrangements: "Private Bedroom", description_of_sleeping_arrangements: "placeholder",
  roommate_situation: "placeholder roommate", public_transportation: "placeholder transpo", 
- what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1),
+ what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1).name,
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
 spot4 = Spot.create!({host_id: User.find_by(email: "email2@gmail.com").id, 
@@ -104,7 +104,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
  sleeping_arrangements: "Private Bedroom", description_of_sleeping_arrangements: "placeholder",
  roommate_situation: "placeholder roommate", public_transportation: "placeholder transpo", 
- what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1),
+ what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(1).name,
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
 spot5 = Spot.create!({host_id: User.find_by(email: "email3@gmail.com").id, 
@@ -114,7 +114,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
  sleeping_arrangements: "Private Bedroom", description_of_sleeping_arrangements: "placeholder",
  roommate_situation: "placeholder roommate", public_transportation: "placeholder transpo", 
- what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(2),
+ what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(2).name,
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
 spot6 = Spot.create!({host_id: User.find_by(email: "email4@gmail.com").id, 
@@ -124,7 +124,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
  sleeping_arrangements: "Private Bedroom", description_of_sleeping_arrangements: "placeholder",
  roommate_situation: "placeholder roommate", public_transportation: "placeholder transpo", 
- what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(2),
+ what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(2).name,
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
 spot7 = Spot.create!({host_id: User.find_by(email: "email5@gmail.com").id, 
@@ -134,7 +134,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
  sleeping_arrangements: "Private Bedroom", description_of_sleeping_arrangements: "placeholder",
  roommate_situation: "placeholder roommate", public_transportation: "placeholder transpo", 
- what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(2),
+ what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(2).name,
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
 spot8 = Spot.create!({host_id: User.find_by(email: "email6@gmail.com").id, 
@@ -144,7 +144,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
  sleeping_arrangements: "Private Bedroom", description_of_sleeping_arrangements: "placeholder",
  roommate_situation: "placeholder roommate", public_transportation: "placeholder transpo", 
- what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(3),
+ what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(3).name,
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
 spot9 = Spot.create!({host_id: User.find_by(email: "email7@gmail.com").id, 
@@ -154,7 +154,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
  sleeping_arrangements: "Private Bedroom", description_of_sleeping_arrangements: "placeholder",
  roommate_situation: "placeholder roommate", public_transportation: "placeholder transpo", 
- what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(3),
+ what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(4).name,
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
 spot10 = Spot.create!({host_id: User.find_by(email: "email8@gmail.com").id, 
@@ -164,7 +164,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
  sleeping_arrangements: "Private Bedroom", description_of_sleeping_arrangements: "placeholder",
  roommate_situation: "placeholder roommate", public_transportation: "placeholder transpo", 
- what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(3),
+ what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(5).name,
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
 spot11 = Spot.create!({host_id: User.find_by(email: "email9@gmail.com").id, 
@@ -174,7 +174,7 @@ pet_friendly: true, smoking_allowed: true, has_pets: false, has_children: false,
  smoking_at_home: true, wheelchair_accessible: true, 
  sleeping_arrangements: "Private Bedroom", description_of_sleeping_arrangements: "placeholder",
  roommate_situation: "placeholder roommate", public_transportation: "placeholder transpo", 
- what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(3),
+ what_i_can_share_with_guests: "placeholder share", additional_information: "placeholder add", location_name: Location.find(5).name,
  sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, sat: false})
 
 booking1 = Booking.create!({destination: "Paris", arrival_date: "09/09/2020", 

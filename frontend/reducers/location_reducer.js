@@ -5,7 +5,11 @@ export default (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
       case GET_SEARCH_RESULTS:
-        return Object.assign({}, state, { searchResult: Object.values(action.searchResults) })
+        let results = {};
+        Object.values(action.searchResults).forEach((result, i) => {
+          results[i] = result
+        })
+        return Object.assign({}, state, results)
       case CLEAR_SEARCH_RESULTS:
         return Object.assign({}, state);
       case RECEIVE_LOCATIONS:

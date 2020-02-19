@@ -4,10 +4,19 @@ import { Link } from 'react-router-dom';
 class LocationSearch extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      error: false
+    }
   }
 
   componentDidMount() {
-    return this.props.searchResults;
+    debugger
+    if (Object.keys(this.props.location).length > 1) {
+      debugger
+      this.setState({
+        error: true
+      })
+    }
   }
 
   componentWillUnmount () {
@@ -15,34 +24,60 @@ class LocationSearch extends React.Component {
   }
 
   render() {
-    if (!this.props.searchResults) return null;
-    const searchResults = this.props.searchResults
-    const results = Object.values(searchResults.spots)
-    const items = results.map((result, i) => {
-      return (
-        <div className="host-div" key={i}>
-          <Link to={`/api/users/${result.host_id}`} key={Math.random()} className="host-item">
-            <img className="prof-pic" src={window.default} alt="prof-pic"/>
-          </Link>
-          <Link to={`/api/users/${result.host_id}`} key={Math.random()} className="host-item">
-            <h3 className="host-name">{result.host_name}</h3>
-          </Link>
-        </div>
-      )
-    })
+    if (!this.props.location) return null;
+    const searchResults = this.props.location
+    let results;
+    let items;
+
+
+    if (Object.keys(this.props.location).length === 1) {
+      results = Object.values(searchResults.spots)
+      items = results.map((result, i) => {
+        return (
+          <div className="host-div" key={i}>
+            <Link to={`/api/users/${result.host_id}`} key={Math.random()} className="host-item">
+              <img className="prof-pic" src={window.default} alt="prof-pic"/>
+            </Link>
+            <Link to={`/api/users/${result.host_id}`} key={Math.random()} className="host-item">
+              <h3 className="host-name">{result.host_name}</h3>
+            </Link>
+          </div>
+        )
+      })
+    } else {
+        results = Object.values(searchResults)
+        items = results.map((result, i) => {
+          return (
+            <div className="host-div" key={i}>
+              <Link to={`/api/users/${result.host_id}`} key={Math.random()} className="host-item">
+                <img className="prof-pic" src={window.default} alt="prof-pic"/>
+              </Link>
+              <Link to={`/api/users/${result.host_id}`} key={Math.random()} className="host-item">
+                <h3 className="host-name">{result.host_name}</h3>
+              </Link>
+              <Link to={`/api/locations/show/${result.location_id}`} key={Math.random()} className="host-item">
+                <h4 className="host-location">{result.location_name}</h4>
+              </Link>
+            </div>
+          )
+      })
+    }
+    debugger
+    const stay = `Stay with one of the {Object.values(searchResults.spots).length + " "}  
+    hosts in {searchResults.name}`
+    const localHosts = searchResults.name ? "Local Hosts" : "No hosts in that area yet, here's a list of all current hosts!"
     return (
       <main className="locations-search">
         <header className="search-name">
-          <h2>{searchResults.name}</h2>
+          <h2>{searchResults.name ? searchResults.name : ""}</h2>
         </header>
         <section className="body-section">
           <header className="local-header">
-            <h2>&#127968; Local Hosts</h2>
+            <h2>&#127968; {localHosts}</h2>
           </header>
           <div className="hosts-body">
             <h3>
-              Stay with one of the {Object.values(searchResults.spots).length + " "}  
-               hosts in {searchResults.name}
+              {searchResults.name ? stay : "Find a host"}
             </h3>
             <span className="host-clickables">
               {items}

@@ -11,7 +11,7 @@ import CreateSpotContainer from './spot/create_spot_container';
 import SpotShowContainer from './spot/spot_show_container';
 import ProfileShowContainer from './user/profile_show_container';
 import EditSpotContainer from './spot/edit_spot_container';
-import spot_search_index_container from './spot/spot_search_index_container';
+import AllSpots from './spot/spot_search_index_container';
 import trip_index_container from './trip/trip_index_container';
 import DashboardNavContainer from './nav/dashboard_nav_container';
 import Footer from './nav/footer';
@@ -42,6 +42,7 @@ const App = () => {
       <ProtectedRoute path="/api/reviews/new" component={CreateReview} />
       <ProtectedRoute path="/api/locations/search" component={LocationSearchContainer} />
       <ProtectedRoute path="/api/locations/show/:location_id" component={LocationShow} />
+      <Route path="/api/spots/all" component={AllSpots} />
       <Route path="/" component={Footer} />
     </>
 

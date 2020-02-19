@@ -41,9 +41,9 @@ class Spot < ApplicationRecord
         foreign_key: :host_id,
         class_name: :User
 
-    belongs_to :location,
-        primary_key: :id,
-        foreign_key: :location_id,
-        class_name: :Location
+    belongs_to :location
+        # primary_key: :id,
+        # foreign_key: :location_id,
+        # class_name: :Location
 
 end

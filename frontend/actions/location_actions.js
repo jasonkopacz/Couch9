@@ -11,6 +11,7 @@ export const searchQuery =  (search) => dispatch => {
       dispatch(getSearchResults(payload));
     },
       err => {
+        // debugger
         dispatch(receiveErrors(err.responseJSON))
       }
       );
@@ -52,6 +53,7 @@ export const searchQuery =  (search) => dispatch => {
       return payload;
     },
     err => {
+      debugger
       dispatch(receiveErrors(err.responseJSON))
     });
   };

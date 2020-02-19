@@ -13,20 +13,17 @@ export const fetchSpot = id => (
   })
 );
 
-// export const getData = (search) => {
-//   return $.ajax({
-//     method: 'GET',
-//     url: `api/search/`,
-//     dataType: "json",
-//     data: `q=${search}`
-//   });
-// };
-
-
 export const update = (id, data) => {
     return $.ajax({
       method: 'PATCH',
       url: `/api/spots/${id}`,
       data: { data },
     });
+};
+
+export const fetchAllSpots = () => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/spots`
+  });
 };

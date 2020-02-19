@@ -12,6 +12,10 @@ class Api::SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
   end
 
+  def index
+    @spots = Spot.all
+  end
+
   # def search
   #   @search_query = params[:q].upcase
   #   @spots = Spot.where("UPPER(location_name) LIKE ?", @search_query)

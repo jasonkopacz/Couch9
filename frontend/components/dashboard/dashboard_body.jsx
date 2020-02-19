@@ -24,7 +24,7 @@ class DashboardBody extends React.Component {
     const that = this;
     this.props.searchQuery(search).then(() => {
       that.props.history.push("/api/locations/search");
-    });
+    })
   }
 
 
@@ -134,7 +134,7 @@ class DashboardBody extends React.Component {
                     &#128269;
                     {/* <img className="mag-glass" src={window.search} /> */}
                   </button>
-                  <input type="text" name="q" id="searchQuery" placeholder="Where are you going?" />
+                  <input type="search" name="q" id="searchQuery" placeholder="Where are you going?" />
                 </form>
               </div>
              </div>

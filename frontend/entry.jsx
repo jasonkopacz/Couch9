@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let input3 = document.getElementById('dest-search');
     new google.maps.places.Autocomplete(input3);
   }
-  google.maps.event.addDomListener(window, 'load', initialize);
+  window.google.maps.event.addDomListener(window, 'load', initialize);
   
   let store;
   if (window.currentUser) {

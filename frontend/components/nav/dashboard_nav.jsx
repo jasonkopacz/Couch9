@@ -19,7 +19,8 @@ class DashboardNav extends React.Component {
     const that = this;
     this.props.searchQuery(search).then(() => {
       that.props.history.push("/api/locations/search");}
-      );
+      )
+      // .catch((err) => {debugger;that.props.history.push("/api/spots/all")})
   }
 
   render() {
@@ -44,7 +45,7 @@ class DashboardNav extends React.Component {
                   &#128269;
                   {/* <img src={window.search}/> */}
                 </button>
-                  <input type="text" name="q" id="searchQueryTop" placeholder="Where are you going?"/>
+                  <input type="search" name="q" id="searchQueryTop" placeholder="Where are you going?"/>
               </form>  
             </div>
             </fieldset>

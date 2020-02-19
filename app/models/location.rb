@@ -15,4 +15,7 @@ class Location < ApplicationRecord
         foreign_key: :location_id,
         class_name: :Spot 
 
+    has_many :hosts,
+        through: :spots
+
 end

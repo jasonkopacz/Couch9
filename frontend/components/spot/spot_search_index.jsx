@@ -7,7 +7,7 @@ class SpotSearchIndex extends React.Component {
   }
 
   componentDidMount() {
-    return this.props.searchResults;
+    return this.props.fetchAllSpots();
   }
 
   componentWillUnmount () {
@@ -15,9 +15,10 @@ class SpotSearchIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.searchResults) return null;
-    const { searchResults } = this.props;
-    const items = searchResults.map((result, i) => {
+
+    if (!this.props.all) return null;
+    const all = Object.values(this.props.all);
+    const items = all.map((result, i) => {
       return (
         <ul>
           <li key={result.id}>

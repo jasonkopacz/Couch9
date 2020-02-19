@@ -8,7 +8,7 @@ const mapStateToProps = ( {entities, errors, session} ) => {
     errors: errors.session,
     users: entities.users,
     currentUser: entities.users[session.id],
-    searchResults: entities.locations.searchResult
+    location: entities.locations
   };
 };
 
