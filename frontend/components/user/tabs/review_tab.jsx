@@ -39,11 +39,17 @@ class ReviewTab extends React.Component {
       this.props.fetchAllBookings();
       this.props.fetchUsers();
     } else {
-      this.props.fetchReviews(this.props.currentUser.id);
+      this.props.fetchReviews(this.props.currentUser.id)
+      .then(() => {
+        this.setState({
+          reviews_as_host_from_surfer:  this.props.currentUser.reviews_as_host_from_surfer,
+          reviews_from_host: this.props.currentUser.reviews_from_host
+      })
       this.props.fetchAllBookings();
       this.props.fetchUsers();
-    }
+    })}
   }
+
 
   componentWillUnmount() {
     this.props.clearBookings();
@@ -82,7 +88,6 @@ class ReviewTab extends React.Component {
     let author;
     const that = this;
 
-    debugger
     if (this.state.renderHostReviews) {
       const reviews_as_host_from_surfer = this.state.reviews_as_host_from_surfer;
       hostReviews = reviews_as_host_from_surfer.map((review, id) => {

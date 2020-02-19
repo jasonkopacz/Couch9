@@ -28,8 +28,8 @@ class LocationSearch extends React.Component {
     let items;
 
 
-    if (Object.keys(this.props.location).length === 1) {
-      results = Object.values(searchResults.spots)
+    if (this.props.location[0].name) {
+      results = Object.values(searchResults[0].spots)
       items = results.map((result, i) => {
         return (
           <div className="host-div" key={i}>
@@ -62,11 +62,11 @@ class LocationSearch extends React.Component {
     }
     const stay = `Stay with one of the {Object.values(searchResults.spots).length + " "}  
     hosts in {searchResults.name}`
-    const localHosts = searchResults.name ? "Local Hosts" : "No hosts in that area yet, here's a list of all current hosts!"
+    const localHosts = searchResults[0].name ? "Local Hosts" : "No hosts in that area yet, here's a list of all current hosts!"
     return (
       <main className="locations-search">
         <header className="search-name">
-          <h2>{searchResults.name ? searchResults.name : ""}</h2>
+          <h2>{searchResults[0].name ? searchResults[0].name : ""}</h2>
         </header>
         <section className="body-section">
           <header className="local-header">

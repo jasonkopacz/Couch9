@@ -18,7 +18,6 @@ class Api::ReviewsController < ApplicationController
         # @reviews_as_host_for_surfer = Review.where("host_id = ? AND author_id = ?", @user.id, @user.id)
         @reviews_for_host = Review.where("author_id = ? AND host_id != ?", @user.id, @user.id)
         @reviews_from_host = Review.where("author_id != ? AND surfer_id = ? AND host_id != ?", @user.id, @user.id, @user.id)
-        # debugger
         render "api/reviews/index"
         
         # @reviews_from_host = Review.where("author_id != mine AND surfer_id = id",

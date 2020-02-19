@@ -6,7 +6,6 @@ class FromSurfer extends React.Component {
     render () {
         const { review, booking, author } = this.props
         const color = review.recommended ? "green" : "red";
-        debugger
         return (
             <main>
                 <section className="review-container">
