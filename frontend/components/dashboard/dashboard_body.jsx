@@ -20,10 +20,12 @@ class DashboardBody extends React.Component {
   }
 
   handleSubmit() {
+    event.preventDefault();
     const search = document.getElementById('searchQuery').value;
     const that = this;
-    this.props.searchQuery(search).then(() => {
-      that.props.history.push("/api/locations/search");
+    this.props.searchQuery(search)
+    .then(() => {
+      that.props.history.push("/api/locations/search")
     })
   }
 
@@ -134,7 +136,7 @@ class DashboardBody extends React.Component {
                     &#128269;
                     {/* <img className="mag-glass" src={window.search} /> */}
                   </button>
-                  <input type="search" name="q" id="searchQuery" placeholder="Where are you going?" />
+                  <input type="text" name="q" id="searchQuery" placeholder="Where are you going?" />
                 </form>
               </div>
              </div>

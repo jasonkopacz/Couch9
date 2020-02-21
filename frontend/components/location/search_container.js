@@ -19,5 +19,4 @@ const mapDispatchToProps = dispatch => {
     searchQuery: (item) => dispatch(searchQuery(item))
   };
 };
-
 export default connect(mapStateToProps, mapDispatchToProps)(LocationSearch);

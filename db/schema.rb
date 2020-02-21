@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_014025) do
+ActiveRecord::Schema.define(version: 2020_02_21_171410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,9 +29,6 @@ ActiveRecord::Schema.define(version: 2020_02_19_014025) do
     t.index ["id"], name: "index_bookings_on_id"
   end
 
-  create_table "location_tables", force: :cascade do |t|
-  end
-
   create_table "locations", force: :cascade do |t|
     t.text "name", null: false
     t.string "lat"
@@ -39,12 +36,12 @@ ActiveRecord::Schema.define(version: 2020_02_19_014025) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "author_id", null: false
-    t.integer "host_id", null: false
     t.text "body", null: false
     t.integer "surfer_id"
     t.integer "booking_id"
     t.boolean "recommended"
+    t.integer "author_id"
+    t.integer "host_id"
   end
 
   create_table "spots", force: :cascade do |t|

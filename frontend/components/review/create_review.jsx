@@ -51,7 +51,7 @@ class CreateReview extends React.Component {
 
         const review = Object.assign({recommended, surfer_id, host_id, author_id, body})
         this.props.createReview(review)
-        .then(() => this.props.history.push("/dashboard"))
+        this.props.history.push("/dashboard")
     }
 
     update(field) {
