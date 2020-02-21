@@ -4,6 +4,9 @@ import {Link} from 'react-router-dom';
 import Tabs from './tabs/tabs';
 
 class ProfileBody extends React.Component {
+  componentDidMount() {
+    this.props.requestUser(this.props.currentUser.id)
+  }
 
   render() {
     const user = this.props.currentUser;
@@ -16,7 +19,7 @@ class ProfileBody extends React.Component {
               <h2 className="user-name">{this.props.currentUser.fname} {this.props.currentUser.lname}</h2>
 
               <div className="location">
-                <button>{this.props.currentUser.city}</button>
+                <Link to={`/api/locations/show/${user.location.id}`}>{user.location.name}</Link>
               </div>
             </section>
           </div>

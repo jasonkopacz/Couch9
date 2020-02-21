@@ -29,7 +29,11 @@ footer {
 }
 
 .footer-icons > a > img {
-  width: 50px;
+  width: inherit;
   height: 50px;
+}
+
+.personal {
+  border-radius: 66%;
 }
 

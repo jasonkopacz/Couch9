@@ -15,11 +15,14 @@ class DashboardNav extends React.Component {
   }
 
   handleSubmit() {
-    const search = document.getElementById('searchQuery').value;
-
-    this.props.searchQuery(search).then(() => {
-      this.props.history.push("/api/spots/search");}
-      );
+    event.preventDefault();
+    const search = document.getElementById('searchQueryTop').value;
+    const that = this;
+    this.props.searchQuery(search)
+    .then(() => {
+      that.props.history.push("/api/locations/search")
+    }
+      )
   }
 
   render() {
@@ -65,9 +68,7 @@ class DashboardNav extends React.Component {
             <li tabIndex="0" className="dashboard-link-6-body">
                 <img src={window.cog}></img>
               <ul id="dropdown-menu">
-                <li>Account and Settings</li>
-                <li onClick={this.handleLogout} className="nav-logout">Logout
-                </li>
+                <li onClick={this.handleLogout} className="nav-logout">Logout</li>
               </ul>
               Settings
             </li>

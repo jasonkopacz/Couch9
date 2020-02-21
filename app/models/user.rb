@@ -22,6 +22,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  location        :string
 #
 
 class User < ApplicationRecord
@@ -39,10 +40,43 @@ class User < ApplicationRecord
     foreign_key: :host_id,
     class_name: :Spot
 
-  has_many :bookings,
+  has_one :location,
+    through: :spot
+
+  has_many :host_bookings,
     primary_key: :id,
-    foreign_key: :user_id,
+    foreign_key: :host_id,
     class_name: :Booking
+
+  # has_many :surfer_bookings,
+  #   primary_key: :id,
+  #   foreign_key: :surfer_id,
+  #   class_name: :Booking
+
+  # has_many :reviews_from_surfers,
+  #   primary_key: :id,
+  #   foreign_key: :author_id,
+  #   class_name: :Review
+
+  # has_many :reviews_as_surfer,
+  #   primary_key: :id,
+  #   foreign_key: :author_id,
+  #   class_name: :Review
+
+  has_many :reviews_from_host,
+    primary_key: :id,
+    foreign_key: :surfer_id,
+    class_name: :Review
+
+  has_many :reviews_as_host_from_surfer,
+    primary_key: :id,
+    foreign_key: :host_id,
+    class_name: :Review
+
+  has_many :reviews_for_host,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Review
 
 
   def password=(pw)

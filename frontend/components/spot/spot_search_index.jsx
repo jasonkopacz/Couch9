@@ -1,4 +1,5 @@
 import React from 'react';
+import SpotSearchItem from './spot_search_item_container'
 
 class SpotSearchIndex extends React.Component {
   constructor(props) {
@@ -6,7 +7,7 @@ class SpotSearchIndex extends React.Component {
   }
 
   componentDidMount() {
-    return this.props.searchResults;
+    return this.props.fetchAllSpots();
   }
 
   componentWillUnmount () {
@@ -14,12 +15,21 @@ class SpotSearchIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.searchResults) return null;
-    const { searchResults } = this.props;
 
+    if (!this.props.all) return null;
+    const all = Object.values(this.props.all);
+    const items = all.map((result, i) => {
+      return (
+        <ul>
+          <li key={result.id}>
+            <div>{result.fname} {result.lname}</div>
+          </li>
+        </ul>
+      )
+    })
     return (
       <div>
-        {searchResults[0].location_name}
+        {items}
       </div>
     )
   }

@@ -1,0 +1,93 @@
+.review-page-container {
+    margin-top: 70px;
+    background-color: #F1EFEA;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.review-form {
+    background-color: white;
+    width: 90vh;
+}
+
+.ref-header {
+    height: 5vh;
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: left;
+    margin: 10px;
+    padding: 10px;
+}
+
+.ref-header > h1 {
+    color: #ED6504;
+    font-size: 16px;
+}
+
+.choose-booking {
+    // margin: 10px;
+    padding: 10px;
+}
+
+.rev-section {
+//    margin: 10px;
+   padding: 10px;
+}
+
+.rev-section > p {
+    // margin: 10px;
+    padding: 10px;
+}
+
+.surf-or-host {
+//   margin: 10px;
+  padding: 10px;
+}
+
+.surf-or-host > p {
+    padding: 10px;
+}
+
+#memorable {
+//   margin: 10px;
+width: 80%;
+  padding: 10px;
+}
+
+.radio-review {
+    // margin: 10px;
+    padding: 10px;
+}
+
+.review-button {
+    background-color: #287FB8;
+    border: 1px solid #287FB8;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    max-width: 240px;
+    min-width: 6em;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    white-space: normal;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+    margin: 10px;
+}
+
+.submit {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+}

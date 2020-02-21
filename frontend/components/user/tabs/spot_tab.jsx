@@ -17,7 +17,7 @@ class SpotTab extends React.Component {
     return (
       <main className="create-spot-button">
           <button>
-            <Link to="/spots/new">Create Your Spot</Link>
+            <Link to="spots/new">Create Your Spot</Link>
           </button>
       </main>
     )

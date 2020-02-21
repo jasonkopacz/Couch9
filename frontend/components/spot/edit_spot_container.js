@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { create, clearErrors } from '../../actions/spot_actions';
+import { update, clearErrors, requestSpot } from '../../actions/spot_actions';
 import EditSpot from './edit_spot';
+// import { update } from '../../util/spot_util';
 
 const mapStateToProps = ({ errors, entities, session }) => {
   return {
@@ -11,8 +12,9 @@ const mapStateToProps = ({ errors, entities, session }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    processForm: (spot) => dispatch(create(spot)),
+    processForm: (id, data) => dispatch(update(id, data)),
     clearErrors: () => dispatch(clearErrors()),
+    // requestSpot: (id) => dispatch(requestSpot(id))
   };
 };
 

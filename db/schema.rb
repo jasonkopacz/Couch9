@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_31_183814) do
+ActiveRecord::Schema.define(version: 2020_02_21_171410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,24 @@ ActiveRecord::Schema.define(version: 2020_01_31_183814) do
     t.datetime "updated_at", null: false
     t.integer "number_of_travelers", null: false
     t.integer "user_id"
+    t.integer "host_id"
+    t.integer "surfer_id"
     t.index ["id"], name: "index_bookings_on_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.text "name", null: false
+    t.string "lat"
+    t.string "long"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "surfer_id"
+    t.integer "booking_id"
+    t.boolean "recommended"
+    t.integer "author_id"
+    t.integer "host_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -41,17 +58,22 @@ ActiveRecord::Schema.define(version: 2020_01_31_183814) do
     t.boolean "smoking_at_home", default: false
     t.boolean "wheelchair_accessible", default: false
     t.text "sleeping_arrangements"
-    t.text "more_details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "available_nights"
-    t.boolean "request_preferences"
     t.text "description_of_sleeping_arrangements"
     t.text "roommate_situation"
     t.text "public_transportation"
     t.text "what_i_can_share_with_guests"
     t.text "additional_information"
     t.string "location_name"
+    t.boolean "sun"
+    t.boolean "mon"
+    t.boolean "tue"
+    t.boolean "wed"
+    t.boolean "thu"
+    t.boolean "fri"
+    t.boolean "sat"
+    t.string "host_name"
     t.index ["location_id"], name: "index_spots_on_location_id"
   end
 
@@ -75,6 +97,7 @@ ActiveRecord::Schema.define(version: 2020_01_31_183814) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["friendable_type", "friendable_id"], name: "index_users_on_friendable_type_and_friendable_id"
     t.index ["imageable_type", "imageable_id"], name: "index_users_on_imageable_type_and_imageable_id"

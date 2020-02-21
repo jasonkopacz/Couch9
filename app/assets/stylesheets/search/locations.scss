@@ -1,0 +1,85 @@
+.locations-search {
+    margin-top: 70px;
+    background-color: #F1EFEA;
+    min-height: 100vh;
+}
+
+.location-show {
+    margin-top: 70px;
+}
+
+.search-name {
+    background-image: url(asset_path("nyc_skyline.jpg"));
+    background-position: center;
+    background-position-y: 80vh;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    align-items: center;
+}
+
+.search-name > h2 {
+    color: white;
+    font-size: 40px;
+}
+
+.body-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.local-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 80vw;
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+    background-color: white;
+}
+
+.hosts-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 80vw;
+}
+
+.host-clickables {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.host-div {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.prof-pic {
+    max-width: 7vw;
+    border-radius: 50%;
+}
+
+.host-name {
+    font-weight: normal;
+    text-align: center;
+}
+
+.host-location, .host-name {
+    color: #287FB8;
+}
+
+.host-location:hover, .host-name:hover {
+    color: #ED6504;
+}

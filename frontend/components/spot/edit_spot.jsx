@@ -4,16 +4,17 @@ class EditSpot extends React.Component {
   constructor(props) {
     super(props);
     const spot = this.props.currentUser.spot || {};
-
+    
     this.state = {
-      host_id: this.props.currentUser.id,
-      sun: false,
-      mon: false,
-      tue: false,
-      wed: false,
-      thu: false,
-      fri: false,
-      sat: false,
+      id: spot.id,
+      host_id: spot.host_id,
+      sun: spot.sun || false,
+      mon: spot.mon || false,
+      tue: spot.tue || false,
+      wed: spot.wed || false,
+      thu: spot.thu || false,
+      fri: spot.fri || false,
+      sat: spot.sat || false,
       max_guests: spot.max_guests || 0,
       last_minute_requests: spot.last_minute_requests || false,
       preferred_gender: spot.preferred_gender || "Any",
@@ -30,13 +31,12 @@ class EditSpot extends React.Component {
       public_transportation: spot.public_transportation || "",
       what_i_can_share_with_guests: spot.what_i_can_share_with_guests || "",
       additional_information: spot.additional_information || "",
+      location_name: spot.location_name || ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.checkboxUpdate = this.checkboxUpdate.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    // this.dateUpdate = this.dateUpdate.bind(this);
-    // this.checkboxState = this.checkboxState.bind(this);
   }
 
   renderErrors() {
@@ -56,53 +56,42 @@ class EditSpot extends React.Component {
     $('#error').addClass('hidden')
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   return this.setState({ inputVal: nextProps.publication.document_title })
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
-    const createForm = Object.assign({}, this.state);
-    this.props.processForm(createForm)
-      .then(() => this.props.history.push(`/api/users`))
+    this.props.processForm(this.state.id, this.state)
+    .then(() => this.props.history.push(`/api/users`))
   };
 
   update(field) {
-    return e => {this.setState({
-      [field]: e.currentTarget.value
-    });
-  }}
+    const that = this;
+    return e => {
+      that.setState({
+        [field]: e.currentTarget.value
+      });
+    }
+  }
 
   checkboxUpdate(field) {
-    return e => this.setState({
-      [field]: true
-    });
-  };
-
-  // dateUpdate(field) {
-  //     return e => {
-  //     this.state.available_nights.forEach(night => {
-  //       if (field === night.value) {
-  //         this.setState({ night })
-  //       }
-  //     })
-  //   };
-      // Array.from(this.state[selections]).forEach(selection => {
-      //   if (selection.value === e.target.value)
-      //     selection.isChecked = e.target.checked;
-      // });
-      // this.setState({ selections });
-    
-  // }
-
+    const that = this;
+    return e => {
+      if (that.state[field] === false) {
+        that.setState({
+          [field]: true
+        });
+    } else {
+        that.setState({
+          [field]: false
+        })
+      }
+    }
+  }
 
   render() {
     return (
       <main>
+        {this.renderErrors}
         <article className="spot-page">
           <form className="create-spot-form" onSubmit={this.handleSubmit}>
-
-
             <div className="spot-left-column">
               <div className="inside-left-column">
                 <section className="spot-user">
@@ -113,9 +102,9 @@ class EditSpot extends React.Component {
                   <h2>OVERVIEW</h2>
                   <ul>
                     <li>Languages</li>
-                    <li>Age Gender</li>
-                    <li>Occupation</li>
-                    <li>Education</li>
+                    <li>{this.props.currentUser.age} {this.props.currentUser.gender}</li>
+                    <li>{this.props.currentUser.occupation}</li>
+                    <li>{this.props.currentUser.education}</li>
                   </ul>
                 </div>
               </div>
@@ -127,11 +116,10 @@ class EditSpot extends React.Component {
               </header>
               <main className="main-body">
                 <header className="home-header">
-                  {this.renderErrors}
                   <h2>My Home</h2>
                   <div className="header-buttons">
                     <input type="submit" value="Save" />
-                    <a href="/">Cancel</a>
+                    <a href="api/users">Cancel</a>
                   </div>
                 </header>
                 <section className="home-preferences">
@@ -141,46 +129,53 @@ class EditSpot extends React.Component {
                     <dd className="available-nights-descriptions">
                       <ul className="days">
                         <li>
-                          <label>Sun</label>
+                          <label htmlFor="sun">Sun</label>
                           <input type="checkbox" name="sun" id="sun" className="available_nights"
                             className="save-cb-state"
-                            value="sun" onChange={this.checkboxUpdate("sun")} />
+                            value="sun" onChange={this.checkboxUpdate("sun")} 
+                            checked={this.state.sun ? "checked" : ""}/>
                         </li>
                         <li>
-                          <label>Mon</label>
+                          <label htmlFor="mon">Mon</label>
                           <input type="checkbox" name="mon" id="mon" className="available_nights"
                             className="save-cb-state"
-                            value="mon" onChange={this.checkboxUpdate("mon")} />
+                            value="mon" onChange={this.checkboxUpdate("mon")} 
+                            checked={this.state.mon ? "checked" : ""}/>
                         </li>
                         <li>
-                          <label>Tue</label>
+                          <label htmlFor="tue">Tue</label>
                           <input type="checkbox" name="tue" id="tue" className="available_nights"
                             className="save-cb-state"
-                            value="tue" onChange={this.checkboxUpdate("tue")} />
+                            value="tue" onChange={this.checkboxUpdate("tue")} 
+                            checked={this.state.tue ? "checked" : ""}/>
                         </li>
                         <li>
-                          <label>Wed</label>
+                          <label htmlFor="wed">Wed</label>
                           <input type="checkbox" name="wed" id="wed" className="available_nights"
                             className="save-cb-state"
-                            value="wed" onChange={this.checkboxUpdate("wed")} />
+                            value="wed" onChange={this.checkboxUpdate("wed")} 
+                            checked={this.state.wed ? "checked" : ""}/>
                         </li>
                         <li>
-                          <label>Thu</label>
+                          <label htmlFor="thu">Thu</label>
                           <input type="checkbox" name="thu" id="thu" className="available_nights"
                             className="save-cb-state"
-                            value="thu" onChange={this.checkboxUpdate("thu")} />
+                            value="thu" onChange={this.checkboxUpdate("thu")} 
+                            checked={this.state.thu ? "checked" : ""}/>
                         </li>
                         <li>
-                          <label>Fri</label>
+                          <label htmlFor="fri">Fri</label>
                           <input type="checkbox" name="fri" id="fri" className="available_nights"
                             className="save-cb-state"
-                            value="fri" onChange={this.checkboxUpdate("fri")} />
+                            value="fri" onChange={this.checkboxUpdate("fri")} 
+                            checked={this.state.fri ? "checked" : ""}/>
                         </li>
                         <li>
-                          <label>Sat</label>
+                          <label htmlFor="sat">Sat</label>
                           <input type="checkbox" name="sat" id="sat" className="available_nights"
                             className="save-cb-state"
-                            value="sat" onChange={this.checkboxUpdate("sat")} />
+                            value="sat" onChange={this.checkboxUpdate("sat")} 
+                            checked={this.state.sat ? "checked" : ""}/>
                         </li>
                       </ul>
                     </dd>
@@ -190,6 +185,7 @@ class EditSpot extends React.Component {
                     <select value={this.state.max_guests}
                       onChange={this.update('max_guests')}
                       name="guests" id="guests">
+                      <option value="Any" defaultValue>Any</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -213,19 +209,10 @@ class EditSpot extends React.Component {
                     <dd className="request-descriptions">
                       <li>
                         <label htmlFor="last">Last-Minute Requests Okay</label>
-                        <input type="radio" name="last" id="last" className="last_minute_requests"
-                          onChange={this.update("last_minute_requests")} value={this.state.last_minute_requests} />
-
+                        <input type="checkbox" name="last" id="last" className="last_minute_requests"
+                          onChange={this.checkboxUpdate("last_minute_requests")} 
+                          checked={this.state.last_minute_requests ? "checked" : ""}/>
                       </li>
-                      {/* <li id="mul">
-                  <label>Multiple Groups per Night Okay</label>
-                        <input type="checkbox" name="multi" id="multi" className="requestPreferences"
-                          onChange={this.checkboxUpdate()} value="multi" />
-                  <small>
-                    Once I've confirmed a guest, it's okay to send 
-                    me additional requests for that night.
-                  </small>
-                </li> */}
                     </dd>
                   </dl>
 
@@ -247,19 +234,22 @@ class EditSpot extends React.Component {
                         <label htmlFor="kid">Kid Friendly</label>
                         <input type="checkbox" name="kid" id="kid"
                           className="kid_friendly" className="save-cb-state"
-                          onChange={this.checkboxUpdate("kid_friendly")} value={this.state.kid_friendly} />
+                          onChange={this.checkboxUpdate("kid_friendly")} 
+                          checked={this.state.kid_friendly ? "checked" : ""}/>
                       </li>
                       <li>
                         <label htmlFor="pet">Pet Friendly</label>
                         <input type="checkbox" name="pet" id="pet"
                           className="pet_friendly" className="save-cb-state"
-                          onChange={this.checkboxUpdate("pet_friendly")} value={this.state.pet_friendly} />
+                          onChange={this.checkboxUpdate("pet_friendly")} 
+                          checked={this.state.pet_friendly ? "checked" : ""}/>
                       </li>
                       <li>
                         <label htmlFor="smoking">Smoking is Allowed</label>
                         <input type="checkbox" name="smoking" id="smoking"
                           className="smoking_allowed" className="save-cb-state"
-                          onChange={this.checkboxUpdate("smoking_allowed")} value={this.state.smoking_allowed} />
+                          onChange={this.checkboxUpdate("smoking_allowed")}  
+                          checked={this.state.smoking_allowed ? "checked" : ""}/>
                       </li>
                     </dd>
                   </dl>
@@ -283,20 +273,18 @@ class EditSpot extends React.Component {
 
                   <div className="description-sleep">
                     <h3 className="dt">Description of Sleeping Arrangement</h3>
-                    <label id="testing">
-                      <input type="textarea" className="text-area"
-                        value={this.state.description_of_sleeping_arrangement}
-                        onChange={this.update('description_of_sleeping_arrangement')} >
-                      </input>
-                    </label>
+                      <textarea name="description-sleep" cols="40" rows="8"
+                        value={this.state.description_of_sleeping_arrangements}
+                        onChange={this.update("description_of_sleeping_arrangements")}>
+                      </textarea>
                   </div>
 
                   <div className="roommate-situation">
                     <h3 className="dt">Roommate Situation</h3>
-                    <input type="textarea" className="text-area"
+                    <textarea name="roommate-situation" cols="40" rows="8"
                       value={this.state.roommate_situation}
                       onChange={this.update("roommate_situation")}>
-                    </input>
+                    </textarea>
                   </div>
 
                   <dl className="misc">
@@ -306,51 +294,55 @@ class EditSpot extends React.Component {
                         <label htmlFor="have-pet">I Have a Pet</label>
                         <input type="checkbox" name="have-pet" id="have-pet" value={this.state.has_pets}
                           className="has_pets" className="save-cb-state"
-                          onChange={this.checkboxUpdate("has_pets")} />
+                          onChange={this.checkboxUpdate("has_pets")} 
+                          checked={this.state.has_pets ? "checked" : ""}/>
                       </li>
                       <li>
                         <label htmlFor="have-kids">Kids at Home</label>
                         <input type="checkbox" name="have-kids" id="have-kids" value={this.state.has_children}
                           className="has_kids" className="save-cb-state"
-                          onChange={this.checkboxUpdate("has_kids")} />
+                          onChange={this.checkboxUpdate("has_children")} 
+                          checked={this.state.has_children ? "checked" : ""}/>
                       </li>
                       <li>
                         <label htmlFor="home-smoking">Smoking at Home</label>
                         <input type="checkbox" name="home-smoking" id="home-smoking" value={this.state.smoking_at_home}
                           className="smoking_at_home" className="save-cb-state"
-                          onChange={this.checkboxUpdate("smoking_at_home")} />
+                          onChange={this.checkboxUpdate("smoking_at_home")} 
+                          checked={this.state.smoking_at_home ? "checked" : ""}/>
                       </li>
                       <li>
                         <label htmlFor="wheelchair">Wheelchair Accessible</label>
                         <input type="checkbox" name="wheelchair" id="wheelchair" value={this.state.wheelchair_accessible}
                           className="wheelchair_accessible" className="save-cb-state"
-                          onChange={this.checkboxUpdate("wheelchair_accessible")} />
+                          onChange={this.checkboxUpdate("wheelchair_accessible")} 
+                          checked={this.state.wheelchair_accessible ? "checked" : ""}/>
                       </li>
                     </dd>
                   </dl>
 
                   <div className="public-transportation">
                     <h3 className="dt">Public Transportation</h3>
-                    <input type="textarea" className="text-area"
+                    <textarea name="public-transportation" cols="40" rows="8"
                       value={this.state.public_transportation}
                       onChange={this.update("public_transportation")}>
-                    </input>
+                    </textarea>
                   </div>
 
                   <div className="shared">
                     <h3 className="dt">What I Can Share With Guests</h3>
-                    <input type="textarea" className="text-area"
+                    <textarea name="shared" cols="40" rows="8"
                       value={this.state.what_i_can_share_with_guests}
                       onChange={this.update("what_i_can_share_with_guests")}>
-                    </input>
+                    </textarea>
                   </div>
 
                   <div className="additional">
                     <h3 className="dt">Additional Information</h3>
-                    <input type="textarea" className="text-area"
+                    <textarea name="additional" cols="40" rows="8"
                       value={this.state.additional_information}
                       onChange={this.update("additional_information")}>
-                    </input>
+                    </textarea>
                   </div>
 
                 </section>

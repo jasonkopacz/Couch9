@@ -3,13 +3,13 @@ import { withRouter } from 'react-router-dom';
 
 class EditBooking extends React.Component {
   constructor(props) {
-    super(props);
+    super(props);    
     this.state = {
-      destination: '',
-      arrival_date: '',
-      departure_date: '',
-      number_of_travelers: 0,
-      trip_description: ''
+      destination: props.booking.destination || '',
+      arrival_date: props.booking.arrival_date ||'',
+      departure_date: props.booking.departure_date || '',
+      number_of_travelers: props.booking.number_of_travelers || 0,
+      trip_description: props.booking.trip_description || ''
 
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,8 +23,10 @@ class EditBooking extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const booking = Object.assign({}, this.state);
-    this.props.update(booking).then(this.props.closeModal);
+    const booking = Object.assign({user_id: this.props.currentUser.id, id: this.props.booking.id}, this.state);
+    this.props.update(booking)
+    this.props.fetchBookings(this.props.currentUser.id)
+    .then(this.props.closeModal);
   }
 
 
@@ -62,18 +64,24 @@ class EditBooking extends React.Component {
             </label>
             <br />
             <div className="dates">
-                <h2>Arrival Date</h2>
-              <label className="date-label">
-                  <input value={this.state.arrival_date} type="date" id="start" name="booking-start"
-                    max="2022-12-31" onChange={this.update('arrival_date')}/>
-              </label>
+              <span className="arrival">
+                  <h2>Arrival Date</h2>
+                <label className="date-label">
+                    <input type="date" id="start" name="booking-start"
+                      max="2022-12-31" onChange={this.update('arrival_date')}
+                      value={this.state.arrival_date}/>
+                </label>
+              </span>
               <br />
-                <h2>Departure Date</h2>
-              <label>
-                  <input value={this.state.departure_date} type="date" id="end" name="booking-end"
-                    min={this.state.arrival_date} max="2022-12-31"
-                    onChange={this.update('departure_date')}/>
-              </label>
+              <span className="departure">
+                  <h2>Departure Date</h2>
+                <label className="date-label">
+                    <input type="date" id="end" name="booking-end"
+                      min={this.state.arrival_date} max="2022-12-31"
+                      onChange={this.update('departure_date')}
+                      value={this.state.departure_date}/>
+                </label>
+              </span>
             </div>
             <br />
               <h2>Number of Travelers</h2>
@@ -98,13 +106,16 @@ class EditBooking extends React.Component {
                     <option value="15">15</option>
                 </select>
             </label>
-              <h2>Trip Description</h2>
+            <h2 className="h2">Trip Description</h2>
             <label className="desc">
-              <textarea value={this.state.trip_description} rows="10" cols="50" onChange={this.update('trip_description')}>
+              <textarea className="tarea" rows="10" cols="50" onChange={this.update('trip_description')}>
 
               </textarea>
             </label>
-            <input className="booking-submit" type="submit" value="Create"></input>
+            <section className="booking-buttons">
+              <button className="booking-cancel" onClick={this.props.closeModal}>Cancel</button>
+              <input className="booking-submit" type="submit" value="Save"></input>
+            </section>
           </div>
         </form>
       </main>

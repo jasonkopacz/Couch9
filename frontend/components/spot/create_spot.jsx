@@ -3,16 +3,10 @@ import React from 'react';
 class CreateSpot extends React.Component {
   constructor(props) {
     super(props);
-    const spot = this.props.user[this.props.currentUserId].spot || {};
-
+    const spot = this.props.currentUser.spot || {};
     this.state = {
-      host_id: this.props.currentUserId,
-      available_nights: spot.available_nights || [ 
-        { id: 0, value: "sun", is_checked: false }, { id: 1, value: "mon", is_checked: false },
-        { id: 2, value: "tue", is_checked: false }, { id: 3, value: "wed", is_checked: false },
-        { id: 4, value: "thu", is_checked: false }, { id: 5, value: "fri", is_checked: false },
-        { id: 6, value: "sat", is_checked: false },
-      ],
+      host_id: this.props.currentUser.id,
+      location_id: spot.location_id || null,
       max_guests: spot.max_guests || 0,
       last_minute_requests: spot.last_minute_requests || false,
       preferred_gender: spot.preferred_gender || "Any",
@@ -29,13 +23,18 @@ class CreateSpot extends React.Component {
       public_transportation: spot.public_transportation || "",
       what_i_can_share_with_guests: spot.what_i_can_share_with_guests || "",
       additional_information: spot.additional_information || "",
+      sun: spot.sun || false,
+      mon: spot.mon || false,
+      tue: spot.tue || false,
+      wed: spot.wed || false,
+      thu: spot.thu || false,
+      fri: spot.fri || false,
+      sat: spot.sat || false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.checkboxUpdate = this.checkboxUpdate.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    this.dateUpdate = this.dateUpdate.bind(this);
-    // this.checkboxState = this.checkboxState.bind(this);
   }
 
   renderErrors() {
@@ -55,10 +54,6 @@ class CreateSpot extends React.Component {
     $('#error').addClass('hidden')
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   return this.setState({ inputVal: nextProps.publication.document_title })
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
     const createForm = Object.assign({}, this.state);
@@ -74,23 +69,22 @@ class CreateSpot extends React.Component {
   }
 
   checkboxUpdate(field) {
-    return e => this.setState({
-      [field]: true });
-    };
-
-  dateUpdate() {
     return e => {
-      let selections = e.target.className;
-      Array.from(this.state[selections]).forEach(selection => {
-        if (selection.value === e.target.value)
-          selection.isChecked = e.target.checked;
-      });
-      this.setState({ selections });
-    };
+      if (this.state[field] === false) {
+        this.setState({
+          [field]: true
+        });
+    } else {
+        this.setState({
+          [field]: false
+        })
+      }
+    }
   }
 
   
   render() {
+    const currentUser = this.props.currentUser
     return(
       <main>
         <article className="spot-page">
@@ -107,17 +101,17 @@ class CreateSpot extends React.Component {
               <h2>OVERVIEW</h2>
               <ul>
                 <li>Languages</li>
-                <li>Age Gender</li>
-                <li>Occupation</li>
-                <li>Education</li>
+                <li>{currentUser.age} {currentUser.gender}</li>
+                <li>{currentUser.occupation}</li>
+                <li>{currentUser.education}</li>
               </ul>
             </div>
           </div>
         </div>
         <div className="home-container">
           <header className="main-header">
-                <h1>{this.props.user[this.props.currentUserId].fname} {this.props.user[this.props.currentUserId].lname}</h1>
-                <h2>{this.props.user[this.props.currentUserId].city}</h2>
+                <h1>{currentUser.fname} {currentUser.lname}</h1>
+                <h2>{currentUser.city}</h2>
           </header>
           <main className="main-body">
           <header className="home-header">
@@ -133,50 +127,50 @@ class CreateSpot extends React.Component {
             <dl className="available-nights">
               <dt className="available-title">Available Nights to Host</dt>
               <dd className="available-nights-descriptions">
-                <ul className="days">
-                  <li>
-                    <label>Sun</label>
-                      <input type="checkbox" name="sun" id="sun" className="available_nights"
-                        className="save-cb-state"
-                      value={this.state.available_nights[0].value} onChange={this.dateUpdate()}/>
-                  </li>
-                  <li>
-                    <label>Mon</label>
-                      <input type="checkbox" name="mon" id="mon" className="available_nights"
-                        className="save-cb-state"
-                      value="mon" onChange={this.dateUpdate()}/>
-                  </li>
-                  <li>
-                    <label>Tue</label>
-                      <input type="checkbox" name="tue" id="tue" className="available_nights"
-                        className="save-cb-state"
-                      value="tue" onChange={this.dateUpdate()}/>
-                  </li>
-                  <li>
-                    <label>Wed</label>
-                      <input type="checkbox" name="wed" id="wed" className="available_nights"
-                        className="save-cb-state"
-                      value="wed" onChange={this.dateUpdate()}/>
-                  </li>
-                  <li>
-                    <label>Thu</label>
-                      <input type="checkbox" name="thu" id="thu" className="available_nights"
-                        className="save-cb-state"
-                      value="thu" onChange={this.dateUpdate()}/>
-                  </li>
-                  <li>
-                    <label>Fri</label>
-                      <input type="checkbox" name="fri" id="fri" className="available_nights"
-                        className="save-cb-state"
-                      value="fri" onChange={this.dateUpdate()}/>
-                  </li>
-                  <li>
-                    <label>Sat</label>
-                      <input type="checkbox" name="sat" id="sat" className="available_nights"
-                        className="save-cb-state"
-                      value="sat" onChange={this.dateUpdate()}/>
-                  </li>
-                </ul>
+              <ul className="days">
+                <li>
+                  <label htmlFor="sun">Sun</label>
+                  <input type="checkbox" name="sun" id="sun" className="available_nights"
+                    className="save-cb-state"
+                    value="sun" onChange={this.checkboxUpdate("sun")} />
+                </li>
+                <li>
+                  <label htmlFor="mon">Mon</label>
+                  <input type="checkbox" name="mon" id="mon" className="available_nights"
+                    className="save-cb-state"
+                    value="mon" onChange={this.checkboxUpdate("mon")} />
+                </li>
+                <li>
+                  <label htmlFor="tue">Tue</label>
+                  <input type="checkbox" name="tue" id="tue" className="available_nights"
+                    className="save-cb-state"
+                    value="tue" onChange={this.checkboxUpdate("tue")} />
+                </li>
+                <li>
+                  <label htmlFor="wed">Wed</label>
+                  <input type="checkbox" name="wed" id="wed" className="available_nights"
+                    className="save-cb-state"
+                    value="wed" onChange={this.checkboxUpdate("wed")} />
+                </li>
+                <li>
+                  <label htmlFor="thu">Thu</label>
+                  <input type="checkbox" name="thu" id="thu" className="available_nights"
+                    className="save-cb-state"
+                    value="thu" onChange={this.checkboxUpdate("thu")} />
+                </li>
+                <li>
+                  <label htmlFor="fri">Fri</label>
+                  <input type="checkbox" name="fri" id="fri" className="available_nights"
+                    className="save-cb-state"
+                    value="fri" onChange={this.checkboxUpdate("fri")} />
+                </li>
+                <li>
+                  <label htmlFor="sat">Sat</label>
+                  <input type="checkbox" name="sat" id="sat" className="available_nights"
+                    className="save-cb-state"
+                    value="sat" onChange={this.checkboxUpdate("sat")} />
+                </li>
+              </ul>
               </dd>
             </dl>
             <div className="max-guests">
@@ -184,6 +178,7 @@ class CreateSpot extends React.Component {
               <select value ={this.state.max_guests} 
                 onChange={this.update('max_guests')}
                 name="guests" id="guests">
+                <option value="any" defaultValue>Any</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -208,18 +203,8 @@ class CreateSpot extends React.Component {
                 <li>
                   <label htmlFor="last">Last-Minute Requests Okay</label>
                         <input type="radio" name="last" id="last" className="last_minute_requests"
-                          onChange={this.update("last_minute_requests")} value={this.state.last_minute_requests}/>
-                           
+                          onChange={this.update("last_minute_requests")} value={this.state.last_minute_requests}/>      
                 </li>
-                {/* <li id="mul">
-                  <label>Multiple Groups per Night Okay</label>
-                        <input type="checkbox" name="multi" id="multi" className="requestPreferences"
-                          onChange={this.checkboxUpdate()} value="multi" />
-                  <small>
-                    Once I've confirmed a guest, it's okay to send 
-                    me additional requests for that night.
-                  </small>
-                </li> */}
               </dd>
             </dl>
 
@@ -277,20 +262,16 @@ class CreateSpot extends React.Component {
 
             <div className="description-sleep">
               <h3 className="dt">Description of Sleeping Arrangement</h3>
-              <label id="testing">
-              <input type="textarea" className="text-area"
-                value={this.state.description_of_sleeping_arrangement}
-                onChange={this.update('description_of_sleeping_arrangement')} >
-              </input>
-              </label>
+                <textarea name="description-sleep" id="" cols="40" rows="8"
+                  onChange={this.update("description_of_sleeping_arrangements")}>
+                </textarea>
             </div>
 
             <div className="roommate-situation">
               <h3 className="dt">Roommate Situation</h3>
-              <input type="textarea" className="text-area" 
-                value={this.state.roommate_situation}
+              <textarea name="roommate-situation" id="" cols="40" rows="8"
                 onChange={this.update("roommate_situation")}>
-              </input>
+              </textarea>
             </div>
 
             <dl className="misc">
@@ -298,53 +279,50 @@ class CreateSpot extends React.Component {
               <dd className="misc-descriptions">
                 <li>
                   <label htmlFor="have-pet">I Have a Pet</label>
-                  <input type="checkbox" name="have-pet" id="have-pet" value={this.state.has_pets}
+                  <input type="checkbox" name="have-pet" id="have-pet" 
                       className="has_pets" className="save-cb-state"
-                  onChange={this.checkboxUpdate("has_pets")}  />
+                      onChange={this.checkboxUpdate("has_pets")}  />
                 </li>
                 <li>
                   <label htmlFor="have-kids">Kids at Home</label>
-                  <input type="checkbox" name="have-kids" id="have-kids" value={this.state.has_children}
+                  <input type="checkbox" name="have-kids" id="have-kids" 
                       className="has_kids" className="save-cb-state"
-                  onChange={this.checkboxUpdate("has_kids")} />
+                      onChange={this.checkboxUpdate("has_children")} />
                 </li>
                 <li>
                   <label htmlFor="home-smoking">Smoking at Home</label>
-                  <input type="checkbox" name="home-smoking" id="home-smoking" value={this.state.smoking_at_home}
+                  <input type="checkbox" name="home-smoking" id="home-smoking" 
                       className="smoking_at_home" className="save-cb-state"
-                  onChange={this.checkboxUpdate("smoking_at_home")}  />
+                      onChange={this.checkboxUpdate("smoking_at_home")}  />
                 </li>
                 <li>
                   <label htmlFor="wheelchair">Wheelchair Accessible</label>
-                  <input type="checkbox" name="wheelchair" id="wheelchair" value={this.state.wheelchair_accessible}
-                    className="wheelchair_accessible" className="save-cb-state"
-                  onChange={this.checkboxUpdate("wheelchair_accessible")}  />
+                  <input type="checkbox" name="wheelchair" id="wheelchair" 
+                      className="wheelchair_accessible" className="save-cb-state"
+                      onChange={this.checkboxUpdate("wheelchair_accessible")}  />
                 </li>
               </dd>
             </dl>
 
             <div className="public-transportation">
               <h3 className="dt">Public Transportation</h3>
-                    <input type="textarea" className="text-area"
-                      value={this.state.public_transportation}
-                      onChange={this.update("public_transportation")}>
-                    </input>
+              <textarea name="public-transportation" id="" cols="40" rows="8"
+                onChange={this.update("public_transportation")}>
+              </textarea>
             </div>
 
             <div className="shared">
               <h3 className="dt">What I Can Share With Guests</h3>
-                    <input type="textarea" className="text-area"
-                      value={this.state.what_i_can_share_with_guests}
-                      onChange={this.update("what_i_can_share_with_guests")}>
-                    </input>
+              <textarea name="shared" id="" cols="40" rows="8"
+                onChange={this.update("what_i_can_share_with_guests")}>
+              </textarea>
             </div>
 
             <div className="additional">
               <h3 className="dt">Additional Information</h3>
-                    <input type="textarea" className="text-area"
-                      value={this.state.additional_information}
-                      onChange={this.update("additional_information")}>
-                    </input>
+              <textarea name="additional" id="" cols="40" rows="8"
+                onChange={this.update("additional_information")}>
+              </textarea>
             </div>
 
           </section>
@@ -362,46 +340,3 @@ class CreateSpot extends React.Component {
 }
 
 export default CreateSpot;
-
-
-// checkboxState() {
-          //   // variable to store our current state
-          //   var cbstate;
-        
-          //   // bind to the onload event
-          //   window.addEventListener('load', function () {
-          //     // Get the current state from localstorage
-          //     // State is stored as a JSON string
-          //     cbstate = JSON.parse(localStorage['CBState'] || '{}');
-        
-          //     // Loop through state array and restore checked 
-          //     // state for matching elements
-          //     for (var i in cbstate) {
-          //       var el = document.querySelector('input[name="' + i + '"]');
-          //       if (el) el.checked = true;
-          //     }
-        
-          //     // Get all checkboxes that you want to monitor state for
-          //     var cb = document.getElementsByClassName('save-cb-state');
-        
-          //     // Loop through results and ...
-          //     for (var i = 0; i < cb.length; i++) {
-        
-          //       //bind click event handler
-          //       cb[i].addEventListener('click', function (evt) {
-          //         // If checkboxe is checked then save to state
-          //         if (this.checked) {
-          //           cbstate[this.name] = true;
-          //         }
-        
-          //         // Else remove from state
-          //         else if (cbstate[this.name]) {
-          //           delete cbstate[this.name];
-          //         }
-        
-          //         // Persist state
-          //         localStorage.CBState = JSON.stringify(cbstate);
-          //       });
-          //     }
-          //   });
-          // };

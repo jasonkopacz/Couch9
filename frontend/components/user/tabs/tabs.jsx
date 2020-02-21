@@ -1,8 +1,7 @@
 import React from 'react';
 import AboutTabContainer from './about_tab_container';
 import SpotTabContainer from './spot_tab_container';
-import PhotoTab from './photo_tab';
-import ReviewTab from './review_tab';
+import ReviewTab from './review_tab_container';
 
 class Headers extends React.Component {
   constructor(props) {
@@ -42,8 +41,7 @@ export default class Tabs extends React.Component {
     this.panes = [
       { title: 'About', content: <AboutTabContainer user={this.props.user}/> },
       { title: 'My Spot', content: <SpotTabContainer user={this.props.user}/> },
-      { title: 'Photos', content: <PhotoTab/> },
-      { title: 'Reviews', content: <ReviewTab/> }
+      { title: 'Reviews', content: <ReviewTab user={this.props.user}/> }
     ];
 
   }

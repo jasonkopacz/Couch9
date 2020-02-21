@@ -9,6 +9,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.all
+    render "api/users/index"
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -19,7 +24,7 @@ class Api::UsersController < ApplicationController
       @user.destroy
       render "api/users"
     else
-      render json ["You are not logged in."]
+      render json: ["You are not logged in."]
     end
   end
 
@@ -29,13 +34,14 @@ class Api::UsersController < ApplicationController
       @user.update(user_params)
       render "api/users/show"
     else
-      render json ['You can not do that']
+      render json: ['You can not do that']
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:fname, :lname, :email, :password, :age, :gender)
+    params.require(:user).permit(:fname, :lname, :email, :password, :age, :gender, 
+      :occupation, :education, :about_me, :location)
   end
 end

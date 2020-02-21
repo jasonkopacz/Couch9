@@ -2,6 +2,7 @@ import * as APIUtil from '../util/user_util';
 import {receiveCurrentUser, receiveErrors } from './session_actions';
 export const EDIT_CURRENT_USER = 'EDIT_CURRENT_USER';
 export const GET_USER = 'GET_USER';
+export const GET_USERS = 'GET_USERS'
 export const LOAD_USER = 'LOAD_USER';
 
 
@@ -16,6 +17,19 @@ export const getUser = (user) => ({
   type: GET_USER,
   user
 });
+
+export const requestUsers = () => (dispatch) => {
+  return APIUtil.fetchUsers().then(users => {
+    dispatch(getUsers(users));
+    return users;
+  });
+};
+
+export const getUsers = (users) => ({
+  type: GET_USERS,
+  users
+});
+
 
 export const editUser = (user) => {
   return {

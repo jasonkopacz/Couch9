@@ -4,8 +4,8 @@ export const RECEIVE_SPOT_ERRORS = 'RECEIVE_SPOT_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const GET_SPOT = 'GET_SPOT';
 export const REQUEST_SPOT = 'REQUEST_SPOT';
-export const GET_SEARCH_RESULTS = 'GET_SEARCH_RESULTS';
-export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
+export const RECEIVE_UPDATED_SPOT = 'RECEIVE_UPDATED_SPOT';
+export const RECEIVE_ALL_SPOTS = 'RECEIVE_ALL_SPOTS';
 
 export const receiveCurrentSpot = payload => {
   return {
@@ -13,6 +13,24 @@ export const receiveCurrentSpot = payload => {
     payload
   };
 };
+
+export const receiveAllSpots = payload => {
+  return {
+    type: RECEIVE_ALL_SPOTS,
+    payload
+  };
+};
+
+export const fetchAllSpots = () => dispatch => {
+  return APIUtil.fetchAllSpots().then(payload => {
+    dispatch(receiveAllSpots(payload));
+    return payload;
+  },
+  err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ));
+};
+
 
 export const create = spot => dispatch => {
   return APIUtil.create(spot).then(payload => {
@@ -22,6 +40,23 @@ export const create = spot => dispatch => {
   err => (
     dispatch(receiveErrors(err.responseJSON))
   ));
+};
+
+export const receiveUpdatedSpot = payload => {
+  return {
+    type: RECEIVE_UPDATED_SPOT,
+    payload
+  };
+};
+
+export const update = (id, data) => dispatch => {
+  return APIUtil.update(id, data).then(payload => {
+    dispatch(receiveUpdatedSpot(payload));
+    return payload;
+  },
+    err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ));
 };
 
 export const receiveErrors = errors => {
@@ -48,29 +83,3 @@ export const getSpot = (spot) => ({
   type: GET_SPOT,
   spot
 });
-
-export const searchQuery =  (search) => dispatch => {
-  debugger
-  return APIUtil.getData(search).then(payload => {
-    debugger
-    dispatch(getSearchResults(payload));
-  },
-    err => {
-      dispatch(receiveErrors(err.responseJSON))
-    }
-    );
-};
-
-export const getSearchResults = (searchResults) => {
-  debugger
-  return {
-    type: GET_SEARCH_RESULTS,
-    searchResults
-  };
-};
-
-export const clearSearch = () => {
-  return {
-    type: CLEAR_SEARCH_RESULTS
-  };
-};

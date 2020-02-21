@@ -1,6 +1,7 @@
 .trip-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 10px 10px 10px 20px;
     border-bottom: 2px solid rgba(0,0,0,0.15);
   border-bottom-width: 2px;
@@ -21,6 +22,10 @@
     justify-content: flex-start;
     padding: 10px 10px 10px 20px;
     margin-bottom: 5px;
+}
+
+#bd {
+    background-color: unset;
 }
 
 .booking-destination > a {
@@ -54,10 +59,6 @@
     color: #34495e;
 }
 
-.half > div {
-    width: 45%;
-}
-
 .public {
     font-size: 1.1em;
     font-weight: bold;
@@ -70,10 +71,81 @@
 }
 
 .trip-index {
-  max-height: calc(100vh - 50px);
   background-color: #F1EFEA;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 70px;
+  min-height: 83vh;
+}
+
+.trip-mod-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  font-size: 16px;
+  color: #287FB8;
+  background-color: white;
+  min-width: max-content;
+}
+
+.trip-mod-index > a {
+    background-color: #287FB8;
+    border: 1px solid #287FB8;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    min-width: 6em;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.trip-mod-index > h3 {
+  text-align: left;
+  color: #ED6504;
+}
+
+.left-column-booking {
+    width: 25%;
+}
+
+.right-column-booking {
+    width: 25%;
+}
+
+#bookings-public {
+  border-bottom: 1px solid #e6e6e6;
+  color: #27374c;
+  font-size: 1em;
+  padding: 0 0 0 20px;
+  display: flex;
+  align-items: center;
+  height: 66px;
+}
+
+.edit-booking {
+    background-color: #287FB8;
+    border: 1px solid #287FB8;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    max-width: 240px;
+    min-width: 6em;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    width: 200px;
+    margin: 20px;
 }
