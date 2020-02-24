@@ -40,8 +40,8 @@ class User < ApplicationRecord
     foreign_key: :host_id,
     class_name: :Spot
 
-  # has_one :location,
-  #   through: :spot
+  has_many :locations,
+    through: :spot
 
   has_many :host_bookings,
     primary_key: :id,
