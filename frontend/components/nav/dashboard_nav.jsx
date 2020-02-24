@@ -8,6 +8,11 @@ class DashboardNav extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.initialize = this.initialize.bind(this);
+  }
+
+  componentDidMount() {
+    this.initialize();
   }
 
   handleLogout() {
@@ -24,6 +29,16 @@ class DashboardNav extends React.Component {
     }
       )
   }
+  
+  initialize() {
+      let input = document.getElementById('searchQuery');
+      new google.maps.places.Autocomplete(input);
+      let input2 = document.getElementById('searchQueryTop');
+      new google.maps.places.Autocomplete(input2);
+      debugger
+      // let input3 = document.getElementById('dest-search');
+      // new google.maps.places.Autocomplete(input3);
+    }
 
   render() {
     return (
