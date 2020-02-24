@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class EditSpot extends React.Component {
   constructor(props) {
@@ -59,7 +60,7 @@ class EditSpot extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state.id, this.state)
-    .then(() => this.props.history.push(`/api/users`))
+    .then(() => this.props.history.push(`/dashboard`))
   };
 
   update(field) {
@@ -119,7 +120,7 @@ class EditSpot extends React.Component {
                   <h2>My Home</h2>
                   <div className="header-buttons">
                     <input type="submit" value="Save" />
-                    <a href="api/users">Cancel</a>
+                    <a href="/">Cancel</a>
                   </div>
                 </header>
                 <section className="home-preferences">
@@ -359,4 +360,4 @@ class EditSpot extends React.Component {
   }
 }
 
-export default EditSpot;
+export default withRouter(EditSpot);

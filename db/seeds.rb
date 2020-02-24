@@ -21,7 +21,7 @@ location5 = Location.create!({name: "Paris, France", lat: "48.8566N", long: "2.3
 
 
 demo_user = User.create!({fname: "Jason", lname: "Kopacz", email: "jk@gmail.com",
-password: "demouser", age: 27, gender: "M", occupation: "goon",
+password: "demouser", age: 27, gender: "M", occupation: "Software Engineer",
 education: "Rutgers University", location: Location.find_by(name: "New York, NY, USA"), 
 about_me: "Software Engineer :D"})
 

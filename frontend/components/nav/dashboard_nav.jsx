@@ -35,9 +35,6 @@ class DashboardNav extends React.Component {
       new google.maps.places.Autocomplete(input);
       let input2 = document.getElementById('searchQueryTop');
       new google.maps.places.Autocomplete(input2);
-      debugger
-      // let input3 = document.getElementById('dest-search');
-      // new google.maps.places.Autocomplete(input3);
     }
 
   render() {

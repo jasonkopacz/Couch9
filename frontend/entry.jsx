@@ -23,13 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Root store={store}/>, root)
   window.store = store;
   function initialize() {
-    debugger
     let input = document.getElementById('searchQuery');
     new google.maps.places.Autocomplete(input);
     let input2 = document.getElementById('searchQueryTop');
     new google.maps.places.Autocomplete(input2);
-    // let input3 = document.getElementById('dest-search');
-    // new google.maps.places.Autocomplete(input3);
   }
   window.google.maps.event.addDomListener(document, 'load', initialize);
   
