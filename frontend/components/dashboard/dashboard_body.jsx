@@ -12,13 +12,13 @@ class DashboardBody extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.initialize = this.initialize.bind(this);
+    // this.initialize = this.initialize.bind(this);
   }
 
   componentDidMount () {  
     this.props.fetchBookings(this.props.currentUser.id)
     this.props.fetchLocations();
-    this.initialize()
+    // this.initialize()
   }
   
   handleSubmit() {
@@ -32,15 +32,15 @@ class DashboardBody extends React.Component {
     })
   }
   
-  initialize() {
-    let input = document.getElementById('searchQuery');
-    new google.maps.places.Autocomplete(input);
-    let input2 = document.getElementById('searchQueryTop');
-    new google.maps.places.Autocomplete(input2);
-    debugger
-    // let input3 = document.getElementById('dest-search');
-    // new google.maps.places.Autocomplete(input3);
-  }
+  // initialize() {
+  //   let input = document.getElementById('searchQuery');
+  //   new google.maps.places.Autocomplete(input);
+  //   let input2 = document.getElementById('searchQueryTop');
+  //   new google.maps.places.Autocomplete(input2);
+  //   debugger
+  //   // let input3 = document.getElementById('dest-search');
+  //   // new google.maps.places.Autocomplete(input3);
+  // }
 
 
   render() {
