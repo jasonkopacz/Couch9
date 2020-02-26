@@ -19,7 +19,7 @@ class Booking < ApplicationRecord
 
   validates :destination, :arrival_date, :departure_date, :number_of_travelers, :trip_description, presence: true
 
-  belongs_to :host,
+  has_one :host,
     primary_key: :id,
     foreign_key: :host_id,
     class_name: :User 
