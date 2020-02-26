@@ -15,7 +15,7 @@ class FromSurfer extends React.Component {
                             <h3>{author.location.name}</h3>
                         </div>
                         <div className="stay-info">
-                            <h3>{booking ? bookking.arrival_date : ""}</h3>
+                            <h3>{booking ? booking.arrival_date : ""}</h3>
                             <h4></h4>
                         </div>
                     </header>
