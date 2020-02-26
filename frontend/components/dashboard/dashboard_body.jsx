@@ -12,9 +12,11 @@ class DashboardBody extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.initialize = this.initialize.bind(this);
   }
 
-  componentDidMount () {  
+  componentDidMount () {
+    this.initialize();  
     this.props.fetchBookings(this.props.currentUser.id)
     this.props.fetchLocations();
   }
@@ -27,6 +29,11 @@ class DashboardBody extends React.Component {
     .then(() => {
       that.props.history.push("/api/locations/search")
     })
+  }
+
+  initialize () {
+    let input = document.getElementById('searchQuery');
+    new google.maps.places.Autocomplete(input);
   }
 
 
